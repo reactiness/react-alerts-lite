@@ -7,7 +7,7 @@ export function reducer(state = initialState, action) {
       const updatedAlerts = [...state.current, newAlert];
       return {
         ...state,
-        updatedAlerts
+        current: updatedAlerts
       };
     }
     case 'REMOVE': {

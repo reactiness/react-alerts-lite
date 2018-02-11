@@ -7,6 +7,7 @@ const reducers = {
   alerts: reducer
 }
 const store = new Store(reducers);
+const unsubscribe = store.subscribe(state => {});
 
 class Alert extends React.Component {
 

@@ -3,6 +3,8 @@ export class Store {
   constructor (reducers={}, initialState={}) {
     this.reducers = reducers;
     this.state = this.reduce(initialState, {});
+    this.subscribers = [];
+
   };
 
   value() {
@@ -11,26 +13,24 @@ export class Store {
 
   dispatch(action) {
     this.state = this.reduce(this.state, action)
+    this.subscribers.forEach(cb => cb(this.state))
   }
 
   reduce(state, action) {
     const newState = {};
     for (const prop in this.reducers) {
       const reducer = this.reducers[prop]
-      console.log(reducer);
-      console.log("prop ", prop);
-      console.log("state prop ", state[prop]);
-      console.log("state ", state);
-      console.log("action ",action);
-      console.log("this.reducers ",this.reducers);
-      console.log(reducer(state[prop], action));
       newState[prop] = this.reducers[prop](state[prop], action);
     }
     return {};
   }
 
-  subscribe() {
-
+  subscribe(cb) {
+    this.subscribers = [ ...this.subscribers, cb ] 
+    cb(this.state);
+    return () => {
+      this.subscribers = this.subscribers.filter(sub => sub !== cb)
+    }
   }
 
 }
