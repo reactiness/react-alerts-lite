@@ -1,16 +1,16 @@
-export default actions = {
+export const actions = {
   add, 
   remove,
 }
 
-const add = (alert) => {
+function add(alert) {
   return {
     type: 'ADD',
     payload: alert,
   }
 };
 
-const remove = (alert) => {
+function remove(alert) {
   return {
     type: 'REMOVE',
     payload: alert,

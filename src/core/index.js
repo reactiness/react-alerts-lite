@@ -1,13 +1,27 @@
 import React from 'react';
-import reducer from './reducer';
 import {Store} from './Store';
+import {actions} from './actions';
+import {reducer} from './reducer';
 
-const store = new Store();
+const reducers = {
+  alerts: reducer
+}
+const store = new Store(reducers);
 
-const App = () => {
-  return (
-    <h1>hello world</h1>
-  );
+class Alert extends React.Component {
+
+  static error(msg, data) {
+    console.log('here');
+  }
+
+  render() {
+    store.dispatch(actions.add({"asd": 'asd'}))
+    console.log(store.value());
+    return(
+      <p>render func</p>
+
+    )
+  };
 };
 
-export default App;
+export default Alert;

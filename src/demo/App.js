@@ -1,9 +1,13 @@
 import React from 'react';
-import Alerts from '../core';
+import Alert from '../core';
+
 
 const App = () => {
   return (
-    <h1>hello world</h1>
+    <div>
+      <Alert/>>
+      <h1>hello world</h1>
+    </div>
   );
 };
 
