@@ -1,7 +1,8 @@
 import React from 'react';
 import reducer from './reducer';
+import {Store} from './Store';
 
-const store = new Store(reducer, {});
+const store = new Store();
 
 const App = () => {
   return (
