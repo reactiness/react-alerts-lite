@@ -1,0 +1,18 @@
+{
+  "name": "react-simple-alerts",
+  "version": "1.0.0",
+  "description": "Minimal library for alert in react",
+  "main": "index.js",
+  "repository": "git@github.com:reactiness/react-simple-alerts.git",
+  "author": "",
+  "license": "MIT",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
+    "test": ""
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-flow": "^6.23.0"
+  }
+}
