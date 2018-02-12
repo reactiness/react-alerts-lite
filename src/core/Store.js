@@ -1,6 +1,7 @@
 export class Store {
 
   constructor (reducers={}, initialState={}) {
+    console.log('init state ', initialState);
     this.reducers = reducers;
     this.state = this.reduce(initialState, {});
     this.subscribers = [];
@@ -12,6 +13,8 @@ export class Store {
   }
 
   dispatch(action) {
+    console.log("action ", action);
+    console.log("this state  ", this.state);
     this.state = this.reduce(this.state, action)
     this.subscribers.forEach(cb => cb(this.state))
   }
@@ -22,7 +25,8 @@ export class Store {
       const reducer = this.reducers[prop]
       newState[prop] = this.reducers[prop](state[prop], action);
     }
-    return {};
+    console.log("newState", newState);
+    return newState;
   }
 
   subscribe(cb) {

@@ -1,4 +1,8 @@
 export const initialState = {
-    current: []
-
+    alerts: {
+        current: [{
+            type: "info",
+            content: "test"
+        }]
+    }
 }

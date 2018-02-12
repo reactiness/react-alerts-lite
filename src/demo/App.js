@@ -1,14 +1,13 @@
-import React from 'react';
 import Alert from '../core';
+import React from 'react';
 
-
-const App = () => {
-  return (
-    <div>
-      <Alert/>>
-      <h1>hello world</h1>
-    </div>
-  );
-};
-
-export default App;
+export default class App extends React.Component {
+  render() {
+    return (
+      <div>
+        
+        <Alert />
+      </div>
+    );
+  }
+}

@@ -1,13 +1,14 @@
 import {initialState} from './initialState';
 
-export function reducer(state = initialState, action) {
+export function reducer(state = initialState.alerts, action) {
   switch (action.type) {
     case 'ADD': {
-      const newAlert = action.payload;
-      const updatedAlerts = [...state.current, newAlert];
       return {
         ...state,
-        current: updatedAlerts
+        current: [
+          ...state.current,
+          action.payload
+        ]
       };
     }
     case 'REMOVE': {
