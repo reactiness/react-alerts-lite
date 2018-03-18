@@ -15,7 +15,6 @@ const store = new Store(reducers, initialState);
 // }
 
 function insert(type, content, timeout) {
-
   store.dispatch(actions.add({
     "id": counter, 
     "content": content, 
@@ -30,13 +29,25 @@ export class Alerts extends React.Component {
   constructor(props) {
     super(props);
   }
+
   static error(content, timeout) {
     insert('error', content, timeout)
+  }
+  static warning(content, timeout) {
+    insert('warning', content, timeout)
+  } 
+  static success(content, timeout) {
+    insert('success', content, timeout)
+  } 
+  static info(content, timeout) {
+    insert('info', content, timeout)
+  }
+  static basic(content, timeout) {
+    insert('basic', content, timeout)
   }
 
   static remove(id){
     store.dispatch(actions.remove(id))
-
   }
 
   render() {
