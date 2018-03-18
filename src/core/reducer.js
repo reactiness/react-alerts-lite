@@ -1,40 +1,33 @@
 import {initialState} from './initialState';
 
+const remove = (state, id) => {
+  return {
+    ...state,
+    current: state.current.filter((el) => el.id === id)
+  }
+}
+
+const add = (state, alert) => {
+  return {
+    ...state,
+    current: [
+      ...state.current,
+      alert
+    ]
+  }
+}
+
 export function reducer(state = initialState.alerts, action) {
-  console.log('reducerstate -- outer', state, action);
-
-  
   switch (action.type) {
-
     case 'REMOVE': {
-      console.log('reducerstate -- inner remove', state, action);
-      const current = state.current.filter((el) => el.id === action.payload)
-      console.log('current', current);
-      const state = {
-        ...state,
-        current
-      }
-      console.log('filtered: ', state);
-      return state;
+      return remove(state, action.payload)
     }
 
     case 'ADD': {
-      console.log('reducerstate -- inner add', state);
-      return {
-        ...state,
-        current: [
-          ...state.current,
-          action.payload
-        ]
-      };
+      return add(state, action.payload)
     }
-
-   
 
     default:
       return state
-    
   }
-
-  return state;
 }

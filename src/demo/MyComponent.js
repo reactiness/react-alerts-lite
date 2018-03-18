@@ -6,6 +6,8 @@ export const MyComponent = () => {
     <div>
       some content
       {Alerts.error('popipoipoipoi', 5000)}
+
+      {Alerts.error('popipoipoipoi', 10000)}
     </div>
   );
 };
