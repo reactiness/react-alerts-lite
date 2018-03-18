@@ -3,7 +3,7 @@ import {initialState} from './initialState';
 const remove = (state, id) => {
   return {
     ...state,
-    current: state.current.filter((el) => el.id === id)
+    current: state.current.filter((el) => el.id !== id)
   }
 }
 
