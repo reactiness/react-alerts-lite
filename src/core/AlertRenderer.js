@@ -1,7 +1,8 @@
 import { Alert } from "./Alert";
 import React, { Component } from 'react';
 import { actions } from './actions';
-
+import TransitionGroup from 'react-transition-group/TransitionGroup'
+import { FadeAndSlideTransition } from '../transitions/FadeSlide';
 
 const createHandlers = dispatch => {
   const handleRemove = id => {
@@ -23,11 +24,16 @@ export class AlertRenderer extends Component {
     console.log('rendering alert renderer');
     const { store } = this.props;
     return(
-        store.state.alerts.current.map((alert, i) => {
+      <TransitionGroup>
+        {store.state.alerts.current.map((alert, i) => {
           return (
-            <Alert key={`__rsa_alert_${alert.id}`} pos={i} store={store} remove={this.handlers.handleRemove} {...alert}/>
+            <FadeAndSlideTransition duration={1000} key={`__rsa_alert_${alert.id}`} >
+              <Alert pos={i} store={store} remove={this.handlers.handleRemove} {...alert}/>
+              {/* <Alert key={`__rsa_alert_${alert.id}`} pos={i} store={store} remove={this.handlers.handleRemove} {...alert}/> */}
+            </FadeAndSlideTransition>
           )
-        })
+        })}
+      </TransitionGroup>
     )
   };
 }
