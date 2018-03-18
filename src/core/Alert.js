@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { actions } from './actions';
+import { defaultStyles } from "../css/defaultAlert"
 
 export class Alert extends React.Component {
   constructor(args) {
@@ -20,17 +21,15 @@ export class Alert extends React.Component {
   
   render() {
     console.log('alert', this);
-    const { content, type, remove } = this.props;
+    const { content, type, remove, pos } = this.props;
     return (
-      <div>
-        { this.state.renderChild 
-          ? <div>
-            {content}
-            {type}
-            </div> 
-          : remove(this.props.id)
-        }
-      </div>
+      this.state.renderChild 
+        ? <div style={defaultStyles(pos)}>
+          {content}
+          {type}
+          </div> 
+        : remove(this.props.id)
+      
     )
   }
 }

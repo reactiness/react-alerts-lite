@@ -56,10 +56,12 @@ export class Alerts extends React.Component {
         {store.state.alerts.current.map((alert, i) => {
 
           return (
-            <Alert key={alert.id} remove={Alerts.remove} {...alert}/>
+            <Alert key={alert.id} _store={store} pos={i} remove={Alerts.remove} {...alert}/>
           )
         })}
       </div>
     )
   };
 };
+
+// export class WithStore()
