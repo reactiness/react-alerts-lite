@@ -1,31 +1,54 @@
 import React from 'react';
-import {Store} from './Store';
-import {actions} from './actions';
-import {reducer} from './reducer';
-import {initialState} from './initialState';
+import { Store } from './Store';
+import { actions } from './actions';
+import { reducer } from './reducer';
+import { initialState } from './initialState';
+import { Alert } from './Alert';
 
 const reducers = {
   alerts: reducer
 }
+let counter = 0;
 const store = new Store(reducers, initialState);
 // const unsubscribe = store.subscribe(state => {});
+// function remove(id) {
+// }
 
-class Alert extends React.Component {
+function insert(type, content, timeout) {
 
-  static error(msg, data) {
-    console.log('here');
+  store.dispatch(actions.add({
+    "id": counter, 
+    "content": content, 
+    "type": type,
+    "timeout": timeout
+  }))
+  counter++;
+}
+
+export class Alerts extends React.Component {
+
+  constructor(props) {
+    super(props);
+  }
+  static error(content, timeout) {
+    insert('error', content, timeout)
+  }
+
+  static remove(id){
+    store.dispatch(actions.remove(id))
+
   }
 
   render() {
-    store.dispatch(actions.add({"asd": 'asd'}))
-    console.log("STORE VALUE", store.value());
-    console.log("STORE", store);
     return(
-      // loop over the state and render each state entry into a component
-      <p>render func</p>
-       
+      <div>
+        {store.state.alerts.current.map((alert, i) => {
+
+          return (
+            <Alert key={alert.id} remove={Alerts.remove} {...alert}/>
+          )
+        })}
+      </div>
     )
   };
 };
-
-export default Alert;

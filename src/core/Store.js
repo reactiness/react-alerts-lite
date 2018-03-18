@@ -20,12 +20,18 @@ export class Store {
   }
 
   reduce(state, action) {
+    console.log("storestate", state, action, this.reducers);
     const newState = {};
     for (const prop in this.reducers) {
+      console.log('-- prop', prop);
+      console.log('--state prop', state[prop]);
+      console.log('-- action', action);
       const reducer = this.reducers[prop]
-      newState[prop] = this.reducers[prop](state[prop], action);
+      console.log(' -- reducer ', reducer);
+      newState[prop] = reducer(state[prop], action);
     }
-    console.log("newState", newState);
+
+    console.log("storestate -- after reducing ", newState, action);
     return newState;
   }
 
