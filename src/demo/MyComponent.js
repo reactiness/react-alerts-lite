@@ -6,12 +6,13 @@ export const MyComponent = () => {
     <div>
       {Alerts.error({
         content:'popipoipoipoi',
-        timeout:5000
+        timeout:2000,
+        align: 'right'
       })}
-
-      {Alerts.error({
+      {Alerts.success({
         content:'popipoipoipoi',
-        timeout:8000
+        timeout:10000,
+        align: 'center'
       })}
     </div>
   );

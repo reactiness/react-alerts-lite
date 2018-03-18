@@ -17,16 +17,16 @@ export class Alerts {
   static error(args) {
     add({...args, type: 'error'});    
   }
-  static warning(content, timeout) {
+  static warning(args) {
     add({...args, type: 'warning'});    
   } 
-  static success(content, timeout) {
+  static success(args) {
     add({...args, type: 'success'});    
   } 
-  static info(content, timeout) {
+  static info(args) {
     add({...args, type: 'info'});    
   }
-  static basic(content, timeout) {
+  static basic(args) {
     add({...args, type: 'basic'});    
   }
 };

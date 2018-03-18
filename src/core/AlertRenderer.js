@@ -25,7 +25,7 @@ export class AlertRenderer extends Component {
     return(
         store.state.alerts.current.map((alert, i) => {
           return (
-            <Alert key={alert.id} pos={i} store={store} remove={this.handlers.handleRemove} {...alert}/>
+            <Alert key={`__rsa_alert_${alert.id}`} pos={i} store={store} remove={this.handlers.handleRemove} {...alert}/>
           )
         })
     )

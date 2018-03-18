@@ -1,7 +1,13 @@
 import React, { Component } from 'react';
 // import { actions } from './actions';
-import { defaultStyles } from "../css/defaultAlert"
-
+import { 
+  defaultStyle,
+  errorStyle,
+  infoStyle,
+  basicStyle,
+  warningStyle,
+  successStyle
+ } from "../css/styles"
 
 export class Alert extends React.Component {
   constructor(props) {
@@ -10,6 +16,9 @@ export class Alert extends React.Component {
       renderChild: true
     }
     this.interval = null;
+    console.log(this.props.type);
+    console.log(this.getStyle);
+    this.style = this.getStyle(this.props.type);
   }
   
   componentDidMount() {
@@ -19,12 +28,45 @@ export class Alert extends React.Component {
   componentWillUnmount() {
     clearInterval(this.interval);
   }   
+
+  getStyle(type) {
+    console.log('asdasdasd', type);
+    switch (type) {
+      case "error": {}
+        return errorStyle
+      case 'warning':
+        return warningStyle
+      case 'success':
+        return successStyle
+      case 'info':
+        return infoStyle
+      case 'basic':
+        return basicStyle
+      default:
+        return {}
+    }
+  }
   
+  getOptions(props) {
+    return {
+      textAlign: props.align
+    }
+  }
+
   render() {
-    const { content, type, pos } = this.props;
-    return (<div style={defaultStyles(pos)}>
-        {content}
-        {type}
-    </div>)
+    const { content, type, pos, ...props } = this.props;
+    console.log(this.style);
+    console.log(type);
+
+    return (
+      <div style={{}}>
+        <div style={{
+        ...defaultStyle(pos),
+        ...this.style,
+        ...this.getOptions(props)}}>
+          {content}
+        </div>
+      </div>
+    )
   }
 }
