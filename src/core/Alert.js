@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
-import { actions } from './actions';
+// import { actions } from './actions';
 import { defaultStyles } from "../css/defaultAlert"
 
+
 export class Alert extends React.Component {
-  constructor(args) {
-    super(args);
+  constructor(props) {
+    super(props);
     this.state = {
       renderChild: true
     }
@@ -12,7 +13,7 @@ export class Alert extends React.Component {
   }
   
   componentDidMount() {
-    this.interval = setTimeout(() => this.setState({renderChild: false}), this.props.timeout);
+    this.interval = setTimeout(() => this.props.remove(this.props.id), this.props.timeout);
   }
   
   componentWillUnmount() {
@@ -20,18 +21,10 @@ export class Alert extends React.Component {
   }   
   
   render() {
-    console.log('aleasdr!!t', this.props._store.state.alerts);
-    const { content, type, remove, pos } = this.props;
-    return (
-      <div>
-        {this.state.renderChild 
-          ? <div style={defaultStyles(pos)}>
-            {content}
-            {type}
-            </div> 
-          : remove(this.props.id)}
-      </div>
-      
-    )
+    const { content, type, pos } = this.props;
+    return (<div style={defaultStyles(pos)}>
+        {content}
+        {type}
+    </div>)
   }
 }

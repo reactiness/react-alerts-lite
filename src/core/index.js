@@ -1,71 +1,32 @@
 import React from 'react';
-import { Store } from './Store';
-import { actions } from './actions';
-import { reducer } from './reducer';
-import { initialState } from './initialState';
 import { Alert } from './Alert';
+import { store } from "./AlertProvider";
+import { actions } from './actions';
 
-const reducers = {
-  alerts: reducer
-}
 let counter = 0;
-const store = new Store(reducers, initialState);
-// const unsubscribe = store.subscribe(state => {});
-// function remove(id) {
-// }
 
-function insert(type, content, timeout) {
+const add = (args) => {
   store.dispatch(actions.add({
-    "id": counter, 
-    "content": content, 
-    "type": type,
-    "timeout": timeout
-  }))
-  counter++;
+    id: counter,
+    ...args,
+  }));
+  counter ++
 }
 
-export class Alerts extends React.Component {
-
-  constructor(props) {
-    super(props);
-    this.remove = this.remove.bind(this);
-  }
-
-  static error(content, timeout) {
-    insert('error', content, timeout)
+export class Alerts {
+  static error(args) {
+    add({...args, type: 'error'});    
   }
   static warning(content, timeout) {
-    insert('warning', content, timeout)
+    add({...args, type: 'warning'});    
   } 
   static success(content, timeout) {
-    insert('success', content, timeout)
+    add({...args, type: 'success'});    
   } 
   static info(content, timeout) {
-    insert('info', content, timeout)
+    add({...args, type: 'info'});    
   }
   static basic(content, timeout) {
-    insert('basic', content, timeout)
+    add({...args, type: 'basic'});    
   }
-
-  remove(id){
-    console.log('removing');
-    store.dispatch(actions.remove(id))
-    this.render();
-  }
-
-  render() {
-    console.log('rendering');
-    return(
-      <div>
-        {store.state.alerts.current.map((alert, i) => {
-          return (
-            <Alert key={alert.id} _store={store} pos={i} remove={this.remove} {...alert}/>
-          )
-        })}
-      </div>
-    )
-  };
 };
-
-
-// export class WithStore()

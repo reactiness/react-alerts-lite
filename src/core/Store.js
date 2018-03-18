@@ -4,6 +4,7 @@ export class Store {
     this.reducers = reducers;
     this.state = this.reduce(initialState, {});
     this.subscribers = [];
+    this.dispatch = this.dispatch.bind(this);
 
   };
 

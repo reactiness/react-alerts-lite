@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Alerts } from "../core"
+import { AlertProvider } from "../core/AlertProvider"
 import { MyComponent } from "./MyComponent"
 
 export default class App extends React.Component {
@@ -8,7 +8,11 @@ export default class App extends React.Component {
     return (
       <div>
         <MyComponent/>
-        <Alerts/>
+
+        <MyComponent/>
+
+        <MyComponent/>
+        <AlertProvider/>
       </div>
 
     );
