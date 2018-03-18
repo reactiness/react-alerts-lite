@@ -20,15 +20,17 @@ export class Alert extends React.Component {
   }   
   
   render() {
-    console.log('alert', this);
+    console.log('aleasdr!!t', this.props._store.state.alerts);
     const { content, type, remove, pos } = this.props;
     return (
-      this.state.renderChild 
-        ? <div style={defaultStyles(pos)}>
-          {content}
-          {type}
-          </div> 
-        : remove(this.props.id)
+      <div>
+        {this.state.renderChild 
+          ? <div style={defaultStyles(pos)}>
+            {content}
+            {type}
+            </div> 
+          : remove(this.props.id)}
+      </div>
       
     )
   }

@@ -28,6 +28,7 @@ export class Alerts extends React.Component {
 
   constructor(props) {
     super(props);
+    this.remove = this.remove.bind(this);
   }
 
   static error(content, timeout) {
@@ -46,22 +47,25 @@ export class Alerts extends React.Component {
     insert('basic', content, timeout)
   }
 
-  static remove(id){
+  remove(id){
+    console.log('removing');
     store.dispatch(actions.remove(id))
+    this.render();
   }
 
   render() {
+    console.log('rendering');
     return(
       <div>
         {store.state.alerts.current.map((alert, i) => {
-
           return (
-            <Alert key={alert.id} _store={store} pos={i} remove={Alerts.remove} {...alert}/>
+            <Alert key={alert.id} _store={store} pos={i} remove={this.remove} {...alert}/>
           )
         })}
       </div>
     )
   };
 };
+
 
 // export class WithStore()
