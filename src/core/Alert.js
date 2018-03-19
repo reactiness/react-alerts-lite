@@ -6,7 +6,8 @@ import {
   infoStyle,
   basicStyle,
   warningStyle,
-  successStyle
+  successStyle,
+  containerStyle
  } from "../css/styles"
 
 export class Alert extends React.Component {
@@ -59,9 +60,9 @@ export class Alert extends React.Component {
     console.log(type);
 
     return (
-      <div style={{}}>
+      <div style={{...containerStyle(pos)}}>
         <div style={{
-        ...defaultStyle(pos),
+        ...defaultStyle,
         ...this.style,
         ...this.getOptions(props)}}>
           {content}

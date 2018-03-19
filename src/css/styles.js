@@ -1,31 +1,39 @@
-export const defaultStyle = (pos) => ({
+
+export const containerStyle = (pos) => ({
   position: 'fixed',
   width: '100%',
   height: '35px',
   bottom: `${pos * 40}px`,
   left: '0px',
   border: '1px grey black',
-  verticalAlign: 'middle',
   display: 'inline-block',
-  lineHeight: '35px',
 })
 
+export const defaultStyle = {
+  verticalAlign: 'middle',
+  lineHeight: '35px',
+  fontFamily: 'Lato,Helvetica Neue,Arial,Helvetica,sans-serif;',
+  width: '100%',
+  height: '35px',
+  color: 'white',
+}
+
 export const errorStyle = {
-  backgroundColor: 'red'
+  backgroundColor: '#f44336'
 }
 
 export const basicStyle = {
-  backgroundColor: 'grey'
+  backgroundColor: '#f1f2f2'
 }
 
 export const successStyle = {
-  backgroundColor: 'green'
+  backgroundColor: '#4CAF50'
 }
 
 export const warningStyle = {
-  backgroundColor: 'yellow'
+  backgroundColor: '#ff9800'
 }
 
 export const infoStyle = {
-  backgroundColor: 'blue'
+  backgroundColor: '#2196F3'
 }

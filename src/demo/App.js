@@ -11,7 +11,6 @@ export default class App extends React.Component {
         <MyComponent/>
         <AlertProvider/>
       </div>
-
     );
   }
 }
