@@ -9,6 +9,16 @@ export const MyComponent = () => {
         timeout:5000,
         align: 'center'
       })}
+      {Alerts.warning({
+        content:'popipoipoipoi',
+        timeout:3000,
+        align: 'center'
+      })}
+      {Alerts.error({
+        content:'popipoipoipoi',
+        timeout:6000,
+        align: 'center'
+      })}
     </div>
   );
 };
