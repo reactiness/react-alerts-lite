@@ -36,23 +36,23 @@ export class AlertRenderer extends Component {
     const { store } = this.props;
     return(
       <TransitionGroup>
-        {store.state.alerts.current.map((alert, i) => (
+        {store.state.alerts.current.map((alert, i) => {
             // <FadeAndSlideTransition duration={1000} key={`__rsa_alert_${alert.id}`} >
-            <FadeAndSlideTransition duration={1000} key={`__rsa_alert_${alert.id}`}>
-              {/* <Fade key={alert.id}> */}
-              {/* <div style={{height: '50px', backgroundColor: 'green'}}>
-asdasd
-              </div> */}
-              {/* <Alert pos={i} store={store} remove={this.handlers.handleRemove} {...alert}/> */}
-              {/* <div> */}
-                <Alert pos={i} remove={this.handlers.handleRemove} {...alert}/>
-                
-                {/* </div>   */}
-            
-            {/* </Fade> */}
-            </FadeAndSlideTransition>
-
-        ))}
+            console.log(alert.transition);
+            if (alert.transition) {
+              return (
+                <alert.transition duration={alert.duration} key={`__rsa_alert_${alert.id}`}>
+                  <Alert pos={i} remove={this.handlers.handleRemove} {...alert}/>
+                </alert.transition>
+              )
+            } else {
+              return (
+                <FadeAndSlideTransition duration={1000} key={`__rsa_alert_${alert.id}`}>
+                  <Alert pos={i} remove={this.handlers.handleRemove} {...alert}/>
+                </FadeAndSlideTransition>
+              )
+            }
+        })}
       </TransitionGroup>
     )
   };

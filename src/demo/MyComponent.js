@@ -1,5 +1,6 @@
 import React from 'react';
 import { Alerts } from "../core"
+import { FadeAndSlideTransition } from '../transitions/FadeSlide';
 
 export const MyComponent = () => {
   return (
@@ -17,7 +18,9 @@ export const MyComponent = () => {
       {Alerts.error({
         content:'popipoipoipoi',
         timeout:6000,
-        align: 'center'
+        align: 'center',
+        transition: FadeAndSlideTransition,
+        duration: 1000
       })}
     </div>
   );

@@ -3,6 +3,7 @@ import React from 'react';
 import { AlertProvider } from "../core/AlertProvider"
 import { MyComponent } from "./MyComponent"
 import { Alerts } from "../core"
+import { FadeAndSlideTransition } from '../transitions/FadeSlide';
 
 export default class App extends React.Component {
 
@@ -10,7 +11,9 @@ export default class App extends React.Component {
     Alerts.success({
       content:'popipoipoipoi',
       timeout:5000,
-      align: 'center'
+      align: 'center',
+      transition: FadeAndSlideTransition,
+      duration: 500
     })
   }
   render() {
