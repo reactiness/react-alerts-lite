@@ -17,8 +17,8 @@ export class Alert extends React.Component {
       renderChild: true
     }
     this.interval = null;
-    console.log(this.props.type);
-    console.log(this.getStyle);
+    // console.log(this.props.type);
+    // console.log(this.getStyle);
     this.style = this.getStyle(this.props.type);
   }
   
@@ -31,7 +31,7 @@ export class Alert extends React.Component {
   }   
 
   getStyle(type) {
-    console.log('asdasdasd', type);
+    // console.log('asdasdasd', type);
     switch (type) {
       case "error": {}
         return errorStyle
@@ -55,12 +55,12 @@ export class Alert extends React.Component {
   }
 
   render() {
-    const { content, type, pos, ...props } = this.props;
-    console.log(this.style);
-    console.log(type);
+    const { content, type, pos, key, remove, ...props } = this.props;
+    // console.log(this.style);
+    // console.log(type);
 
     return (
-      <div style={{...containerStyle(pos)}}>
+      <div style={{...containerStyle(pos)}} {...props}>
         <div style={{
         ...defaultStyle,
         ...this.style,

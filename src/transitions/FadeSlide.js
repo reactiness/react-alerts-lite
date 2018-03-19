@@ -5,7 +5,8 @@ import React from 'react';
 // 'children' is the element to be animated.
 // 'duration' is the duration of the animation in milliseconds.
 // The `in` prop will be provided by <TransitionGroup />. 
-export function FadeAndSlideTransition ({children, duration, in: inProp}) {
+export function FadeAndSlideTransition ({children, duration, in: inProp, key}) {
+  console.log('IN', inProp);
   // Styles to set on children which are necessary in order
   // for the animation to work.
   const defaultStyle = {
@@ -60,8 +61,12 @@ export function FadeAndSlideTransition ({children, duration, in: inProp}) {
           // Apply different styles to children based
           // on the current value of 'status'. 
           const currentStyles = transitionStyles[status]
+          console.log(' -- STATUS ', status);
+          console.log(' -- TRANS ', transitionStyles[status]);
+          console.log(children);
           return React.cloneElement(children, {
-            style: Object.assign({}, defaultStyle, currentStyles)
+            style: Object.assign({}, children.props.style, defaultStyle, currentStyles),
+            key
           })
         }
       }

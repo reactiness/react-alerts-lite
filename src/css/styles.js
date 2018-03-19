@@ -12,7 +12,7 @@ export const containerStyle = (pos) => ({
 export const defaultStyle = {
   verticalAlign: 'middle',
   lineHeight: '35px',
-  fontFamily: 'Lato,Helvetica Neue,Arial,Helvetica,sans-serif;',
+  fontFamily: 'Lato,Helvetica Neue,Arial,Helvetica,sans-serif',
   width: '100%',
   height: '35px',
   color: 'white',

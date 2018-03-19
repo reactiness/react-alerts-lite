@@ -11,8 +11,14 @@ const reducers = {
 export const store = new Store(reducers, initialState);
 
 export class AlertProvider  extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      alerts: []
+    }
+  }
   componentDidMount() {
-    store.subscribe(() => this.forceUpdate()); // TODO: bad practice to use forceUpdate()? not sure how to solve otherwise. research this.
+    store.subscribe((alerts) => this.setState({alerts: alerts})); // TODO: bad practice to use forceUpdate()? not sure how to solve otherwise. research this.
   }
 
   render() {
