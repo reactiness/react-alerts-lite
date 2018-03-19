@@ -55,7 +55,7 @@ export class Alert extends React.Component {
   }
 
   render() {
-    const { content, type, pos, key, remove, ...props } = this.props;
+    const { content, type, pos, remove, ...props } = this.props;
     // console.log(this.style);
     // console.log(type);
 

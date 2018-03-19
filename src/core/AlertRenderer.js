@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { actions } from './actions';
 import TransitionGroup from 'react-transition-group/TransitionGroup'
 import { FadeAndSlideTransition } from '../transitions/FadeSlide';
-
+import  { containerStyle } from "../css/styles"
 
 const Fade = ({ children, ...props }) => (
   <CSSTransition
@@ -38,7 +38,7 @@ export class AlertRenderer extends Component {
       <TransitionGroup>
         {store.state.alerts.current.map((alert, i) => (
             // <FadeAndSlideTransition duration={1000} key={`__rsa_alert_${alert.id}`} >
-            <FadeAndSlideTransition duration={1000} key={alert.id} key={`__rsa_alert_${alert.id}`}>
+            <FadeAndSlideTransition duration={1000} key={`__rsa_alert_${alert.id}`}>
               {/* <Fade key={alert.id}> */}
               {/* <div style={{height: '50px', backgroundColor: 'green'}}>
 asdasd
