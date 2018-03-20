@@ -9,6 +9,7 @@
   "scripts": {
     "start": "parcel src/index.html",
     "build": "parcel build src/index.html",
+    "lint": "./node_modules/eslint/bin/eslint.js --fix ./src/",
     "test": ""
   },
   "devDependencies": {
