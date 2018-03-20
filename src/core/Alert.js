@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 // import { actions } from './actions';
-import { 
+import {
   defaultStyle,
   errorStyle,
   infoStyle,
@@ -8,50 +8,55 @@ import {
   warningStyle,
   successStyle,
   containerStyle
- } from "../css/styles"
+} from "../css/styles";
 
 export class Alert extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       renderChild: true
-    }
+    };
     this.interval = null;
     // console.log(this.props.type);
     // console.log(this.getStyle);
     this.style = this.getStyle(this.props.type);
   }
-  
+
   componentDidMount() {
-    this.interval = setTimeout(() => this.props.remove(this.props.id), this.props.timeout);
+    this.interval = setTimeout(
+      () => this.props.remove(this.props.id),
+      this.props.timeout
+    );
   }
-  
+
   componentWillUnmount() {
     clearInterval(this.interval);
-  }   
+  }
 
   getStyle(type) {
     // console.log('asdasdasd', type);
     switch (type) {
-      case "error": {}
-        return errorStyle
-      case 'warning':
-        return warningStyle
-      case 'success':
-        return successStyle
-      case 'info':
-        return infoStyle
-      case 'basic':
-        return basicStyle
+      case "error":
+        {
+        }
+        return errorStyle;
+      case "warning":
+        return warningStyle;
+      case "success":
+        return successStyle;
+      case "info":
+        return infoStyle;
+      case "basic":
+        return basicStyle;
       default:
-        return {}
+        return {};
     }
   }
-  
+
   getOptions(props) {
     return {
       textAlign: props.align
-    }
+    };
   }
 
   render() {
@@ -60,14 +65,17 @@ export class Alert extends React.Component {
     // console.log(type);
 
     return (
-      <div style={{...containerStyle(pos)}} {...props}>
-        <div style={{
-        ...defaultStyle,
-        ...this.style,
-        ...this.getOptions(props)}}>
+      <div style={{ ...containerStyle(pos) }} {...props}>
+        <div
+          style={{
+            ...defaultStyle,
+            ...this.style,
+            ...this.getOptions(props)
+          }}
+        >
           {content}
         </div>
       </div>
-    )
+    );
   }
 }
