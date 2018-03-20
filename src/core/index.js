@@ -1,7 +1,7 @@
 import React from 'react';
 import { Alert } from './Alert';
 import { store } from "./AlertProvider";
-import { actions } from './actions';
+import { actions } from '../state/actions';
 
 let counter = 0;
 

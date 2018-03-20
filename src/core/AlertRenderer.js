@@ -1,6 +1,6 @@
 import { Alert } from "./Alert";
 import React, { Component } from 'react';
-import { actions } from './actions';
+import { actions } from '../state/actions';
 import TransitionGroup from 'react-transition-group/TransitionGroup'
 import { FadeAndSlideTransition } from '../transitions/FadeSlide';
 import  { containerStyle } from "../css/styles"

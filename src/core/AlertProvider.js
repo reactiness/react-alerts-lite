@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import { reducer } from './reducer';
-import { initialState } from './initialState';
+import { reducer } from '../state/reducer';
+import { initialState } from '../state/initialState';
 import { AlertRenderer } from './AlertRenderer';
-import { Store } from './Store';
+import { Store } from '../state/Store';
 
 const reducers = {
   alerts: reducer
