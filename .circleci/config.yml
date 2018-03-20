@@ -25,12 +25,3 @@ jobs:
       # - run: yarn test
       # - run: yarn lint
 
-
-# workflows:
-#   version: 1
-#   build:
-#     jobs:
-#       - build:
-#           filters:
-#             branches:
-#               only: master
