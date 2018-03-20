@@ -1,9 +1,9 @@
 {
-  "name": "react-simple-alerts",
+  "name": "react-transition-alerts",
   "version": "1.0.0",
-  "description": "Minimal library for alert in react",
+  "description": "Library for alerts built using react and react-transitions",
   "main": "src/index.js",
-  "repository": "git@github.com:reactiness/react-simple-alerts.git",
+  "repository": "git@github.com:reactiness/react-transition-alerts.git",
   "author": "",
   "license": "MIT",
   "scripts": {

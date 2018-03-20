@@ -1,1 +1,1 @@
-# react-simple-alerts
+# react-transition-alerts

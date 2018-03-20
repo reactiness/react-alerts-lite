@@ -8,7 +8,7 @@ jobs:
     docker:
       - image: circleci/node:7.10
 
-    working_directory: ~/react-simple-alerts
+    working_directory: ~/react-transition-alerts
 
     steps:
       - checkout
