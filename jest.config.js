@@ -7,6 +7,5 @@ module.exports = {
   setupTestFrameworkScriptFile: "<rootDir>/tools/enzymeTestAdapterSetup.js",
   moduleFileExtensions: ["js", "jsx", "json"],
   moduleDirectories: ["src"],
-  setupFiles: ["./tools/enzymeTestAdapterSetup.js"],
-  roots: ['<rootDir>'],
+  setupFiles: ["./tools/enzymeTestAdapterSetup.js"]
 };
