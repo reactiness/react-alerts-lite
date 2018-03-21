@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import { actions } from "../state/actions";
 import TransitionGroup from "react-transition-group/TransitionGroup";
 import { FadeAndSlideTransition } from "../transitions/FadeSlide";
-import { containerStyle } from "../css/styles";
+import { containerStyle, positionStyle } from "../css/styles";
 
 const createHandlers = dispatch => {
   const handleRemove = id => {
@@ -24,29 +24,31 @@ export class AlertRenderer extends Component {
     console.log("rendering alert renderer");
     const { store } = this.props;
     return (
-      <TransitionGroup>
-        {store.state.alerts.current.map((alert, i) => {
-          if (alert.transition) {
-            return (
-              <alert.transition
-                duration={alert.duration}
-                key={`__rsa_alert_${alert.id}`}
-              >
-                <Alert pos={i} remove={this.handlers.handleRemove} {...alert} />
-              </alert.transition>
-            );
-          } else {
-            return (
-              <FadeAndSlideTransition
-                duration={1000}
-                key={`__rsa_alert_${alert.id}`}
-              >
-                <Alert pos={i} remove={this.handlers.handleRemove} {...alert} />
-              </FadeAndSlideTransition>
-            );
-          }
-        })}
+      // <div >
+      <TransitionGroup style={positionStyle}>
+          {store.state.alerts.current.map((alert, i) => {
+            if (alert.transition) {
+              return (
+                <alert.transition
+                  duration={alert.duration}
+                  key={`__rsa_alert_${alert.id}`}
+                >
+                  <Alert pos={i} remove={this.handlers.handleRemove} {...alert} />
+                </alert.transition>
+              );
+            } else {
+              return (
+                <FadeAndSlideTransition
+                  duration={1000}
+                  key={`__rsa_alert_${alert.id}`}
+                >
+                  <Alert pos={i} remove={this.handlers.handleRemove} {...alert} />
+                </FadeAndSlideTransition>
+              );
+            }
+          })}
       </TransitionGroup>
+        // </div>
     );
   }
 }

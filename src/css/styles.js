@@ -1,12 +1,20 @@
 export const containerStyle = pos => ({
+  width: "100%",
+  height: "35px"
+  // bottom: `${pos * 40}px`,
+  // left: "0px",
+  // display: "inline-block"
+});
+
+export const positionStyle = {
   position: "fixed",
   width: "100%",
-  height: "35px",
-  bottom: `${pos * 40}px`,
+  bottom: "0px",
   left: "0px",
-  border: "1px grey black",
-  display: "inline-block"
-});
+  display: "flex",
+  alignItems: "flex-end",
+  flexDirection: "column"
+};
 
 export const defaultStyle = {
   verticalAlign: "middle",
@@ -14,7 +22,8 @@ export const defaultStyle = {
   fontFamily: "Lato,Helvetica Neue,Arial,Helvetica,sans-serif",
   width: "100%",
   height: "35px",
-  color: "white"
+  color: "white",
+  border: "1px grey black"
 };
 
 export const errorStyle = {

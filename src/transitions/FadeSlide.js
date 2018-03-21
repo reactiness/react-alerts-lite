@@ -12,7 +12,8 @@ export function FadeAndSlideTransition({ children, duration, in: inProp }) {
     // Transition "opacity" and "transform" CSS properties.
     // Set duration of the transition to the duration of the animation.
     transition: `${duration}ms ease-in`,
-    transitionProperty: "opacity, transform"
+    transitionProperty: "opacity, transform",
+    width: "100%"
   };
 
   // Styles that will be applied to children as the status

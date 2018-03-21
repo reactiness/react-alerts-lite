@@ -8,7 +8,7 @@ export default class App extends React.Component {
   createAlert() {
     Alerts.success({
       content: "popipoipoipoi",
-      timeout: 5000,
+      timeout: 15115151,
       align: "center",
       transition: FadeAndSlideTransition,
       duration: 500
