@@ -4,8 +4,8 @@ module.exports = {
   //   "\\.(css|scss)$": "<rootDir>/tools/assetsTransformer.js"
   // },
   snapshotSerializers: ["enzyme-to-json/serializer"],
-  setupTestFrameworkScriptFile: "<rootDir>/tools/enzymeTestAdapterSetup.js",
+  setupTestFrameworkScriptFile: "<rootDir>/tools/test-setup.js",
   moduleFileExtensions: ["js", "jsx", "json"],
   moduleDirectories: ["src"],
-  setupFiles: ["./tools/enzymeTestAdapterSetup.js"]
+  setupFiles: ["<rootDir>/tools/enzymeTestAdapterSetup.js"]
 };
