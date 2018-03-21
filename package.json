@@ -9,21 +9,25 @@
   "scripts": {
     "start": "parcel src/index.html",
     "build": "parcel build src/index.html",
-    "lint": "./node_modules/eslint/bin/eslint.js --fix ./src/",
-    "test": ""
+    "lint": "./node_modules/eslint/bin/eslint.js ./src/",
+    "test": "jest"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-eslint": "^8.2.2",
+    "babel-jest": "^23.0.0-alpha.0",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-3": "^6.24.1",
+    "enzyme": "^3.3.0",
+    "enzyme-to-json": "^3.3.3",
     "eslint": "^4.17.0",
     "eslint-config-prettier": "^2.9.0",
     "eslint-plugin-import": "^2.9.0",
     "eslint-plugin-jest": "^21.15.0",
     "eslint-plugin-prettier": "^2.6.0",
     "eslint-plugin-react": "^7.7.0",
+    "jest": "^22.4.2",
     "parcel-bundler": "^1.5.1",
     "prettier": "^1.11.1",
     "react-transition-group": "^2.2.1"
