@@ -24,13 +24,36 @@ export class AlertProvider extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      alerts: []
+      alerts: {
+        ["bottom"]: [],
+        ["top"]: [],
+        ["top-left"]: [],
+        ["top-right"]: [],
+        ["bottom-left"]: [],
+        ["bottom-right"]: [],
+        ["bottom-full"]: [],
+        ["top-full"]: []
+      }
     };
     this.handlers = createHandlers(store.dispatch);
   }
 
   sortAlerts(alerts) {
-    this.setState({ alerts: alerts });
+    const sortedAlerts = {
+      ["bottom"]: [],
+      ["top"]: [],
+      ["top-left"]: [],
+      ["top-right"]: [],
+      ["bottom-left"]: [],
+      ["bottom-right"]: [],
+      ["bottom-full"]: [],
+      ["top-full"]: []
+    };
+    alerts.forEach(alert => {
+      console.log("ALERT", alert);
+      sortedAlerts[alert.position].push(alert);
+    });
+    this.setState({ alerts: sortedAlerts });
   }
 
   componentDidMount() {

@@ -8,10 +8,11 @@ export default class App extends React.Component {
   createAlert() {
     Alerts.success({
       content: "popipoipoipoi",
-      timeout: 15115151,
+      timeout: 2000,
       align: "center",
       transition: FadeAndSlideTransition,
-      duration: 500
+      duration: 500,
+      position: "bottom"
     });
   }
   render() {

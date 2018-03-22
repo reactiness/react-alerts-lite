@@ -7,21 +7,12 @@ export const MyComponent = () => {
     <div>
       {Alerts.success({
         content: "popipoipoipoi",
-        timeout: 5000,
-        align: "center"
-      })}
-      {Alerts.warning({
-        content: "popipoipoipoi",
-        timeout: 3000,
-        align: "center"
-      })}
-      {Alerts.error({
-        content: "popipoipoipoi",
-        timeout: 6000,
+        timeout: 1511205151,
         align: "center",
         transition: FadeAndSlideTransition,
-        duration: 1000
-      })}
+        duration: 500,
+        position: "bottom"
+      })};
     </div>
   );
 };
