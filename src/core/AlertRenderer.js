@@ -8,7 +8,6 @@ import { positions } from "./constants";
 export class AlertRenderer extends Component {
   render() {
     const { alerts, remove } = this.props;
-    console.log("rendering alert renderer", alerts, positions);
     return positions.map(position => (
       <TransitionGroup
         style={{ ...positionStyle.common, ...positionStyle[position] }}
