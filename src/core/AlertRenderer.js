@@ -24,31 +24,29 @@ export class AlertRenderer extends Component {
     console.log("rendering alert renderer");
     const { store } = this.props;
     return (
-      // <div >
       <TransitionGroup style={positionStyle}>
-          {store.state.alerts.current.map((alert, i) => {
-            if (alert.transition) {
-              return (
-                <alert.transition
-                  duration={alert.duration}
-                  key={`__rsa_alert_${alert.id}`}
-                >
-                  <Alert pos={i} remove={this.handlers.handleRemove} {...alert} />
-                </alert.transition>
-              );
-            } else {
-              return (
-                <FadeAndSlideTransition
-                  duration={1000}
-                  key={`__rsa_alert_${alert.id}`}
-                >
-                  <Alert pos={i} remove={this.handlers.handleRemove} {...alert} />
-                </FadeAndSlideTransition>
-              );
-            }
-          })}
+        {store.state.alerts.current.map((alert, i) => {
+          if (alert.transition) {
+            return (
+              <alert.transition
+                duration={alert.duration}
+                key={`__rsa_alert_${alert.id}`}
+              >
+                <Alert pos={i} remove={this.handlers.handleRemove} {...alert} />
+              </alert.transition>
+            );
+          } else {
+            return (
+              <FadeAndSlideTransition
+                duration={1000}
+                key={`__rsa_alert_${alert.id}`}
+              >
+                <Alert pos={i} remove={this.handlers.handleRemove} {...alert} />
+              </FadeAndSlideTransition>
+            );
+          }
+        })}
       </TransitionGroup>
-        // </div>
     );
   }
 }

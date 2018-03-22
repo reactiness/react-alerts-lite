@@ -1,25 +1,12 @@
 import Transition from "react-transition-group/Transition";
 import React from "react";
-// <FadeAndSlideTransition /> is a component that wraps children in
-// a <Transition /> component.
-// 'children' is the element to be animated.
-// 'duration' is the duration of the animation in milliseconds.
-// The `in` prop will be provided by <TransitionGroup />.
+
 export function FadeAndSlideTransition({ children, duration, in: inProp }) {
-  // Styles to set on children which are necessary in order
-  // for the animation to work.
   const defaultStyle = {
-    // Transition "opacity" and "transform" CSS properties.
-    // Set duration of the transition to the duration of the animation.
     transition: `${duration}ms ease-in`,
     transitionProperty: "opacity, transform",
     width: "100%"
   };
-
-  // Styles that will be applied to children as the status
-  // of the transition changes. Each key of the
-  // 'transitionStyles' object matches the name of a
-  // 'status' provided by <Transition />.
   const transitionStyles = {
     // Start with component invisible and shifted up by 10%
     entering: {
@@ -46,22 +33,15 @@ export function FadeAndSlideTransition({ children, duration, in: inProp }) {
         // Set 'enter' timeout to '0' so that enter animation
         // will start immediately.
         enter: 0,
-
         // Set 'exit' timeout to 'duration' so that the 'exited'
         // status won't be applied until animation completes.
         exit: duration
       }}
     >
-      {// Children is a function that receives the current
-      // status of the animation.
-      status => {
-        // Don't render anything if component has 'exited'.
+      {status => {
         if (status === "exited") {
           return null;
         }
-
-        // Apply different styles to children based
-        // on the current value of 'status'.
         console.log(" -- STATUS ", status);
         const currentStyles = transitionStyles[status];
         return React.cloneElement(children, {
