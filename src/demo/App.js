@@ -12,7 +12,8 @@ export default class App extends React.Component {
       align: "center",
       transition: FadeAndSlideTransition,
       duration: 500,
-      position: "bottom-full"
+      position: "bottom-full",
+      onClose: () => console.log('alert has closed')
     });
   }
   render() {

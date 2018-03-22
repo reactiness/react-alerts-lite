@@ -30,6 +30,8 @@ export class Alert extends React.Component {
   }
 
   componentWillUnmount() {
+    const { onClose } = this.props;
+    if (onClose) onClose();
     clearInterval(this.interval);
   }
 
@@ -37,8 +39,6 @@ export class Alert extends React.Component {
     // console.log('asdasdasd', type);
     switch (type) {
       case "error":
-        {
-        }
         return errorStyle;
       case "warning":
         return warningStyle;
