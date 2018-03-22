@@ -11,7 +11,8 @@
     "build": "parcel build src/index.html",
     "lint": "./node_modules/eslint/bin/eslint.js ./src/",
     "test": "jest",
-    "storybook": "start-storybook -p 9001 -c .storybook"
+    "storybook": "start-storybook -p 9001 -c .storybook",
+    "lint-fix": "./node_modules/eslint/bin/eslint.js --fix ./src/"
   },
   "devDependencies": {
     "@storybook/react": "^3.3.15",

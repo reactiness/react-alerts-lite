@@ -1,38 +1,23 @@
 import { Alert } from "./Alert";
 import React, { Component } from "react";
-import { actions } from "../state/actions";
 import TransitionGroup from "react-transition-group/TransitionGroup";
 import { FadeAndSlideTransition } from "../transitions/FadeSlide";
 import { containerStyle, positionStyle } from "../css/styles";
 
-const createHandlers = dispatch => {
-  const handleRemove = id => {
-    dispatch(actions.remove(id));
-  };
-  return {
-    handleRemove
-  };
-};
-
 export class AlertRenderer extends Component {
-  constructor(props) {
-    super(props);
-    this.handlers = createHandlers(this.props.store.dispatch);
-  }
-
   render() {
-    console.log("rendering alert renderer");
-    const { store } = this.props;
+    const { alerts, remove } = this.props;
+    console.log("rendering alert renderer", alerts);
     return (
       <TransitionGroup style={positionStyle}>
-        {store.state.alerts.current.map((alert, i) => {
+        {alerts.map((alert, i) => {
           if (alert.transition) {
             return (
               <alert.transition
                 duration={alert.duration}
                 key={`__rsa_alert_${alert.id}`}
               >
-                <Alert pos={i} remove={this.handlers.handleRemove} {...alert} />
+                <Alert pos={i} remove={remove} {...alert} />
               </alert.transition>
             );
           } else {
@@ -41,7 +26,7 @@ export class AlertRenderer extends Component {
                 duration={1000}
                 key={`__rsa_alert_${alert.id}`}
               >
-                <Alert pos={i} remove={this.handlers.handleRemove} {...alert} />
+                <Alert pos={i} remove={remove} {...alert} />
               </FadeAndSlideTransition>
             );
           }

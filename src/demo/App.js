@@ -17,8 +17,8 @@ export default class App extends React.Component {
   render() {
     return (
       <div>
-        <MyComponent />
         <AlertProvider />
+        <MyComponent />
         <button onClick={this.createAlert}> create </button>
       </div>
     );
