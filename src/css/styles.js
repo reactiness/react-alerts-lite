@@ -9,14 +9,21 @@ export const containerStyle = pos => ({
 });
 
 export const positionStyle = {
-  [positionConstants.bottom]: {
-    position: "fixed",
-    width: "100%",
-    bottom: "0px",
-    left: "0px",
+  common: {
     display: "flex",
     alignItems: "flex-end",
-    flexDirection: "column"
+    flexDirection: "column",
+    position: "fixed"
+  },
+  [positionConstants.bottomFull]: {
+    bottom: "0px",
+    left: "0px",
+    width: "100%"
+  },
+  [positionConstants.topFull]: {
+    top: "0px",
+    left: "0px",
+    width: "100%"
   }
 };
 

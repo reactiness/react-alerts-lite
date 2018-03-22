@@ -12,7 +12,7 @@ export default class App extends React.Component {
       align: "center",
       transition: FadeAndSlideTransition,
       duration: 500,
-      position: "bottom"
+      position: "bottom-full"
     });
   }
   render() {
@@ -20,7 +20,7 @@ export default class App extends React.Component {
       <div>
         <AlertProvider />
         <MyComponent />
-        <button onClick={this.createAlert}> create </button>
+        <button onClick={this.createAlert} style={{marginTop: "50%"}}> create </button>
       </div>
     );
   }

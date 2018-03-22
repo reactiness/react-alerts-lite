@@ -11,7 +11,7 @@ export class AlertRenderer extends Component {
     console.log("rendering alert renderer", alerts, positions);
     return positions.map(position => (
       <TransitionGroup
-        style={positionStyle[position]}
+        style={{ ...positionStyle.common, ...positionStyle[position] }}
         key={`__rta_pos_${position}`}
       >
         {alerts[position].map((alert, i) => {
