@@ -21,7 +21,7 @@ const createHandlers = dispatch => {
   };
 };
 
-const initPositionsObject = () => {
+const initEmptyPositionsObject = () => {
   const positionsObject = {};
   positions.forEach(position => {
     positionsObject[position] = [];
@@ -33,13 +33,13 @@ export class AlertProvider extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      alerts: initPositionsObject()
+      alerts: initEmptyPositionsObject()
     };
     this.handlers = createHandlers(store.dispatch);
   }
 
   sortAlerts(alerts) {
-    const sortedAlerts = initPositionsObject();
+    const sortedAlerts = initEmptyPositionsObject();
     alerts.forEach(alert => {
       sortedAlerts[alert.position].push(alert);
     });

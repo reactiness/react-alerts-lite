@@ -1,3 +1,5 @@
+import * as positionConstants from "../core/constants";
+
 export const containerStyle = pos => ({
   width: "100%",
   height: "35px"
@@ -7,13 +9,15 @@ export const containerStyle = pos => ({
 });
 
 export const positionStyle = {
-  position: "fixed",
-  width: "100%",
-  bottom: "0px",
-  left: "0px",
-  display: "flex",
-  alignItems: "flex-end",
-  flexDirection: "column"
+  [positionConstants.bottom]: {
+    position: "fixed",
+    width: "100%",
+    bottom: "0px",
+    left: "0px",
+    display: "flex",
+    alignItems: "flex-end",
+    flexDirection: "column"
+  }
 };
 
 export const defaultStyle = {
