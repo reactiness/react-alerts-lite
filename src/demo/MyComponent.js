@@ -12,7 +12,7 @@ export const MyComponent = () => {
         transition: FadeAndSlideTransition,
         duration: 500,
         position: "bottom"
-      })};
+      })}
     </div>
   );
 };

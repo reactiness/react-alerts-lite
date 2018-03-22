@@ -1,7 +1,7 @@
 import { Alert } from "./Alert";
 import React, { Component } from "react";
 import TransitionGroup from "react-transition-group/TransitionGroup";
-import { FadeAndSlideTransition } from "../transitions/FadeSlide";
+import DefaultTransition from "../transitions/FadeSlide";
 import { containerStyle, positionStyle } from "../css/styles";
 
 const positions = [
@@ -24,7 +24,7 @@ export class AlertRenderer extends Component {
         {alerts[position].map((alert, i) => {
           const Transition = alert.transition
             ? alert.transition
-            : FadeAndSlideTransition;
+            : DefaultTransition;
           return (
             <Transition
               duration={alert.duration}
@@ -33,7 +33,7 @@ export class AlertRenderer extends Component {
               <Alert pos={i} remove={remove} {...alert} />
             </Transition>
           );
-        })};
+        })}
       </TransitionGroup>
     ));
   }
