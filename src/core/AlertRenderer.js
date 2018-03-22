@@ -1,26 +1,19 @@
 import { Alert } from "./Alert";
 import React, { Component } from "react";
 import TransitionGroup from "react-transition-group/TransitionGroup";
-import DefaultTransition from "../transitions/FadeSlide";
+import { FadeAndSlideTransition as DefaultTransition } from "../transitions/FadeSlide";
 import { containerStyle, positionStyle } from "../css/styles";
-
-const positions = [
-  "bottom",
-  "top",
-  "top-left",
-  "top-right",
-  "bottom-left",
-  "bottom-right",
-  "bottom-full",
-  "top-full"
-];
+import { positions } from "./constants";
 
 export class AlertRenderer extends Component {
   render() {
     const { alerts, remove } = this.props;
     console.log("rendering alert renderer", alerts, positions);
     return positions.map(position => (
-      <TransitionGroup style={positionStyle}>
+      <TransitionGroup
+        style={positionStyle}
+        key={`__rsa_alert_pos_${position}`}
+      >
         {alerts[position].map((alert, i) => {
           const Transition = alert.transition
             ? alert.transition

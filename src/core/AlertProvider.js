@@ -4,6 +4,7 @@ import { initialState } from "../state/initialState";
 import { AlertRenderer } from "./AlertRenderer";
 import { Store } from "../state/Store";
 import { actions } from "../state/actions";
+import { positions } from "./constants";
 
 const reducers = {
   alerts: reducer
@@ -20,37 +21,26 @@ const createHandlers = dispatch => {
   };
 };
 
+const initPositionsObject = () => {
+  const positionsObject = {};
+  positions.forEach(position => {
+    positionsObject[position] = [];
+  });
+  return positionsObject;
+};
+
 export class AlertProvider extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      alerts: {
-        ["bottom"]: [],
-        ["top"]: [],
-        ["top-left"]: [],
-        ["top-right"]: [],
-        ["bottom-left"]: [],
-        ["bottom-right"]: [],
-        ["bottom-full"]: [],
-        ["top-full"]: []
-      }
+      alerts: initPositionsObject()
     };
     this.handlers = createHandlers(store.dispatch);
   }
 
   sortAlerts(alerts) {
-    const sortedAlerts = {
-      ["bottom"]: [],
-      ["top"]: [],
-      ["top-left"]: [],
-      ["top-right"]: [],
-      ["bottom-left"]: [],
-      ["bottom-right"]: [],
-      ["bottom-full"]: [],
-      ["top-full"]: []
-    };
+    const sortedAlerts = initPositionsObject();
     alerts.forEach(alert => {
-      console.log("ALERT", alert);
       sortedAlerts[alert.position].push(alert);
     });
     this.setState({ alerts: sortedAlerts });
@@ -61,7 +51,6 @@ export class AlertProvider extends Component {
   }
 
   render() {
-    console.log("renderer", this.state, this.props);
     return (
       <AlertRenderer
         alerts={this.state.alerts}
