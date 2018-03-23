@@ -5,13 +5,10 @@ import { FadeAndSlideTransition } from "../transitions/FadeSlide";
 export const MyComponent = () => {
   return (
     <div>
-      {Alerts.success({
-        content: "popipoipoipoi",
-        timeout: 2000,
-        align: "center",
-        transition: FadeAndSlideTransition,
-        duration: 500,
-        position: "top-full"
+      {Alerts.push({
+        type: "success",
+        position: "top-full",
+        content: "success alert"
       })}
     </div>
   );
