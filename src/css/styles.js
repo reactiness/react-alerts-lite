@@ -64,25 +64,26 @@ export const defaultStyle = {
   width: "100%",
   minHeight: "35px",
   color: "white",
-  border: "1px grey black"
+  border: "1px grey black",
+  zIndex: 50
 };
 
 export const errorStyle = {
-  backgroundColor: "#f44336"
+  backgroundColor: "rgba(244, 67, 54, 0.8)"
 };
 
 export const basicStyle = {
-  backgroundColor: "#f1f2f2"
+  backgroundColor: "rgba(241, 242, 242, 0.8)"
 };
 
 export const successStyle = {
-  backgroundColor: "#4CAF50"
+  backgroundColor: "rgba(76, 175, 80, 0.8)"
 };
 
 export const warningStyle = {
-  backgroundColor: "#ff9800"
+  backgroundColor: "rgba(255, 152, 0, 0.8)"
 };
 
 export const infoStyle = {
-  backgroundColor: "#2196F3"
+  backgroundColor: "rgba(33, 150, 243, 0.8)"
 };
