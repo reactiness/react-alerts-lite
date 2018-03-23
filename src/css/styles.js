@@ -48,12 +48,12 @@ export const positionStyle = {
   [positionConstants.bottom]: {
     bottom: "0px",
     left: "310px",
-    width: "calc(100% - 610px)"
+    width: "calc(100% - 620px)"
   },
   [positionConstants.top]: {
     top: "0px",
     left: "310px",
-    width: "calc(100% - 610px)"
+    width: "calc(100% - 620px)"
   }
 };
 
