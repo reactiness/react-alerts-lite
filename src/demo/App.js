@@ -21,7 +21,7 @@ export default class App extends React.Component {
       <div>
         <AlertProvider />
         <MyComponent />
-        <button onClick={this.createAlert} style={{ marginTop: "50%" }}>
+        <button onClick={this.createAlert} style={{ marginTop: "400px" }}>
           {" "}
           create{" "}
         </button>
