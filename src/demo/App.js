@@ -11,20 +11,36 @@ export default class App extends React.Component {
         {/* <MyComponent /> */}
         <div style={{ marginTop: "400px" }}>
           <div>
-            <button onClick={() => Alerts.push({position: "top-full"})}>top full</button>
+            <button onClick={() => Alerts.push({ position: "top-full" })}>
+              top full
+            </button>
           </div>
           <div>
-            <button onClick={() => Alerts.push({position: "top-left"})}>topleft</button>
-            <button onClick={() => Alerts.push({position: "top"})}>top</button>
-            <button onClick={() => Alerts.push({position: "top-right"})}>topright</button>
+            <button onClick={() => Alerts.push({ position: "top-left" })}>
+              topleft
+            </button>
+            <button onClick={() => Alerts.push({ position: "top" })}>
+              top
+            </button>
+            <button onClick={() => Alerts.push({ position: "top-right" })}>
+              topright
+            </button>
           </div>
           <div>
-            <button onClick={() => Alerts.push({position: "bottom"})}>bottom</button>
-            <button onClick={() => Alerts.push({position: "bottom-left"})}>bottomleft</button>
-            <button onClick={() => Alerts.push({position: "bottom-right"})}>bottomright</button>
+            <button onClick={() => Alerts.push({ position: "bottom" })}>
+              bottom
+            </button>
+            <button onClick={() => Alerts.push({ position: "bottom-left" })}>
+              bottomleft
+            </button>
+            <button onClick={() => Alerts.push({ position: "bottom-right" })}>
+              bottomright
+            </button>
           </div>
           <div>
-            <button onClick={() => Alerts.push({position: "bottom-full"})}>bottom full</button>
+            <button onClick={() => Alerts.push({ position: "bottom-full" })}>
+              bottom full
+            </button>
           </div>
         </div>
       </div>
