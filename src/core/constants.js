@@ -27,7 +27,7 @@ export const positions = [
 ];
 
 export const defaultAlertArgs = {
-  type: basic,
+  type: info,
   timeout: 4000,
   align: "center",
   transition: DefaultTransition,

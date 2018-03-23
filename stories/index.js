@@ -1,21 +1,9 @@
-import React from 'react';
-import { storiesOf } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
+import React from "react";
+import { storiesOf } from "@storybook/react";
+import { action } from "@storybook/addon-actions";
 import { Alerts } from "../src/core";
 import { AlertProvider } from "../src/core/AlertProvider";
 import { FadeAndSlideTransition } from "../src/transitions/FadeSlide";
-
-function createAlert() {
-  Alerts.success({
-    content: "popipoipoipoi",
-    timeout: 2000,
-    align: "center",
-    transition: FadeAndSlideTransition,
-    duration: 500,
-    position: "bottom-full",
-    onClose: () => console.log("alert has closed")
-  });
-}
 
 storiesOf("Alerts", module)
   .add("Success notification", () => (
@@ -23,14 +11,9 @@ storiesOf("Alerts", module)
       <AlertProvider />
       <button
         onClick={() =>
-          Alerts.success({
+          Alerts.push({
             content: "Success Alert",
-            timeout: 2000,
-            align: "center",
-            transition: FadeAndSlideTransition,
-            duration: 500,
-            position: "bottom-full",
-            onClose: () => console.log("alert has closed")
+            type: "success"
           })
         }
       >
@@ -43,14 +26,9 @@ storiesOf("Alerts", module)
       <AlertProvider />
       <button
         onClick={() =>
-          Alerts.error({
+          Alerts.push({
             content: "Error alert",
-            timeout: 2000,
-            align: "center",
-            transition: FadeAndSlideTransition,
-            duration: 500,
-            position: "bottom-full",
-            onClose: () => console.log("alert has closed")
+            type: "error"
           })
         }
       >
@@ -63,14 +41,9 @@ storiesOf("Alerts", module)
       <AlertProvider />
       <button
         onClick={() =>
-          Alerts.warning({
+          Alerts.push({
             content: "Warning alert",
-            timeout: 2000,
-            align: "center",
-            transition: FadeAndSlideTransition,
-            duration: 500,
-            position: "bottom-full",
-            onClose: () => console.log("alert has closed")
+            type: "warning"
           })
         }
       >
@@ -83,14 +56,9 @@ storiesOf("Alerts", module)
       <AlertProvider />
       <button
         onClick={() =>
-          Alerts.info({
+          Alerts.push({
             content: "Info alert",
-            timeout: 2000,
-            align: "center",
-            transition: FadeAndSlideTransition,
-            duration: 500,
-            position: "bottom-full",
-            onClose: () => console.log("alert has closed")
+            type: "info"
           })
         }
       >
@@ -103,14 +71,9 @@ storiesOf("Alerts", module)
       <AlertProvider />
       <button
         onClick={() =>
-          Alerts.basic({
+          Alerts.push({
             content: "Basic alert",
-            timeout: 2000,
-            align: "center",
-            transition: FadeAndSlideTransition,
-            duration: 500,
-            position: "bottom-full",
-            onClose: () => console.log("alert has closed")
+            type: "basic"
           })
         }
       >
