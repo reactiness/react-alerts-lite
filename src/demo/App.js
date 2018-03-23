@@ -2,7 +2,6 @@ import React from "react";
 import { AlertProvider } from "../core/AlertProvider";
 import { MyComponent } from "./MyComponent";
 import { Alerts } from "../core";
-import { FadeAndSlideTransition } from "../transitions/FadeSlide";
 
 export default class App extends React.Component {
   render() {
