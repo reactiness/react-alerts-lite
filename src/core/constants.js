@@ -32,6 +32,6 @@ export const defaultAlertArgs = {
   align: "center",
   transition: DefaultTransition,
   duration: 500,
-  position: bottomFull,
-  content: "define some content under the content key when creating an alert"
+  position: bottom,
+  content: "content: define some content"
 };

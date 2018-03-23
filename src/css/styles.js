@@ -24,6 +24,36 @@ export const positionStyle = {
     top: "0px",
     left: "0px",
     width: "100%"
+  },
+  [positionConstants.topLeft]: {
+    top: "0px",
+    left: "0px",
+    width: "300px"
+  },
+  [positionConstants.topRight]: {
+    top: "0px",
+    right: "0px",
+    width: "300px"
+  },
+  [positionConstants.bottomRight]: {
+    bottom: "0px",
+    right: "0px",
+    width: "300px"
+  },
+  [positionConstants.bottomLeft]: {
+    bottom: "0px",
+    left: "0px",
+    width: "300px"
+  },
+  [positionConstants.bottom]: {
+    bottom: "0px",
+    left: "310px",
+    width: "calc(100% - 610px)"
+  },
+  [positionConstants.top]: {
+    top: "0px",
+    left: "310px",
+    width: "calc(100% - 610px)"
   }
 };
 
@@ -32,7 +62,7 @@ export const defaultStyle = {
   lineHeight: "35px",
   fontFamily: "Lato,Helvetica Neue,Arial,Helvetica,sans-serif",
   width: "100%",
-  height: "35px",
+  minHeight: "35px",
   color: "white",
   border: "1px grey black"
 };

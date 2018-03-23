@@ -8,7 +8,8 @@ export const MyComponent = () => {
       {Alerts.push({
         type: "success",
         position: "top-full",
-        content: "success alert"
+        timeout: 10000000,
+        content: "Success Alert"
       })}
     </div>
   );
