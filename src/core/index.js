@@ -18,7 +18,7 @@ const add = args => {
 
 const remove = type => {
   type
-    ? store.dispatch(actions.removeType(alertType))
+    ? store.dispatch(actions.removeType(type))
     : store.dispatch(actions.removeAll());
 };
 

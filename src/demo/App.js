@@ -42,6 +42,10 @@ export default class App extends React.Component {
               bottom full
             </button>
           </div>
+          <div>
+            <button onClick={() => Alerts.remove("info")}>remove info</button>
+            <button onClick={() => Alerts.remove()}>remove all</button>
+          </div>
         </div>
       </div>
     );
