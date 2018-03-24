@@ -1,4 +1,4 @@
-import { FadeAndSlideTransition as DefaultTransition } from "../transitions/FadeSlide";
+import { FadeSlide as DefaultTransition } from "../transitions/FadeSlide";
 
 export const bottom = "bottom";
 export const top = "top";
@@ -28,7 +28,7 @@ export const positions = [
 
 export const defaultAlertArgs = {
   type: info,
-  timeout: 4000,
+  timeout: 5000,
   align: "center",
   transition: DefaultTransition,
   duration: 500,

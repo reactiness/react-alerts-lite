@@ -60,12 +60,12 @@ export class Alert extends React.Component {
   }
 
   render() {
-    const { content, type, pos, remove, ...props } = this.props;
+    const { content, type, remove, style, ...props } = this.props;
     // console.log(this.style);
     // console.log(type);
 
     return (
-      <div style={{ ...containerStyle(pos) }} {...props}>
+      <div style={{ ...containerStyle, ...style }} {...props}>
         <div
           style={{
             ...defaultStyle,

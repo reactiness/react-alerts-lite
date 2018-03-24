@@ -1,12 +1,9 @@
 import * as positionConstants from "../core/constants";
 
-export const containerStyle = pos => ({
+export const containerStyle = {
   width: "100%",
-  height: "35px"
-  // bottom: `${pos * 40}px`,
-  // left: "0px",
-  // display: "inline-block"
-});
+  overflow: "hidden"
+};
 
 export const positionStyle = {
   common: {
