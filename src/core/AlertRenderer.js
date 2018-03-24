@@ -12,12 +12,12 @@ export class AlertRenderer extends Component {
         style={{ ...positionStyle.common, ...positionStyle[position] }}
         key={`__rta_pos_${position}`}
       >
-        {alerts[position].map((alert, i) => (
+        {alerts[position].map(alert => (
           <alert.transition
             duration={alert.duration}
             key={`__rta_alert_${alert.id}`}
           >
-            <Alert pos={i} remove={remove} {...alert} />
+            <Alert remove={remove} {...alert} />
           </alert.transition>
         ))}
       </TransitionGroup>
