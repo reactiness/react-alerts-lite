@@ -2,7 +2,7 @@ import React from "react";
 import { Alert } from "./Alert";
 import { store } from "./AlertProvider";
 import { actions } from "../state/actions";
-import { defaultAlertArgs } from "../core/constants";
+import { defaultAlertArgs, alertTypes } from "../core/constants";
 
 let counter = 0;
 
@@ -16,12 +16,10 @@ const add = args => {
   counter++;
 };
 
-const removeType = type => {
-  store.dispatch(
-    actions.removeType({
-      id: id
-    })
-  );
+const remove = type => {
+  type
+    ? store.dispatch(actions.removeType(alertType))
+    : store.dispatch(actions.removeAll());
 };
 
 export class Alerts {
@@ -29,6 +27,6 @@ export class Alerts {
     add({ ...defaultAlertArgs, ...args });
   }
   static remove(type) {
-    removeType(type);
+    remove(type);
   }
 }

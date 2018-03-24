@@ -1,6 +1,8 @@
 export const actions = {
   add,
-  remove
+  remove,
+  removeType,
+  removeAll
 };
 
 function add(alert) {
@@ -21,5 +23,11 @@ function removeType(type) {
   return {
     type: "REMOVE_TYPE",
     payload: type
+  };
+}
+
+function removeAll() {
+  return {
+    type: "REMOVE_ALL"
   };
 }

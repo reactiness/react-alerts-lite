@@ -15,6 +15,8 @@ export const warning = "warning";
 export const info = "info";
 export const success = "success";
 
+export const alertTypes = [basic, error, warning, info, success];
+
 export const positions = [
   bottom,
   top,

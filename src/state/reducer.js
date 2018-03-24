@@ -35,6 +35,10 @@ export function reducer(state = initialState.alerts, action) {
       return removeType(state, action.payload);
     }
 
+    case "REMOVE_ALL": {
+      return initialState.alerts;
+    }
+
     default:
       return state;
   }
