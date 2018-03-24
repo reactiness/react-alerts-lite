@@ -14,6 +14,13 @@ const add = (state, alert) => {
   };
 };
 
+const removeType = (state, type) => {
+  return {
+    ...state,
+    current: state.current.filter(el => el.type !== type)
+  };
+};
+
 export function reducer(state = initialState.alerts, action) {
   switch (action.type) {
     case "REMOVE": {
@@ -22,6 +29,10 @@ export function reducer(state = initialState.alerts, action) {
 
     case "ADD": {
       return add(state, action.payload);
+    }
+
+    case "REMOVE_TYPE": {
+      return removeType(state, action.payload);
     }
 
     default:

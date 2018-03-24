@@ -16,3 +16,10 @@ function remove(alert) {
     payload: alert
   };
 }
+
+function removeType(type) {
+  return {
+    type: "REMOVE_TYPE",
+    payload: type
+  };
+}

@@ -16,8 +16,19 @@ const add = args => {
   counter++;
 };
 
+const removeType = type => {
+  store.dispatch(
+    actions.removeType({
+      id: id
+    })
+  );
+};
+
 export class Alerts {
   static push(args) {
     add({ ...defaultAlertArgs, ...args });
+  }
+  static remove(type) {
+    removeType(type);
   }
 }
