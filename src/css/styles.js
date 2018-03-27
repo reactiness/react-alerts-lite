@@ -56,6 +56,7 @@ export const positionStyle = {
 
 export const defaultStyle = {
   verticalAlign: "middle",
+  textAlign: "center",
   lineHeight: "35px",
   fontFamily: "Lato,Helvetica Neue,Arial,Helvetica,sans-serif",
   width: "100%",

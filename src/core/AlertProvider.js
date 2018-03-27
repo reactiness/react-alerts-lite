@@ -38,16 +38,17 @@ export class AlertProvider extends Component {
     this.handlers = createHandlers(store.dispatch);
   }
 
-  sortAlerts(alerts) {
-    const sortedAlerts = initEmptyPositionsObject();
+  sortAlerts(alerts, container) {
     alerts.forEach(alert => {
-      sortedAlerts[alert.position].push(alert);
+      container[alert.position].push(alert);
     });
-    this.setState({ alerts: sortedAlerts });
+    this.setState({ alerts: container });
   }
 
   componentDidMount() {
-    store.subscribe(store => this.sortAlerts(store.alerts.current)); // TODO: bad practice to use forceUpdate()? not sure how to solve otherwise. research this.
+    store.subscribe(store =>
+      this.sortAlerts(store.alerts.current, initEmptyPositionsObject())
+    ); // TODO: bad practice to use forceUpdate()? not sure how to solve otherwise. research this.
   }
 
   render() {

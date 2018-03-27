@@ -11,7 +11,11 @@ export default class App extends React.Component {
         {/* <MyComponent /> */}
         <div style={{ marginTop: "400px" }}>
           <div>
-            <button onClick={() => Alerts.push({ position: "top-full" })}>
+            <button
+              onClick={() =>
+                Alerts.push({ timeout: 1231231, position: "top-full" })
+              }
+            >
               top full
             </button>
           </div>

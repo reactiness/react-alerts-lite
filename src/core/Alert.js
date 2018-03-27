@@ -9,6 +9,7 @@ import {
   successStyle,
   containerStyle
 } from "../css/styles";
+import info from "../assets/info.svg";
 
 export class Alert extends React.Component {
   constructor(props) {
@@ -53,12 +54,6 @@ export class Alert extends React.Component {
     }
   }
 
-  getOptions(props) {
-    return {
-      textAlign: props.align
-    };
-  }
-
   render() {
     const { content, type, remove, style, ...props } = this.props;
     // console.log(this.style);
@@ -66,11 +61,11 @@ export class Alert extends React.Component {
 
     return (
       <div style={{ ...containerStyle, ...style }} {...props}>
+        <img src={info} />
         <div
           style={{
             ...defaultStyle,
-            ...this.style,
-            ...this.getOptions(props)
+            ...this.style
           }}
         >
           {content}
