@@ -61,7 +61,8 @@ export class Alert extends React.Component {
 
     return (
       <div style={{ ...containerStyle, ...style }} {...props}>
-        <img src={info} />
+      <img src={info}/>
+        {/* <div className="icon" style={{width: '40px', height: '40px', background: 'url(../assets/info.svg)'}}/> */}
         <div
           style={{
             ...defaultStyle,
