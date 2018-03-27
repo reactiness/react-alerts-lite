@@ -1,15 +1,8 @@
 import React, { Component } from "react";
 // import { actions } from './actions';
-import {
-  defaultStyle,
-  errorStyle,
-  infoStyle,
-  basicStyle,
-  warningStyle,
-  successStyle,
-  containerStyle
-} from "../css/styles";
+import { defaultStyle, containerStyle, alertStyles, iconStyle, closeButtonStyle, contentStyle } from "../css/styles";
 import info from "../assets/info.svg";
+import close from "../assets/x.svg";
 
 export class Alert extends React.Component {
   constructor(props) {
@@ -18,9 +11,6 @@ export class Alert extends React.Component {
       renderChild: true
     };
     this.interval = null;
-    // console.log(this.props.type);
-    // console.log(this.getStyle);
-    this.style = this.getStyle(this.props.type);
   }
 
   componentDidMount() {
@@ -36,40 +26,35 @@ export class Alert extends React.Component {
     clearInterval(this.interval);
   }
 
-  getStyle(type) {
-    // console.log('asdasdasd', type);
-    switch (type) {
-      case "error":
-        return errorStyle;
-      case "warning":
-        return warningStyle;
-      case "success":
-        return successStyle;
-      case "info":
-        return infoStyle;
-      case "basic":
-        return basicStyle;
-      default:
-        return {};
-    }
-  }
-
   render() {
-    const { content, type, remove, style, ...props } = this.props;
-    // console.log(this.style);
-    // console.log(type);
+    const {
+      content,
+      type,
+      remove,
+      style: transitionStyle,
+      icon,
 
+      ...props
+    } = this.props;
+
+    console.log("asdasdasd", alertStyles[type]);
     return (
-      <div style={{ ...containerStyle, ...style }} {...props}>
-      <img src={info}/>
-        {/* <div className="icon" style={{width: '40px', height: '40px', background: 'url(../assets/info.svg)'}}/> */}
+      <div style={{ ...containerStyle, ...transitionStyle }} {...props}>
         <div
           style={{
             ...defaultStyle,
-            ...this.style
+            ...alertStyles[type]
           }}
         >
-          {content}
+          <div style={iconStyle}>
+            <img src={info} style={{margin: "0 auto"}}/>
+          </div>
+          <div style={contentStyle}>
+            {content}
+          </div>
+          <div style={closeButtonStyle}>
+            <img src={close} style={{margin: "0 auto"}}/>
+          </div>
         </div>
       </div>
     );

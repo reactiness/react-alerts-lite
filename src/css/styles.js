@@ -1,4 +1,4 @@
-import * as positionConstants from "../core/constants";
+import { positionConstants, alertConstants } from "../core/constants";
 
 export const containerStyle = {
   width: "100%",
@@ -55,15 +55,32 @@ export const positionStyle = {
 };
 
 export const defaultStyle = {
-  verticalAlign: "middle",
-  textAlign: "center",
-  lineHeight: "35px",
+  lineHeight: "38px",
   fontFamily: "Lato,Helvetica Neue,Arial,Helvetica,sans-serif",
   width: "100%",
-  minHeight: "35px",
+  minHeight: "40px",
   color: "white",
-  border: "1px grey black",
-  zIndex: 50
+  zIndex: 50,
+  display: "flex",
+  justifyContent: "flex-start"
+};
+
+export const iconStyle = {
+  color: "white",
+  display: "flex",
+  width: "40px",
+  textAlign: "center"
+};
+
+export const contentStyle = {
+  display: "flex",
+  width: "100%"
+};
+
+export const closeButtonStyle = {
+  color: "white",
+  display: "flex",
+  width: "40px"
 };
 
 export const errorStyle = {
@@ -84,4 +101,12 @@ export const warningStyle = {
 
 export const infoStyle = {
   backgroundColor: "rgba(33, 150, 243, 0.8)"
+};
+
+export const alertStyles = {
+  [alertConstants.error]: errorStyle,
+  [alertConstants.success]: successStyle,
+  [alertConstants.info]: infoStyle,
+  [alertConstants.warning]: warningStyle,
+  [alertConstants.basic]: basicStyle
 };

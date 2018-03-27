@@ -16,7 +16,7 @@ export function FadeSlide({ children, duration, in: inProp }) {
     entered: {
       opacity: 1,
       transform: "translateY(0)",
-      height: "35px"
+      height: "40px"
     },
     exiting: {
       opacity: 0,

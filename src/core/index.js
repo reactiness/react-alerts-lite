@@ -2,7 +2,7 @@ import React from "react";
 import { Alert } from "./Alert";
 import { store } from "./AlertProvider";
 import { actions } from "../state/actions";
-import { defaultAlertArgs, alertTypes } from "../core/constants";
+import { defaultAlertArgs } from "../core/constants";
 
 let counter = 0;
 
