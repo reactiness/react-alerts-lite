@@ -7,14 +7,14 @@ import { defaultAlertArgs, stockTransitionsConstants as sTC } from "../core/cons
 import { FadeSlideBottom } from "../transitions/FadeSlideBottom";
 import { FadeSlideTop } from "../transitions/FadeSlideTop";
 
-const stockTransitions = {
-  [sTC.fadeSlideTop]: FadeSlideTop,
-  [sTC.fadeSlideBottom]: FadeSlideBottom
-};
+
 
 // need to determine transition here using string. Dont pass in transition object to state through alert -> add
-
 export class AlertRenderer extends Component {
+  this.stockTransitions() {
+    [sTC.fadeSlideTop]: FadeSlideTop,
+    [sTC.fadeSlideBottom]: FadeSlideBottom
+  };
   render() {
     const { alerts, remove } = this.props;
     return positions.map(position => (
@@ -22,14 +22,17 @@ export class AlertRenderer extends Component {
         style={{ ...positionStyle.common, ...positionStyle[position] }}
         key={`__rta_pos_${position}`}
       >
-        {alerts[position].map(alert => (
-          <alert.transition
-            duration={alert.duration}
-            key={`__rta_alert_${alert.id}`}
-          >
-            <Alert remove={remove} {...alert} />
-          </alert.transition>
-        ))}
+        {alerts[position].map(alert => {
+          const Transition = stockTransitions
+          return (
+            <alert.transition
+              duration={alert.duration}
+              key={`__rta_alert_${alert.id}`}
+            >
+              <Alert remove={remove} {...alert} />
+            </alert.transition>
+          )
+        })}
       </TransitionGroup>
     ));
   }
