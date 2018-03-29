@@ -73,6 +73,7 @@ export const iconStyle = {
 };
 
 export const contentStyle = {
+  paddingLeft: "15px",
   display: "flex",
   width: "100%"
 };
