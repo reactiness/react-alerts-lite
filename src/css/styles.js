@@ -69,8 +69,9 @@ export const alertIcons = {
 };
 
 export const defaultStyle = {
-  lineHeight: "38px",
+  lineHeight: "40px",
   fontFamily: "Lato,Helvetica Neue,Arial,Helvetica,sans-serif",
+  fontSize: "13px",
   width: "100%",
   minHeight: "40px",
   color: "white",
