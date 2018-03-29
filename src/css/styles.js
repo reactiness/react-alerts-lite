@@ -104,7 +104,7 @@ export const errorStyle = {
 };
 
 export const basicStyle = {
-  backgroundColor: "rgba(241, 242, 242, 0.8)"
+  backgroundColor: "rgba(192,192,192,0.8)"
 };
 
 export const successStyle = {
