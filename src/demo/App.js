@@ -2,7 +2,7 @@ import React from "react";
 import { AlertProvider } from "../core/AlertProvider";
 import { MyComponent } from "./MyComponent";
 import { Alerts } from "../core";
-import { alertConstants } from "../core/constants";
+import { alertConstants, stockTransitionsConstants as sTC } from "../core/constants";
 
 export default class App extends React.Component {
   constructor(props) {
@@ -47,18 +47,18 @@ export default class App extends React.Component {
           </select>
 
           <div>
-            <button onClick={() => this.handlePush({ position: "top-full" })}>
+            <button onClick={() => this.handlePush({ position: "top-full", transition: sTC.FadeSlideTop })}>
               top full
             </button>
           </div>
           <div>
-            <button onClick={() => this.handlePush({ position: "top-left" })}>
+            <button onClick={() => this.handlePush({ position: "top-left", transition: sTC.FadeSlideTop })}>
               topleft
             </button>
-            <button onClick={() => this.handlePush({ position: "top" })}>
+            <button onClick={() => this.handlePush({ position: "top", transition: sTC.FadeSlideTop })}>
               top
             </button>
-            <button onClick={() => this.handlePush({ position: "top-right" })}>
+            <button onClick={() => this.handlePush({ position: "top-right", transition: sTC.FadeSlideTop })}>
               topright
             </button>
           </div>

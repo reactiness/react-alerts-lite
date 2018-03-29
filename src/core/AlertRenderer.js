@@ -2,7 +2,17 @@ import { Alert } from "./Alert";
 import React, { Component } from "react";
 import TransitionGroup from "react-transition-group/TransitionGroup";
 import { containerStyle, positionStyle } from "../css/styles";
-import { positions } from "./constants";
+import { positions, positionSections } from "./constants";
+import { defaultAlertArgs, stockTransitionsConstants as sTC } from "../core/constants";
+import { FadeSlideBottom } from "../transitions/FadeSlideBottom";
+import { FadeSlideTop } from "../transitions/FadeSlideTop";
+
+const stockTransitions = {
+  [sTC.fadeSlideTop]: FadeSlideTop,
+  [sTC.fadeSlideBottom]: FadeSlideBottom
+};
+
+// need to determine transition here using string. Dont pass in transition object to state through alert -> add
 
 export class AlertRenderer extends Component {
   render() {

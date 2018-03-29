@@ -1,5 +1,3 @@
-import { FadeSlide as DefaultTransition } from "../transitions/FadeSlide";
-
 export const bottom = "bottom";
 export const top = "top";
 export const topLeft = "top-left";
@@ -39,12 +37,23 @@ export const positions = [
   topFull
 ];
 
+const fadeSlideTop = "fade-slide-top";
+const fadeSlideBottom = "fade-slide-bottom";
+
+export const stockTransitionsConstants = {
+  fadeSlideTop,
+  fadeSlideBottom
+};
+
+const content =
+  "content: tent: define some con tent: define some con tent: define some con tent: define some condefine some content";
+
 export const defaultAlertArgs = {
   type: info,
   timeout: 5000,
-  transition: DefaultTransition,
+  transition: fadeSlideBottom,
   duration: 500,
   position: bottom,
-  content: "content: tent: define some con tent: define some con tent: define some con tent: define some condefine some content",
+  content,
   closeButton: true
 };
