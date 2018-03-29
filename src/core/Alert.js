@@ -8,6 +8,7 @@ import {
   contentStyle,
   alertIcons
 } from "../css/styles";
+import close from "../assets/x.svg";
 
 const createHandlers = (remove, id) => {
   const handleRemove = () => {
@@ -49,6 +50,8 @@ export class Alert extends React.Component {
       id,
       ...props
     } = this.props;
+
+    console.log(this.props);
     return (
       <div style={{ ...containerStyle, ...transitionStyle }} {...props}>
         <div
@@ -65,7 +68,7 @@ export class Alert extends React.Component {
           </div>
           <div style={contentStyle}>{content}</div>
           {closeButton && (
-            <div style={closeButtonStyle} onClick={this.handlers.handleRemove}>
+            <div style={iconStyle} onClick={this.handlers.handleRemove}>
               <img src={close} style={{ margin: "0 auto" }} />
             </div>
           )}

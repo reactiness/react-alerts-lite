@@ -1,6 +1,5 @@
 import { positionConstants, alertConstants } from "../core/constants";
 
-import close from "../assets/x.svg";
 import info from "../assets/info.svg";
 import warning from "../assets/alert-circle.svg";
 import error from "../assets/alert-circle.svg";
@@ -32,32 +31,32 @@ export const positionStyle = {
   [positionConstants.topLeft]: {
     top: "0px",
     left: "0px",
-    width: "300px"
+    width: "380px"
   },
   [positionConstants.topRight]: {
     top: "0px",
     right: "0px",
-    width: "300px"
+    width: "380px"
   },
   [positionConstants.bottomRight]: {
     bottom: "0px",
     right: "0px",
-    width: "300px"
+    width: "380px"
   },
   [positionConstants.bottomLeft]: {
     bottom: "0px",
     left: "0px",
-    width: "300px"
+    width: "380px"
   },
   [positionConstants.bottom]: {
     bottom: "0px",
-    left: "310px",
-    width: "calc(100% - 620px)"
+    left: "390px",
+    width: "calc(100% - 780px)"
   },
   [positionConstants.top]: {
     top: "0px",
-    left: "310px",
-    width: "calc(100% - 620px)"
+    left: "390px",
+    width: "calc(100% - 780px)"
   }
 };
 
@@ -81,7 +80,6 @@ export const defaultStyle = {
 };
 
 export const iconStyle = {
-  color: "white",
   display: "flex",
   width: "40px",
   textAlign: "center"
@@ -94,9 +92,9 @@ export const contentStyle = {
 };
 
 export const closeButtonStyle = {
-  color: "white",
   display: "flex",
-  width: "40px"
+  width: "40px",
+  textAlign: "center"
 };
 
 export const errorStyle = {
