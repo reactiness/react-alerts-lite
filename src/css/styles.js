@@ -69,7 +69,6 @@ export const alertIcons = {
 };
 
 export const defaultStyle = {
-  lineHeight: "40px",
   fontFamily: "Lato,Helvetica Neue,Arial,Helvetica,sans-serif",
   fontSize: "13px",
   width: "100%",
@@ -81,21 +80,16 @@ export const defaultStyle = {
 };
 
 export const iconStyle = {
+  padding: "10px",
   display: "flex",
   width: "40px",
-  textAlign: "center"
+  alignItems: "flex-start"
 };
 
 export const contentStyle = {
-  paddingLeft: "15px",
+  padding: "10px",
   display: "flex",
   width: "100%"
-};
-
-export const closeButtonStyle = {
-  display: "flex",
-  width: "40px",
-  textAlign: "center"
 };
 
 export const errorStyle = {

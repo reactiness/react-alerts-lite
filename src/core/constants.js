@@ -45,6 +45,6 @@ export const defaultAlertArgs = {
   transition: DefaultTransition,
   duration: 500,
   position: bottom,
-  content: "content: define some content",
+  content: "content: tent: define some con tent: define some con tent: define some con tent: define some condefine some content",
   closeButton: true
 };
