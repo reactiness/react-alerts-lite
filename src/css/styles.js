@@ -1,5 +1,12 @@
 import { positionConstants, alertConstants } from "../core/constants";
 
+import close from "../assets/x.svg";
+import info from "../assets/info.svg";
+import warning from "../assets/alert-circle.svg";
+import error from "../assets/alert-circle.svg";
+import basic from "../assets/alert-circle.svg";
+import success from "../assets/check-circle.svg";
+
 export const containerStyle = {
   width: "100%",
   overflow: "hidden"
@@ -52,6 +59,14 @@ export const positionStyle = {
     left: "310px",
     width: "calc(100% - 620px)"
   }
+};
+
+export const alertIcons = {
+  [alertConstants.error]: error,
+  [alertConstants.success]: success,
+  [alertConstants.info]: info,
+  [alertConstants.warning]: warning,
+  [alertConstants.basic]: basic
 };
 
 export const defaultStyle = {

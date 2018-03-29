@@ -5,10 +5,9 @@ import {
   alertStyles,
   iconStyle,
   closeButtonStyle,
-  contentStyle
+  contentStyle,
+  alertIcons
 } from "../css/styles";
-import info from "../assets/info.svg";
-import close from "../assets/x.svg";
 
 const createHandlers = (remove, id) => {
   const handleRemove = () => {
@@ -59,7 +58,10 @@ export class Alert extends React.Component {
           }}
         >
           <div style={iconStyle}>
-            <img src={info} style={{ margin: "0 auto" }} />
+            <img
+              src={icon ? alertIcons[icon] : alertIcons[type]}
+              style={{ margin: "0 auto" }}
+            />
           </div>
           <div style={contentStyle}>{content}</div>
           {closeButton && (
