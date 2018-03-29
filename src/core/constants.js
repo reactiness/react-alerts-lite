@@ -42,9 +42,9 @@ export const positions = [
 export const defaultAlertArgs = {
   type: info,
   timeout: 5000,
-  align: "center",
   transition: DefaultTransition,
   duration: 500,
   position: bottom,
-  content: "content: define some content"
+  content: "content: define some content",
+  closeButton: true
 };

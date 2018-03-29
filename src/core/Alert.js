@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-// import { actions } from './actions';
 import {
   defaultStyle,
   containerStyle,
@@ -11,6 +10,15 @@ import {
 import info from "../assets/info.svg";
 import close from "../assets/x.svg";
 
+const createHandlers = (remove, id) => {
+  const handleRemove = () => {
+    remove(id);
+  };
+  return {
+    handleRemove
+  };
+};
+
 export class Alert extends React.Component {
   constructor(props) {
     super(props);
@@ -18,13 +26,11 @@ export class Alert extends React.Component {
       renderChild: true
     };
     this.interval = null;
+    this.handlers = createHandlers(props.remove, props.id);
   }
 
   componentDidMount() {
-    this.interval = setTimeout(
-      () => this.props.remove(this.props.id),
-      this.props.timeout
-    );
+    this.interval = setTimeout(this.handlers.handleRemove, this.props.timeout);
   }
 
   componentWillUnmount() {
@@ -40,6 +46,8 @@ export class Alert extends React.Component {
       remove,
       style: transitionStyle,
       icon,
+      closeButton,
+      id,
       ...props
     } = this.props;
     return (
@@ -54,9 +62,11 @@ export class Alert extends React.Component {
             <img src={info} style={{ margin: "0 auto" }} />
           </div>
           <div style={contentStyle}>{content}</div>
-          <div style={closeButtonStyle}>
-            <img src={close} style={{ margin: "0 auto" }} />
-          </div>
+          {closeButton && (
+            <div style={closeButtonStyle} onClick={this.handlers.handleRemove}>
+              <img src={close} style={{ margin: "0 auto" }} />
+            </div>
+          )}
         </div>
       </div>
     );
