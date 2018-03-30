@@ -53,7 +53,7 @@ export class Alert extends React.Component {
 
     console.log(this.props);
     return (
-      <div style={{ ...containerStyle, ...transitionStyle }} {...props}>
+      <div style={{ ...containerStyle, ...transitionStyle }}>
         <div
           style={{
             ...defaultStyle,
