@@ -15,6 +15,7 @@ export class AlertRenderer extends Component {
       >
         {alerts[position].map(alert => {
           const Transition = transitions[alert.transition];
+          console.log("trasn", Transition);
           return (
             <Transition
               duration={alert.duration}

@@ -41,12 +41,14 @@ const fadeSlideDown = "fade-slide-down";
 const fadeSlideUp = "fade-slide-up";
 const fadeSlideDownUp = "fade-slide-down-up";
 const fade = "fade";
+const slideRight = "slide-right";
 
 export const transitionConstants = {
   fadeSlideDown,
   fadeSlideUp,
   fadeSlideDownUp,
-  fade
+  fade,
+  slideRight
 };
 
 const content =

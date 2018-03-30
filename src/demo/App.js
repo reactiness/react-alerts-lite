@@ -49,7 +49,7 @@ export default class App extends React.Component {
               onClick={() =>
                 this.handlePush({
                   position: "top-full",
-                  transition: "fade-slide-down-up"
+                  transition: "fade"
                 })
               }
             >
@@ -61,7 +61,7 @@ export default class App extends React.Component {
               onClick={() =>
                 this.handlePush({
                   position: "top-left",
-                  transition: "fade-slide-down-up"
+                  transition: "slide-right"
                 })
               }
             >
@@ -89,23 +89,45 @@ export default class App extends React.Component {
             </button>
           </div>
           <div>
-            <button onClick={() => this.handlePush({ position: "bottom" })}>
+            <button
+              onClick={() =>
+                this.handlePush({
+                  position: "bottom",
+                  transition: "slide-right"
+                })
+              }
+            >
               bottom
             </button>
             <button
-              onClick={() => this.handlePush({ position: "bottom-left" })}
+              onClick={() =>
+                this.handlePush({
+                  position: "bottom-left",
+                  transition: "slide-right"
+                })
+              }
             >
               bottomleft
             </button>
             <button
-              onClick={() => this.handlePush({ position: "bottom-right" })}
+              onClick={() =>
+                this.handlePush({
+                  position: "bottom-right",
+                  transition: "slide-right"
+                })
+              }
             >
               bottomright
             </button>
           </div>
           <div>
             <button
-              onClick={() => this.handlePush({ position: "bottom-full" })}
+              onClick={() =>
+                this.handlePush({
+                  position: "bottom-full",
+                  transition: "slide-right"
+                })
+              }
             >
               bottom full
             </button>
