@@ -76,7 +76,8 @@ export const defaultStyle = {
   color: "white",
   zIndex: 50,
   display: "flex",
-  justifyContent: "flex-start"
+  justifyContent: "flex-start",
+  overflow: "hidden"
 };
 
 export const iconStyle = {

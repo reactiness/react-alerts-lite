@@ -38,12 +38,7 @@ export function FadeSlideDownUp({ children, maxHeight, duration, in: inProp }) {
         }
         const currentStyles = transitionStyles[status];
         return React.cloneElement(children, {
-          style: Object.assign(
-            {},
-            children.props.style,
-            defaultStyle,
-            currentStyles
-          )
+          style: { ...defaultStyle, ...currentStyles }
         });
       }}
     </Transition>

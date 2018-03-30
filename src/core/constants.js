@@ -26,7 +26,7 @@ export const positionConstants = {
   topFull
 };
 
-export const positions = [
+export const positionsArray = [
   bottom,
   top,
   topLeft,
@@ -41,7 +41,7 @@ const fadeSlideDown = "fade-slide-down";
 const fadeSlideUp = "fade-slide-up";
 const fadeSlideDownUp = "fade-slide-down-up";
 
-export const stockTransitionsConstants = {
+export const transitionConstants = {
   fadeSlideDown,
   fadeSlideUp,
   fadeSlideDownUp
@@ -58,5 +58,5 @@ export const defaultAlertArgs = {
   position: bottom,
   content,
   closeButton: true,
-  maxHeight: "400px"
+  maxHeight: "50px"
 };

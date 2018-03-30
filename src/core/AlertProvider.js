@@ -4,7 +4,7 @@ import { initialState } from "../state/initialState";
 import { AlertRenderer } from "./AlertRenderer";
 import { Store } from "../state/Store";
 import { actions } from "../state/actions";
-import { positions } from "./constants";
+import { positionsArray } from "./constants";
 
 const reducers = {
   alerts: reducer
@@ -23,7 +23,7 @@ const createHandlers = dispatch => {
 
 const initEmptyPositionsObject = () => {
   const positionsObject = {};
-  positions.forEach(position => {
+  positionsArray.forEach(position => {
     positionsObject[position] = [];
   });
   return positionsObject;
