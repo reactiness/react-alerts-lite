@@ -15,7 +15,9 @@ export class AlertRenderer extends Component {
     const { transitions: customTransitions } = this.props;
     try {
       if (customTransitions) {
-        const customTransition = customTransitions.find(t => t.name === transitionString);
+        const customTransition = customTransitions.find(
+          t => t.name === transitionString
+        );
         if (customTransition) return customTransition.transition;
       }
       if (stockTransitions[transitionString])
