@@ -37,12 +37,12 @@ export const positions = [
   topFull
 ];
 
-const fadeSlideTop = "fade-slide-top";
-const fadeSlideBottom = "fade-slide-bottom";
+const fadeSlideDown = "fade-slide-down";
+const fadeSlideUp = "fade-slide-up";
 
 export const stockTransitionsConstants = {
-  fadeSlideTop,
-  fadeSlideBottom
+  fadeSlideDown,
+  fadeSlideUp
 };
 
 const content =
@@ -51,7 +51,7 @@ const content =
 export const defaultAlertArgs = {
   type: info,
   timeout: 5000,
-  transition: fadeSlideBottom,
+  transition: "fade-slide-up",
   duration: 500,
   position: bottom,
   content,

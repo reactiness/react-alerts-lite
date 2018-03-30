@@ -1,7 +1,7 @@
 import Transition from "react-transition-group/Transition";
 import React from "react";
 
-export function FadeSlideBottom({ children, duration, in: inProp }) {
+export function FadeSlideUp({ children, duration, in: inProp }) {
   const defaultStyle = {
     transition: `${duration}ms ease-in`,
     transitionProperty: "opacity, transform, height, max-height",

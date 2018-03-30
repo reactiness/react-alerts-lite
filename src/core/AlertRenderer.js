@@ -3,18 +3,17 @@ import React, { Component } from "react";
 import TransitionGroup from "react-transition-group/TransitionGroup";
 import { containerStyle, positionStyle } from "../css/styles";
 import { positions, positionSections } from "./constants";
-import { defaultAlertArgs, stockTransitionsConstants as sTC } from "../core/constants";
-import { FadeSlideBottom } from "../transitions/FadeSlideBottom";
-import { FadeSlideTop } from "../transitions/FadeSlideTop";
+import { stockTransitionsConstants as sTC } from "../core/constants";
+import { FadeSlideUp } from "../transitions/FadeSlideUp";
+import { FadeSlideDown } from "../transitions/FadeSlideDown";
 
-
+const stockTransitionMapping = {
+  [sTC.fadeSlideDown]: FadeSlideDown,
+  [sTC.fadeSlideUp]: FadeSlideUp
+};
 
 // need to determine transition here using string. Dont pass in transition object to state through alert -> add
 export class AlertRenderer extends Component {
-  this.stockTransitions() {
-    [sTC.fadeSlideTop]: FadeSlideTop,
-    [sTC.fadeSlideBottom]: FadeSlideBottom
-  };
   render() {
     const { alerts, remove } = this.props;
     return positions.map(position => (
@@ -23,14 +22,14 @@ export class AlertRenderer extends Component {
         key={`__rta_pos_${position}`}
       >
         {alerts[position].map(alert => {
-          const Transition = stockTransitions
+          const Transition = stockTransitionMapping[alert.transition];
           return (
-            <alert.transition
+            <Transition
               duration={alert.duration}
               key={`__rta_alert_${alert.id}`}
             >
               <Alert remove={remove} {...alert} />
-            </alert.transition>
+            </Transition>
           )
         })}
       </TransitionGroup>

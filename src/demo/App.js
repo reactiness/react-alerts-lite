@@ -2,13 +2,12 @@ import React from "react";
 import { AlertProvider } from "../core/AlertProvider";
 import { MyComponent } from "./MyComponent";
 import { Alerts } from "../core";
-import { alertConstants, stockTransitionsConstants as sTC } from "../core/constants";
 
 export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      type: alertConstants.basic,
+      type: "basic",
       timeout: 5000
     };
     this.handleType = this.handleType.bind(this);
@@ -32,11 +31,11 @@ export default class App extends React.Component {
         <AlertProvider />
         <div style={{ marginTop: "400px" }}>
           <select value={this.state.type} onChange={this.handleType}>
-            <option value={alertConstants.error}>Error</option>
-            <option value={alertConstants.warning}>Warning</option>
-            <option value={alertConstants.success}>Success</option>
-            <option value={alertConstants.info}>Info</option>
-            <option value={alertConstants.basic}>Basic</option>
+            <option value="error">Error</option>
+            <option value="warning">Warning</option>
+            <option value="success">Success</option>
+            <option value="info">Info</option>
+            <option value="basic">Basic</option>
           </select>
           <select value={this.state.timeout} onChange={this.handleTimeout}>
             <option value={1000}>1000</option>
@@ -47,18 +46,18 @@ export default class App extends React.Component {
           </select>
 
           <div>
-            <button onClick={() => this.handlePush({ position: "top-full", transition: sTC.FadeSlideTop })}>
+            <button onClick={() => this.handlePush({ position: "top-full", transition: "fade-slide-down" })}>
               top full
             </button>
           </div>
           <div>
-            <button onClick={() => this.handlePush({ position: "top-left", transition: sTC.FadeSlideTop })}>
+            <button onClick={() => this.handlePush({ position: "top-left", transition: "fade-slide-down" })}>
               topleft
             </button>
-            <button onClick={() => this.handlePush({ position: "top", transition: sTC.FadeSlideTop })}>
+            <button onClick={() => this.handlePush({ position: "top", transition: "fade-slide-down" })}>
               top
             </button>
-            <button onClick={() => this.handlePush({ position: "top-right", transition: sTC.FadeSlideTop })}>
+            <button onClick={() => this.handlePush({ position: "top-right", transition: "fade-slide-down" })}>
               topright
             </button>
           </div>
@@ -85,7 +84,7 @@ export default class App extends React.Component {
             </button>
           </div>
           <div>
-            <button onClick={() => Alerts.remove("info")}>remove info</button>
+            <button onClick={() => Alerts.remove(this.state.type)}>remove info</button>
             <button onClick={() => Alerts.remove()}>remove all</button>
           </div>
         </div>
