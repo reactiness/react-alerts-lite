@@ -39,10 +39,12 @@ export const positions = [
 
 const fadeSlideDown = "fade-slide-down";
 const fadeSlideUp = "fade-slide-up";
+const fadeSlideDownUp = "fade-slide-down-up";
 
 export const stockTransitionsConstants = {
   fadeSlideDown,
-  fadeSlideUp
+  fadeSlideUp,
+  fadeSlideDownUp
 };
 
 const content =

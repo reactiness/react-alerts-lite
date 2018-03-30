@@ -4,12 +4,16 @@ import TransitionGroup from "react-transition-group/TransitionGroup";
 import { containerStyle, positionStyle } from "../css/styles";
 import { positions, positionSections } from "./constants";
 import { stockTransitionsConstants as sTC } from "../core/constants";
+
+// import transitions
 import { FadeSlideUp } from "../transitions/FadeSlideUp";
 import { FadeSlideDown } from "../transitions/FadeSlideDown";
+import { FadeSlideDownUp } from "../transitions/FadeSlideDownUp";
 
 const stockTransitionMapping = {
   [sTC.fadeSlideDown]: FadeSlideDown,
-  [sTC.fadeSlideUp]: FadeSlideUp
+  [sTC.fadeSlideUp]: FadeSlideUp,
+  [sTC.fadeSlideDownUp]: FadeSlideDownUp
 };
 
 // need to determine transition here using string. Dont pass in transition object to state through alert -> add
@@ -30,7 +34,7 @@ export class AlertRenderer extends Component {
             >
               <Alert remove={remove} {...alert} />
             </Transition>
-          )
+          );
         })}
       </TransitionGroup>
     ));

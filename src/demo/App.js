@@ -1,6 +1,5 @@
 import React from "react";
 import { AlertProvider } from "../core/AlertProvider";
-import { MyComponent } from "./MyComponent";
 import { Alerts } from "../core";
 
 export default class App extends React.Component {
@@ -46,18 +45,46 @@ export default class App extends React.Component {
           </select>
 
           <div>
-            <button onClick={() => this.handlePush({ position: "top-full", transition: "fade-slide-down" })}>
+            <button
+              onClick={() =>
+                this.handlePush({
+                  position: "top-full",
+                  transition: "fade-slide-down-up"
+                })
+              }
+            >
               top full
             </button>
           </div>
           <div>
-            <button onClick={() => this.handlePush({ position: "top-left", transition: "fade-slide-down" })}>
+            <button
+              onClick={() =>
+                this.handlePush({
+                  position: "top-left",
+                  transition: "fade-slide-down-up"
+                })
+              }
+            >
               topleft
             </button>
-            <button onClick={() => this.handlePush({ position: "top", transition: "fade-slide-down" })}>
+            <button
+              onClick={() =>
+                this.handlePush({
+                  position: "top",
+                  transition: "fade-slide-down-up"
+                })
+              }
+            >
               top
             </button>
-            <button onClick={() => this.handlePush({ position: "top-right", transition: "fade-slide-down" })}>
+            <button
+              onClick={() =>
+                this.handlePush({
+                  position: "top-right",
+                  transition: "fade-slide-down-up"
+                })
+              }
+            >
               topright
             </button>
           </div>
@@ -84,7 +111,9 @@ export default class App extends React.Component {
             </button>
           </div>
           <div>
-            <button onClick={() => Alerts.remove(this.state.type)}>remove info</button>
+            <button onClick={() => Alerts.remove(this.state.type)}>
+              remove info
+            </button>
             <button onClick={() => Alerts.remove()}>remove all</button>
           </div>
         </div>
