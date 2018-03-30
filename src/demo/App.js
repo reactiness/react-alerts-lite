@@ -26,9 +26,9 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <div>
+      <div style={{backgroundColor: "grey", height: "100%"}}>
         <AlertProvider />
-        <div style={{ marginTop: "400px" }}>
+        <div style={{ paddingTop: "400px" }}>
           <select value={this.state.type} onChange={this.handleType}>
             <option value="error">Error</option>
             <option value="warning">Warning</option>

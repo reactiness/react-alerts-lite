@@ -6,6 +6,7 @@ import { SlideRight } from "./SlideRight";
 import { SlideLeft } from "./SlideLeft";
 import { RotateLeft } from "./RotateLeft";
 import { RotateRight } from "./RotateRight";
+import { Scale } from "./Scale";
 
 import { Test } from "./Test";
 
@@ -20,5 +21,6 @@ export const transitions = {
   [transitionConstants.slideLeft]: SlideLeft,
   [transitionConstants.rotateLeft]: RotateLeft,
   [transitionConstants.rotateRight]: RotateRight,
+  [transitionConstants.scale]: Scale,
   [transitionConstants.test]: Test
 };
