@@ -4,8 +4,7 @@ import React from "react";
 export function FadeSlideDownUp({ children, maxHeight, duration, in: inProp }) {
   const defaultStyle = {
     transition: `${duration}ms ease-in`,
-    transitionProperty: "opacity, transform, max-height",
-    width: "100%"
+    transitionProperty: "opacity, transform, max-height"
   };
   const transitionStyles = {
     entering: {
