@@ -62,6 +62,7 @@ const rotateLeft = "rotate-left";
 const rotateRight = "rotate-right";
 const test = "test";
 const scale = "scale";
+const none = "none";
 
 const scaleSlideLeft = "scale-slide-left";
 const scaleSlideRight = "scale-slide-right";
@@ -79,11 +80,12 @@ export const transitionConstants = {
   rotateLeft,
   rotateRight,
   scale,
-  test,
   scaleSlideDown,
   scaleSlideLeft,
   scaleSlideRight,
-  scaleSlideUp
+  scaleSlideUp,
+  test,
+  none
 };
 
 const content =

@@ -86,7 +86,7 @@ export default class App extends React.Component {
               onClick={() =>
                 this.handlePush({
                   position: "top-left",
-                  transition: "custom-transition-two"
+                  transition: "none"
                 })
               }
             >

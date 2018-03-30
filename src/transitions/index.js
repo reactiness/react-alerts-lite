@@ -12,7 +12,7 @@ import { ScaleSlideLeft } from "./ScaleSlideLeft";
 import { ScaleSlideRight } from "./ScaleSlideRight";
 import { ScaleSlideUp } from "./ScaleSlideUp";
 import { ScaleSlideDown } from "./ScaleSlideDown";
-
+import { NoStyle } from "./NoStyle";
 import { Test } from "./Test";
 
 import { transitionConstants } from "../core/constants";
@@ -32,5 +32,6 @@ export const transitions = {
   [transitionConstants.scaleSlideLeft]: ScaleSlideLeft,
   [transitionConstants.scaleSlideRight]: ScaleSlideRight,
   [transitionConstants.scaleSlideUp]: ScaleSlideUp,
-  [transitionConstants.test]: Test
+  [transitionConstants.test]: Test,
+  [transitionConstants.none]: NoStyle
 };
