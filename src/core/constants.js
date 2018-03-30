@@ -1,17 +1,17 @@
-export const bottom = "bottom";
-export const top = "top";
-export const topLeft = "top-left";
-export const topRight = "top-right";
-export const bottomLeft = "bottom-left";
-export const bottomRight = "bottom-right";
-export const bottomFull = "bottom-full";
-export const topFull = "top-full";
+const bottom = "bottom";
+const top = "top";
+const topLeft = "top-left";
+const topRight = "top-right";
+const bottomLeft = "bottom-left";
+const bottomRight = "bottom-right";
+const bottomFull = "bottom-full";
+const topFull = "top-full";
 
-export const basic = "basic";
-export const error = "error";
-export const warning = "warning";
-export const info = "info";
-export const success = "success";
+const basic = "basic";
+const error = "error";
+const warning = "warning";
+const info = "info";
+const success = "success";
 
 const rounded = "rounded";
 const flatRounded = "flat-rounded";

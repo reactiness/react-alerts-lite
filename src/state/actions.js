@@ -39,3 +39,10 @@ function addDefaultProps(props) {
     payload: props
   };
 }
+
+function addCustomTheme(theme) {
+  return {
+    type: "ADD_CUSTOM_THEME",
+    payload: theme
+  };
+}

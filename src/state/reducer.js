@@ -46,6 +46,13 @@ export function reducer(state = initialState.alerts, action) {
       };
     }
 
+    case "ADD_CUSTOM_THEME": {
+      return {
+        ...state,
+        customTheme: action.payload
+      };
+    }
+
     default:
       return state;
   }
