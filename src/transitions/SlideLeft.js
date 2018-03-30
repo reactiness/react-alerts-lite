@@ -1,7 +1,7 @@
 import Transition from "react-transition-group/Transition";
 import React from "react";
 
-export function SlideRight({ children, duration, maxHeight, in: inProp }) {
+export function SlideLeft({ children, duration, maxHeight, in: inProp }) {
   const defaultStyle = {
     transition: `${duration}ms ease-in`,
     transitionProperty: "opacity, transform, max-height"
@@ -9,7 +9,7 @@ export function SlideRight({ children, duration, maxHeight, in: inProp }) {
   const transitionStyles = {
     entering: {
       opacity: 0,
-      transform: "translateX(-100%)",
+      transform: "translateX(+100%)",
       maxHeight: "0px"
     },
     entered: {
@@ -19,7 +19,7 @@ export function SlideRight({ children, duration, maxHeight, in: inProp }) {
     },
     exiting: {
       opacity: 0,
-      transform: "translateX(-100%)",
+      transform: "translateX(+100%)",
       maxHeight: "0px"
     }
   };
