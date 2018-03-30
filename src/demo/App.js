@@ -48,6 +48,7 @@ export default class App extends React.Component {
         <AlertProvider
           transitions={customTransitions}
           defaultProps={defaultProps}
+          theme="flat-rounded"
         />
         <div style={{ paddingTop: "400px" }}>
           <select value={this.state.type} onChange={this.handleType}>
