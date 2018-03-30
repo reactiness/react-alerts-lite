@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import TransitionGroup from "react-transition-group/TransitionGroup";
 import { containerStyle, positionStyle } from "../css/styles";
 import { positionsArray, positionSections } from "./constants";
-import { transitions } from "../transitions";
+import { transitions as stockTransitions } from "../transitions";
 
 export class AlertRenderer extends Component {
   constructor(props) {
@@ -11,8 +11,19 @@ export class AlertRenderer extends Component {
     this.selectTransition = this.selectTransition.bind(this);
   }
 
-  selectTransition(transition) {
-    return transitions[transition];
+  selectTransition(transitionString) {
+    const { transitions: customTransitions } = this.props;
+    try {
+      if (customTransitions && customTransitions[transitionString])
+        return customTransitions[transitionString];
+      if (stockTransitions[transitionString])
+        return stockTransitions[transitionString];
+      console.warn("Transition name not found: defaulting to fade transition");
+      return stockTransitions["fade"];
+    } catch (error) {
+      console.warn("Transition name not found: defaulting to fade transition");
+      return stockTransitions["fade"];
+    }
   }
 
   render() {
@@ -24,7 +35,6 @@ export class AlertRenderer extends Component {
       >
         {alerts[position].map(alert => {
           const Transition = this.selectTransition(alert.transition);
-          console.log("trasn", Transition);
           return (
             <Transition
               duration={alert.duration}
