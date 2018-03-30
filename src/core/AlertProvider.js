@@ -56,6 +56,7 @@ export class AlertProvider extends Component {
       <AlertRenderer
         alerts={this.state.alerts}
         remove={this.handlers.handleRemove}
+        transitions={this.props.transitions}
       />
     );
   }

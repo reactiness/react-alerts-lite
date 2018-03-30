@@ -6,6 +6,15 @@ import { positionsArray, positionSections } from "./constants";
 import { transitions } from "../transitions";
 
 export class AlertRenderer extends Component {
+  constructor(props) {
+    super(props);
+    this.selectTransition = this.selectTransition.bind(this);
+  }
+
+  selectTransition(transition) {
+    return transitions[transition];
+  }
+
   render() {
     const { alerts, remove } = this.props;
     return positionsArray.map(position => (
@@ -14,7 +23,7 @@ export class AlertRenderer extends Component {
         key={`__rta_pos_${position}`}
       >
         {alerts[position].map(alert => {
-          const Transition = transitions[alert.transition];
+          const Transition = this.selectTransition(alert.transition);
           console.log("trasn", Transition);
           return (
             <Transition
