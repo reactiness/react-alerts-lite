@@ -26,7 +26,7 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <div style={{backgroundColor: "grey", height: "100%"}}>
+      <div style={{ backgroundColor: "grey", height: "100%" }}>
         <AlertProvider />
         <div style={{ paddingTop: "400px" }}>
           <select value={this.state.type} onChange={this.handleType}>
