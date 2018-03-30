@@ -1,4 +1,8 @@
-import { positionConstants, alertConstants } from "../core/constants";
+import {
+  positionConstants,
+  alertConstants,
+  themeConstants
+} from "../core/constants";
 
 import info from "../assets/info.svg";
 import warning from "../assets/alert-circle.svg";
@@ -58,6 +62,46 @@ export const positionStyle = {
     left: "390px",
     width: "calc(100% - 780px)"
   }
+};
+
+const bordered = {
+  border: "1px solid grey",
+  margin: "3px",
+  width: "100%-8px"
+};
+
+const flat = {
+  margin: "3px",
+  width: "100%-8px"
+};
+
+const shadowed = {
+  border: "1px solid grey",
+  margin: "3px",
+  boxShadow: "0 0 5px 0 rgba(0, 0, 0, 0.35)",
+  width: "100%-8px"
+};
+
+const flatRounded = {
+  margin: "3px",
+  width: "100%-8px",
+  borderRadius: "3px"
+};
+
+const rounded = {
+  border: "1px solid grey",
+  margin: "3px",
+  boxShadow: "0 0 5px 0 rgba(0, 0, 0, 0.35)",
+  width: "100%-8px",
+  borderRadius: "3px"
+};
+
+export const themeStyles = {
+  [themeConstants.bordered]: bordered,
+  [themeConstants.flat]: flat,
+  [themeConstants.flatRounded]: flatRounded,
+  [themeConstants.rounded]: rounded,
+  [themeConstants.shadowed]: shadowed
 };
 
 export const alertIcons = {

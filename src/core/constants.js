@@ -13,6 +13,20 @@ export const warning = "warning";
 export const info = "info";
 export const success = "success";
 
+const rounded = "rounded";
+const flatRounded = "flat-rounded";
+const shadowed = "shadowed";
+const flat = "flat";
+const bordered = "bordered";
+
+export const themeConstants = {
+  rounded,
+  flatRounded,
+  shadowed,
+  flat,
+  bordered
+};
+
 export const alertConstants = { basic, error, warning, info, success };
 
 export const positionConstants = {

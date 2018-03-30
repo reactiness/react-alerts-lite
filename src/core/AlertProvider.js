@@ -63,6 +63,7 @@ export class AlertProvider extends Component {
         alerts={this.state.alerts}
         remove={this.handlers.handleRemove}
         transitions={this.props.transitions}
+        theme={this.props.theme}
       />
     );
   }

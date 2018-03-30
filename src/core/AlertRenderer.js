@@ -1,7 +1,7 @@
 import { Alert } from "./Alert";
 import React, { Component } from "react";
 import TransitionGroup from "react-transition-group/TransitionGroup";
-import { containerStyle, positionStyle } from "../css/styles";
+import { containerStyle, positionStyle, themeStyles } from "../css/styles";
 import { positionsArray, positionSections } from "./constants";
 import { transitions as stockTransitions } from "../transitions";
 
@@ -30,8 +30,22 @@ export class AlertRenderer extends Component {
     }
   }
 
+  selectTheme(themeString) {
+    try {
+      if (themeString) {
+        const themeStyle = themeStyles[themeString];
+        if (themeStyle) return themeStyle;
+        console.warn("Theme not found");
+      }
+      return {};
+    } catch (error) {
+      console.warn("Theme not found");
+      return {};
+    }
+  }
+
   render() {
-    const { alerts, remove } = this.props;
+    const { alerts, remove, theme } = this.props;
     return positionsArray.map(position => (
       <TransitionGroup
         style={{ ...positionStyle.common, ...positionStyle[position] }}
@@ -43,9 +57,13 @@ export class AlertRenderer extends Component {
             <Transition
               duration={alert.duration}
               key={`__rta_alert_${alert.id}`}
-              maxHeight={alert.maxHeight}
+              maxHeight={alert.maxHeight} // Little bit hacky - maybe better way than this
             >
-              <Alert remove={remove} {...alert} />
+              <Alert
+                theme={this.selectTheme(theme)}
+                remove={remove}
+                {...alert}
+              />
             </Transition>
           );
         })}

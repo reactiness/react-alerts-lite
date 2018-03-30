@@ -48,6 +48,7 @@ export class Alert extends React.Component {
       icon,
       closeButton,
       id,
+      theme,
       ...props
     } = this.props;
 
@@ -56,6 +57,7 @@ export class Alert extends React.Component {
         <div
           style={{
             ...defaultStyle,
+            ...theme,
             ...alertStyles[type]
           }}
         >
