@@ -43,6 +43,9 @@ const fadeSlideDownUp = "fade-slide-down-up";
 const fade = "fade";
 const slideRight = "slide-right";
 const slideLeft = "slide-left";
+const rotateLeft = "rotate-left";
+const rotateRight = "rotate-right";
+const test = "test";
 
 export const transitionConstants = {
   fadeSlideDown,
@@ -50,7 +53,10 @@ export const transitionConstants = {
   fadeSlideDownUp,
   fade,
   slideRight,
-  slideLeft
+  slideLeft,
+  rotateLeft,
+  rotateRight,
+  test
 };
 
 const content =
