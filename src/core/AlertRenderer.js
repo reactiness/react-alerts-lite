@@ -35,13 +35,13 @@ export class AlertRenderer extends Component {
     try {
       if (themeString) {
         const themeStyle = themeStyles[themeString];
-        if (themeStyle) return {...themeStyle, ...customTheme};
+        if (themeStyle) return { ...themeStyle, ...customTheme };
         console.warn("Theme not found");
       }
-      return {...customTheme};
+      return { ...customTheme };
     } catch (error) {
       console.warn("Theme not found");
-      return {...customTheme};
+      return { ...customTheme };
     }
   }
 
