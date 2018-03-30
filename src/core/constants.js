@@ -37,9 +37,10 @@ export const positionsArray = [
   topFull
 ];
 
-const fadeSlideDown = "fade-slide-down";
-const fadeSlideUp = "fade-slide-up";
-const fadeSlideDownUp = "fade-slide-down-up";
+const slideDown = "slide-down";
+const slideUp = "slide-up";
+const slideDownUp = "slide-down-up";
+const slideUpDown = "slide-up-down";
 const fade = "fade";
 const slideRight = "slide-right";
 const slideLeft = "slide-left";
@@ -48,17 +49,27 @@ const rotateRight = "rotate-right";
 const test = "test";
 const scale = "scale";
 
+const scaleSlideLeft = "scale-slide-left";
+const scaleSlideRight = "scale-slide-right";
+const scaleSlideDown = "scale-slide-down";
+const scaleSlideUp = "scale-slide-up";
+
 export const transitionConstants = {
-  fadeSlideDown,
-  fadeSlideUp,
-  fadeSlideDownUp,
+  slideDown,
+  slideUp,
+  slideDownUp,
+  slideUpDown,
   fade,
   slideRight,
   slideLeft,
   rotateLeft,
   rotateRight,
   scale,
-  test
+  test,
+  scaleSlideDown,
+  scaleSlideLeft,
+  scaleSlideRight,
+  scaleSlideUp
 };
 
 const content =

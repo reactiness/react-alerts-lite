@@ -1,7 +1,7 @@
 import Transition from "react-transition-group/Transition";
 import React from "react";
 
-export function FadeSlideDownUp({ children, maxHeight, duration, in: inProp }) {
+export function ScaleSlideRight({ children, duration, maxHeight, in: inProp }) {
   const defaultStyle = {
     transition: `${duration}ms ease-in`,
     transitionProperty: "opacity, transform, max-height"
@@ -9,17 +9,17 @@ export function FadeSlideDownUp({ children, maxHeight, duration, in: inProp }) {
   const transitionStyles = {
     entering: {
       opacity: 0,
-      transform: "translateY(-100%)",
+      transform: "translateX(+100%) scale(0.4)",
       maxHeight: "0px"
     },
     entered: {
       opacity: 1,
-      transform: "translateY(0)",
+      transform: "translateX(0) scale(1)",
       maxHeight
     },
     exiting: {
       opacity: 0,
-      transform: "translateY(-100%)",
+      transform: "translateX(+100%) scale(0.4)",
       maxHeight: "0px"
     }
   };

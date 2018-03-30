@@ -1,7 +1,7 @@
 import Transition from "react-transition-group/Transition";
 import React from "react";
 
-export function FadeSlideUp({ children, duration, maxHeight, in: inProp }) {
+export function SlideUpDown({ children, maxHeight, duration, in: inProp }) {
   const defaultStyle = {
     transition: `${duration}ms ease-in`,
     transitionProperty: "opacity, transform, max-height"
@@ -19,7 +19,7 @@ export function FadeSlideUp({ children, duration, maxHeight, in: inProp }) {
     },
     exiting: {
       opacity: 0,
-      transform: "translateY(-100%)",
+      transform: "translateY(+100%)",
       maxHeight: "0px"
     }
   };
