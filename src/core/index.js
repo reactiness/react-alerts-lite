@@ -7,7 +7,6 @@ import { defaultAlertArgs } from "./constants";
 let counter = 0;
 
 const add = args => {
-  console.log(store);
   store.dispatch(
     actions.add({
       id: counter,
@@ -25,7 +24,6 @@ const remove = type => {
 
 export class Alerts {
   static push(args) {
-    console.log();
     add({ ...defaultAlertArgs, ...store.state.alerts.defaultProps, ...args });
   }
   static remove(type) {

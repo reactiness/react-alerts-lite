@@ -51,7 +51,6 @@ export class Alert extends React.Component {
       ...props
     } = this.props;
 
-    console.log(this.props);
     return (
       <div style={{ ...containerStyle, ...transitionStyle }}>
         <div
