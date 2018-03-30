@@ -15,6 +15,11 @@ const customTransitions = [
   }
 ];
 
+const defaultProps = {
+  transition: "fade",
+  duration: 2000
+};
+
 export default class App extends React.Component {
   constructor(props) {
     super(props);
@@ -40,7 +45,10 @@ export default class App extends React.Component {
   render() {
     return (
       <div style={{ backgroundColor: "grey", height: "100%" }}>
-        <AlertProvider transitions={customTransitions} />
+        <AlertProvider
+          transitions={customTransitions}
+          defaultProps={defaultProps}
+        />
         <div style={{ paddingTop: "400px" }}>
           <select value={this.state.type} onChange={this.handleType}>
             <option value="error">Error</option>

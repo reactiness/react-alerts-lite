@@ -2,7 +2,8 @@ export const actions = {
   add,
   remove,
   removeType,
-  removeAll
+  removeAll,
+  addDefaultProps
 };
 
 function add(alert) {
@@ -29,5 +30,12 @@ function removeType(type) {
 function removeAll() {
   return {
     type: "REMOVE_ALL"
+  };
+}
+
+function addDefaultProps(props) {
+  return {
+    type: "ADD_DEFAULT_PROPS",
+    payload: props
   };
 }

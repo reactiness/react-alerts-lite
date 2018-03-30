@@ -39,6 +39,13 @@ export function reducer(state = initialState.alerts, action) {
       return initialState.alerts;
     }
 
+    case "ADD_DEFAULT_PROPS": {
+      return {
+        ...state,
+        defaultProps: action.payload
+      };
+    }
+
     default:
       return state;
   }

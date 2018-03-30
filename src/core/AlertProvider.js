@@ -16,8 +16,12 @@ const createHandlers = dispatch => {
   const handleRemove = id => {
     dispatch(actions.remove(id));
   };
+  const addDefaultProps = props => {
+    dispatch(actions.addDefaultProps(props));
+  };
   return {
-    handleRemove
+    handleRemove,
+    addDefaultProps
   };
 };
 
@@ -49,6 +53,8 @@ export class AlertProvider extends Component {
     store.subscribe(store =>
       this.sortAlerts(store.alerts.current, initEmptyPositionsObject())
     );
+    if (this.props.defaultProps)
+      this.handlers.addDefaultProps(this.props.defaultProps);
   }
 
   render() {
