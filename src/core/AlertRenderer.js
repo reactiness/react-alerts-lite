@@ -31,16 +31,17 @@ export class AlertRenderer extends Component {
   }
 
   selectTheme(themeString) {
+    const { customTheme } = this.props;
     try {
       if (themeString) {
         const themeStyle = themeStyles[themeString];
-        if (themeStyle) return themeStyle;
+        if (themeStyle) return {...themeStyle, ...customTheme};
         console.warn("Theme not found");
       }
-      return {};
+      return {...customTheme};
     } catch (error) {
       console.warn("Theme not found");
-      return {};
+      return {...customTheme};
     }
   }
 

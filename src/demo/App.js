@@ -49,6 +49,9 @@ export default class App extends React.Component {
           transitions={customTransitions}
           defaultProps={defaultProps}
           theme="flat-rounded"
+          customTheme={{
+            border: "5px solid red"
+          }}
         />
         <div style={{ paddingTop: "400px" }}>
           <select value={this.state.type} onChange={this.handleType}>

@@ -50,11 +50,11 @@ export class AlertProvider extends Component {
   }
 
   componentDidMount() {
+    const { defaultProps, customTheme } = this.props;
     store.subscribe(store =>
       this.sortAlerts(store.alerts.current, initEmptyPositionsObject())
     );
-    if (this.props.defaultProps)
-      this.handlers.addDefaultProps(this.props.defaultProps);
+    if (defaultProps) this.handlers.addDefaultProps(defaultProps);
   }
 
   render() {
@@ -64,6 +64,7 @@ export class AlertProvider extends Component {
         remove={this.handlers.handleRemove}
         transitions={this.props.transitions}
         theme={this.props.theme}
+        customTheme={this.props.customTheme ? this.props.customTheme : {}}
       />
     );
   }
