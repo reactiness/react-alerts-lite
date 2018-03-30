@@ -48,7 +48,7 @@ export class AlertProvider extends Component {
   componentDidMount() {
     store.subscribe(store =>
       this.sortAlerts(store.alerts.current, initEmptyPositionsObject())
-    ); // TODO: bad practice to use forceUpdate()? not sure how to solve otherwise. research this.
+    );
   }
 
   render() {

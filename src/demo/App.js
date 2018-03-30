@@ -1,6 +1,19 @@
 import React from "react";
 import { AlertProvider } from "../core/AlertProvider";
 import { Alerts } from "../core";
+import { ScaleSlideRight } from "../transitions/ScaleSlideRight";
+import { ScaleSlideUp } from "../transitions/ScaleSlideUp";
+
+const customTransitions = [
+  {
+    name: "custom-transition",
+    transition: ScaleSlideRight
+  },
+  {
+    name: "custom-transition-two",
+    transition: ScaleSlideUp
+  }
+];
 
 export default class App extends React.Component {
   constructor(props) {
@@ -27,7 +40,7 @@ export default class App extends React.Component {
   render() {
     return (
       <div style={{ backgroundColor: "grey", height: "100%" }}>
-        <AlertProvider />
+        <AlertProvider transitions={customTransitions} />
         <div style={{ paddingTop: "400px" }}>
           <select value={this.state.type} onChange={this.handleType}>
             <option value="error">Error</option>
@@ -61,7 +74,7 @@ export default class App extends React.Component {
               onClick={() =>
                 this.handlePush({
                   position: "top-left",
-                  transition: "testas"
+                  transition: "custom-transition-two"
                 })
               }
             >

@@ -14,8 +14,10 @@ export class AlertRenderer extends Component {
   selectTransition(transitionString) {
     const { transitions: customTransitions } = this.props;
     try {
-      if (customTransitions && customTransitions[transitionString])
-        return customTransitions[transitionString];
+      if (customTransitions) {
+        const customTransition = customTransitions.find(t => t.name === transitionString);
+        if (customTransition) return customTransition.transition;
+      }
       if (stockTransitions[transitionString])
         return stockTransitions[transitionString];
       console.warn("Transition name not found: defaulting to fade transition");
