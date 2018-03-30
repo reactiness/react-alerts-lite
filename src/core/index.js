@@ -25,7 +25,8 @@ const remove = type => {
 
 export class Alerts {
   static push(args) {
-    add({ ...defaultAlertArgs, ...args });
+    console.log();
+    add({ ...defaultAlertArgs, ...store.state.alerts.defaultProps, ...args });
   }
   static remove(type) {
     remove(type);
