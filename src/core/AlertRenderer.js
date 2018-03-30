@@ -5,7 +5,6 @@ import { containerStyle, positionStyle } from "../css/styles";
 import { positionsArray, positionSections } from "./constants";
 import { transitions } from "../transitions";
 
-// need to determine transition here using string. Dont pass in transition object to state through alert -> add
 export class AlertRenderer extends Component {
   render() {
     const { alerts, remove } = this.props;
