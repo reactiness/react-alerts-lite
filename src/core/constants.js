@@ -57,5 +57,6 @@ export const defaultAlertArgs = {
   duration: 500,
   position: bottom,
   content,
-  closeButton: true
+  closeButton: true,
+  maxHeight: "400px"
 };

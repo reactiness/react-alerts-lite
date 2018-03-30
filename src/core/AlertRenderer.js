@@ -31,6 +31,7 @@ export class AlertRenderer extends Component {
             <Transition
               duration={alert.duration}
               key={`__rta_alert_${alert.id}`}
+              maxHeight={alert.maxHeight}
             >
               <Alert remove={remove} {...alert} />
             </Transition>

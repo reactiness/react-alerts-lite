@@ -1,29 +1,26 @@
 import Transition from "react-transition-group/Transition";
 import React from "react";
 
-export function FadeSlideDown({ children, duration, in: inProp }) {
+export function FadeSlideDown({ children, maxHeight, duration, in: inProp }) {
   const defaultStyle = {
     transition: `${duration}ms ease-in`,
-    transitionProperty: "opacity, transform, height, max-height",
+    transitionProperty: "opacity, transform, max-height",
     width: "100%"
   };
   const transitionStyles = {
     entering: {
       opacity: 0,
       transform: "translateY(-100%)",
-      // height: "0px"
       maxHeight: "0px"
     },
     entered: {
       opacity: 1,
       transform: "translateY(0)",
-      // height: "40px"
-      maxHeight: "400px"
+      maxHeight
     },
     exiting: {
       opacity: 0,
       transform: "translateY(+100%)",
-      // height: "0px"
       maxHeight: "0px"
     }
   };
@@ -40,7 +37,6 @@ export function FadeSlideDown({ children, duration, in: inProp }) {
         if (status === "exited") {
           return null;
         }
-        console.log(" -- STATUS ", status);
         const currentStyles = transitionStyles[status];
         return React.cloneElement(children, {
           style: Object.assign(
