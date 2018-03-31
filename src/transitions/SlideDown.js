@@ -19,7 +19,7 @@ export function SlideDown({ children, maxHeight, duration, in: inProp }) {
     },
     exiting: {
       opacity: 0,
-      transform: "translateY(+100%)",
+      transform: "translateY(-100%)",
       maxHeight: "0px"
     }
   };

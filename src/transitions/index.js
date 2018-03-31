@@ -1,7 +1,6 @@
 import { SlideUp } from "./SlideUp";
 import { SlideDown } from "./SlideDown";
-import { SlideDownUp } from "./SlideDownUp";
-import { SlideUpDown } from "./SlideUpDown";
+import { SlideUpThrough } from "./SlideUpThrough";
 import { Fade } from "./Fade";
 import { SlideRight } from "./SlideRight";
 import { SlideLeft } from "./SlideLeft";
@@ -20,8 +19,7 @@ import { transitionConstants } from "../core/constants";
 export const transitions = {
   [transitionConstants.slideDown]: SlideDown,
   [transitionConstants.slideUp]: SlideUp,
-  [transitionConstants.slideDownUp]: SlideDownUp,
-  [transitionConstants.slideUpDown]: SlideUpDown,
+  [transitionConstants.slideUpThrough]: SlideUpThrough,
   [transitionConstants.fade]: Fade,
   [transitionConstants.slideRight]: SlideRight,
   [transitionConstants.slideLeft]: SlideLeft,

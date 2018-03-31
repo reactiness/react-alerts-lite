@@ -53,8 +53,7 @@ export const positionsArray = [
 
 const slideDown = "slide-down";
 const slideUp = "slide-up";
-const slideDownUp = "slide-down-up";
-const slideUpDown = "slide-up-down";
+const slideUpThrough = "slide-up-through";
 const fade = "fade";
 const slideRight = "slide-right";
 const slideLeft = "slide-left";
@@ -72,8 +71,7 @@ const scaleSlideUp = "scale-slide-up";
 export const transitionConstants = {
   slideDown,
   slideUp,
-  slideDownUp,
-  slideUpDown,
+  slideUpThrough,
   fade,
   slideRight,
   slideLeft,

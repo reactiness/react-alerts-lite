@@ -17,7 +17,7 @@ const customTransitions = [
 
 const defaultProps = {
   transition: "fade",
-  duration: 2000
+  duration: 500
 };
 
 export default class App extends React.Component {
@@ -25,7 +25,7 @@ export default class App extends React.Component {
     super(props);
     this.state = {
       type: "basic",
-      timeout: 5000
+      timeout: 3000
     };
     this.handleType = this.handleType.bind(this);
     this.handleTimeout = this.handleTimeout.bind(this);
@@ -72,7 +72,7 @@ export default class App extends React.Component {
               onClick={() =>
                 this.handlePush({
                   position: "top-full",
-                  transition: "fade"
+                  transition: "slide-down-through"
                 })
               }
             >
@@ -94,7 +94,7 @@ export default class App extends React.Component {
               onClick={() =>
                 this.handlePush({
                   position: "top",
-                  transition: "test"
+                  transition: "slide-down-through"
                 })
               }
             >
@@ -148,7 +148,7 @@ export default class App extends React.Component {
               onClick={() =>
                 this.handlePush({
                   position: "bottom-full",
-                  transition: "slide-right"
+                  transition: "slide-up-through"
                 })
               }
             >
