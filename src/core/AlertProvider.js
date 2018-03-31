@@ -25,21 +25,21 @@ const createHandlers = dispatch => {
   };
 };
 
-const initEmptyPositionsObject = () => {
-  const positionsObject = {};
-  positionsArray.forEach(position => {
-    positionsObject[position] = [];
-  });
-  return positionsObject;
-};
-
 export class AlertProvider extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      alerts: initEmptyPositionsObject()
+      alerts: this.initEmptyPositionsObject()
     };
     this.handlers = createHandlers(store.dispatch);
+  }
+
+  initEmptyPositionsObject() {
+    const positionsObject = {};
+    positionsArray.forEach(position => {
+      positionsObject[position] = [];
+    });
+    return positionsObject;
   }
 
   sortAlerts(alerts, container) {
@@ -52,7 +52,7 @@ export class AlertProvider extends Component {
   componentDidMount() {
     const { defaultProps, customTheme } = this.props;
     store.subscribe(store =>
-      this.sortAlerts(store.alerts.current, initEmptyPositionsObject())
+      this.sortAlerts(store.alerts.current, this.initEmptyPositionsObject())
     );
     if (defaultProps) this.handlers.handleAddDefaultProps(defaultProps);
   }

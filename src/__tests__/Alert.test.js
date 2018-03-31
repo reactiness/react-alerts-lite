@@ -90,14 +90,15 @@ describe("Alert", () => {
         onClose={mock}
       />
     );
-    setTimeout(() => expect(mock).toHaveBeenCalled(), 150);
+    wrapper.unmount();
+    expect(mock).toHaveBeenCalled();
   });
-  it("should call remove on unmount", () => {
+  it("should call remove on timeout", () => {
     const mock = jest.fn();
     const wrapper = mount(
-      <Alert content={"test"} timeout={100} type="basic" remove={mock} />
+      <Alert content={"test"} timeout={50} type="basic" remove={mock} />
     );
-    setTimeout(() => expect(mock).toHaveBeenCalled(), 150);
+    setTimeout(() => expect(mock).toHaveBeenCalled(), 60);
   });
 });
 
