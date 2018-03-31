@@ -7,6 +7,7 @@ import { defaultAlertArgs } from "./constants";
 let counter = 0;
 
 const addAlert = args => {
+  console.log("args", args);
   store.dispatch(
     add({
       id: counter,
