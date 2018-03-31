@@ -93,8 +93,8 @@ const content =
 
 export const defaultAlertArgs = {
   type: info,
-  timeout: 5000,
-  transition: "fade-slide-up",
+  timeout: 4000,
+  transition: "fade",
   duration: 500,
   position: bottomFull,
   content,
