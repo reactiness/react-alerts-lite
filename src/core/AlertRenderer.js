@@ -9,6 +9,7 @@ export class AlertRenderer extends Component {
   constructor(props) {
     super(props);
     this.selectTransition = this.selectTransition.bind(this);
+    this.selectTheme = this.selectTheme.bind(this);
   }
 
   selectTransition(transitionString) {

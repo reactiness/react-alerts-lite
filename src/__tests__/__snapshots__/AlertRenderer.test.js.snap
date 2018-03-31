@@ -1,0 +1,134 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Alert Renderer should render correctly 1`] = `
+Array [
+  <TransitionGroup
+    childFactory={[Function]}
+    component="div"
+    key="__rta_pos_bottom"
+    style={
+      Object {
+        "alignItems": "flex-end",
+        "bottom": "0px",
+        "display": "flex",
+        "flexDirection": "column",
+        "left": "390px",
+        "position": "fixed",
+        "width": "calc(100% - 780px)",
+      }
+    }
+  />,
+  <TransitionGroup
+    childFactory={[Function]}
+    component="div"
+    key="__rta_pos_top"
+    style={
+      Object {
+        "alignItems": "flex-end",
+        "display": "flex",
+        "flexDirection": "column",
+        "left": "390px",
+        "position": "fixed",
+        "top": "0px",
+        "width": "calc(100% - 780px)",
+      }
+    }
+  />,
+  <TransitionGroup
+    childFactory={[Function]}
+    component="div"
+    key="__rta_pos_top-left"
+    style={
+      Object {
+        "alignItems": "flex-end",
+        "display": "flex",
+        "flexDirection": "column",
+        "left": "0px",
+        "position": "fixed",
+        "top": "0px",
+        "width": "380px",
+      }
+    }
+  />,
+  <TransitionGroup
+    childFactory={[Function]}
+    component="div"
+    key="__rta_pos_top-right"
+    style={
+      Object {
+        "alignItems": "flex-end",
+        "display": "flex",
+        "flexDirection": "column",
+        "position": "fixed",
+        "right": "0px",
+        "top": "0px",
+        "width": "380px",
+      }
+    }
+  />,
+  <TransitionGroup
+    childFactory={[Function]}
+    component="div"
+    key="__rta_pos_bottom-left"
+    style={
+      Object {
+        "alignItems": "flex-end",
+        "bottom": "0px",
+        "display": "flex",
+        "flexDirection": "column",
+        "left": "0px",
+        "position": "fixed",
+        "width": "380px",
+      }
+    }
+  />,
+  <TransitionGroup
+    childFactory={[Function]}
+    component="div"
+    key="__rta_pos_bottom-right"
+    style={
+      Object {
+        "alignItems": "flex-end",
+        "bottom": "0px",
+        "display": "flex",
+        "flexDirection": "column",
+        "position": "fixed",
+        "right": "0px",
+        "width": "380px",
+      }
+    }
+  />,
+  <TransitionGroup
+    childFactory={[Function]}
+    component="div"
+    key="__rta_pos_bottom-full"
+    style={
+      Object {
+        "alignItems": "flex-end",
+        "bottom": "0px",
+        "display": "flex",
+        "flexDirection": "column",
+        "left": "0px",
+        "position": "fixed",
+        "width": "100%",
+      }
+    }
+  />,
+  <TransitionGroup
+    childFactory={[Function]}
+    component="div"
+    key="__rta_pos_top-full"
+    style={
+      Object {
+        "alignItems": "flex-end",
+        "display": "flex",
+        "flexDirection": "column",
+        "left": "0px",
+        "position": "fixed",
+        "top": "0px",
+        "width": "100%",
+      }
+    }
+  />,
+]
+`;
