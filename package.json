@@ -1,10 +1,10 @@
 {
   "name": "react-transition-alerts",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Library for alerts built using react and react-transitions",
   "main": "src/index.js",
   "repository": "git@github.com:reactiness/react-transition-alerts.git",
-  "author": "",
+  "author": "Geoff Whitehead",
   "license": "MIT",
   "scripts": {
     "start": "webpack-dev-server --mode development --open",
