@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Alert should render correctly 1`] = `
+<div
+  style={
+    Object {
+      "overflow": "hidden",
+      "width": "100%",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "backgroundColor": "rgba(76, 175, 80, 0.8)",
+        "color": "white",
+        "display": "flex",
+        "fontFamily": "Lato,Helvetica Neue,Arial,Helvetica,sans-serif",
+        "fontSize": "13px",
+        "justifyContent": "flex-start",
+        "minHeight": "40px",
+        "overflow": "hidden",
+        "width": "100%",
+        "zIndex": 50,
+      }
+    }
+  >
+    <div
+      style={
+        Object {
+          "alignItems": "flex-start",
+          "display": "flex",
+          "padding": "10px",
+          "width": "40px",
+        }
+      }
+    >
+      <img
+        src={
+          Object {
+            "process": [Function],
+          }
+        }
+        style={
+          Object {
+            "margin": "0 auto",
+          }
+        }
+      />
+    </div>
+    <div
+      style={
+        Object {
+          "display": "flex",
+          "padding": "10px",
+          "width": "100%",
+        }
+      }
+    >
+      this is a test alert
+    </div>
+  </div>
+</div>
+`;
