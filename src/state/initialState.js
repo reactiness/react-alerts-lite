@@ -1,5 +1,6 @@
 export const initialState = {
   alerts: {
-    current: []
+    current: [],
+    defaultProps: {}
   }
 };
