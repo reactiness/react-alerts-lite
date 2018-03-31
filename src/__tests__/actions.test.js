@@ -5,7 +5,6 @@ import {
   REMOVE_ALL,
   ADD_DEFAULT_PROPS
 } from "../state/actions";
-
 import {
   add,
   remove,
