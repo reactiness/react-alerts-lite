@@ -43,7 +43,6 @@ export class AlertProvider extends Component {
   }
 
   sortAlerts(alerts, container) {
-    console.log(alert, container);
     alerts.forEach(alert => {
       container[alert.position].push(alert);
     });

@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Alert Provider should render correctly 1`] = `
+<AlertRenderer
+  alerts={
+    Object {
+      "bottom": Array [],
+      "bottom-full": Array [],
+      "bottom-left": Array [],
+      "bottom-right": Array [],
+      "top": Array [],
+      "top-full": Array [],
+      "top-left": Array [],
+      "top-right": Array [],
+    }
+  }
+  customTheme={Object {}}
+  remove={[Function]}
+/>
+`;

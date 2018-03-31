@@ -67,7 +67,7 @@ exports[`Alert should render basic alert correctly 1`] = `
 </div>
 `;
 
-exports[`Alert should render correctly from snapshot 1`] = `
+exports[`Alert should render correctly 1`] = `
 <div
   className="__rta_container"
   style={

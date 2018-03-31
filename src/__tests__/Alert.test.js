@@ -65,9 +65,39 @@ describe("Alert", () => {
   });
   it("should call remove on clicking close button", () => {
     const remove = jest.fn();
-    const wrapper = mount(<Alert content="test" type="info" remove={remove} closeButton={true} />);
+    const wrapper = mount(
+      <Alert content="test" type="info" remove={remove} closeButton={true} />
+    );
     wrapper.find("div.__rta_close").simulate("click");
     expect(remove).toHaveBeenCalled();
+  });
+  it("should render the content prop into content div", () => {
+    const content = "test";
+    const wrapper = mount(
+      <Alert content={content} type="info" remove={jest.fn()} />
+    );
+    const contentDiv = wrapper.find("div.__rta_content").text();
+    expect(contentDiv).toEqual(content);
+  });
+  it("should call onClose callback on unmount", () => {
+    const mock = jest.fn();
+    const wrapper = mount(
+      <Alert
+        content={"test"}
+        timeout={100}
+        type="basic"
+        remove={jest.fn()}
+        onClose={mock}
+      />
+    );
+    setTimeout(() => expect(mock).toHaveBeenCalled(), 150);
+  });
+  it("should call remove on unmount", () => {
+    const mock = jest.fn();
+    const wrapper = mount(
+      <Alert content={"test"} timeout={100} type="basic" remove={mock} />
+    );
+    setTimeout(() => expect(mock).toHaveBeenCalled(), 150);
   });
 });
 
