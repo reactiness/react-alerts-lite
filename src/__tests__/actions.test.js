@@ -17,12 +17,12 @@ const alert = {
   id: 0,
   closeButton: true,
   content: "this is a test alert",
+  type: "basic",
   duration: 500,
   maxHeight: "200px",
   position: "top-right",
   timeout: 3000,
-  transition: "scale-slide-right",
-  type: "basic"
+  transition: "scale-slide-right"
 };
 
 const defaultProps = {

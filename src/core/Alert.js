@@ -53,23 +53,33 @@ export class Alert extends React.Component {
     } = this.props;
 
     return (
-      <div style={{ ...containerStyle, ...transitionStyle }}>
+      <div
+        className="__rta_container"
+        style={{ ...containerStyle, ...transitionStyle }}
+      >
         <div
+          className="__rta_wrapper"
           style={{
             ...defaultStyle,
             ...theme,
             ...alertStyles[type]
           }}
         >
-          <div style={iconStyle}>
+          <div className="__rta_icon" style={iconStyle}>
             <img
               src={icon ? alertIcons[icon] : alertIcons[type]}
               style={{ margin: "0 auto" }}
             />
           </div>
-          <div style={contentStyle}>{content}</div>
+          <div className="__rta_content" style={contentStyle}>
+            {content}
+          </div>
           {closeButton && (
-            <div style={iconStyle} onClick={this.handlers.handleRemove}>
+            <div
+              className="__rta_close"
+              style={iconStyle}
+              onClick={this.handlers.handleRemove}
+            >
               <img src={close} style={{ margin: "0 auto" }} />
             </div>
           )}
