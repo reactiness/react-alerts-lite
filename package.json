@@ -11,11 +11,14 @@
     "build": "webpack --mode production",
     "lint": "./node_modules/eslint/bin/eslint.js ./src/",
     "test": "jest",
+    "lint-fix": "./node_modules/eslint/bin/eslint.js --fix ./src/",
     "storybook": "start-storybook -p 9001 -c .storybook",
-    "lint-fix": "./node_modules/eslint/bin/eslint.js --fix ./src/"
+    "build-storybook": "build-storybook -c .storybook -o .out",
+    "deploy-storybook": "storybook-to-ghpages"
   },
   "devDependencies": {
     "@storybook/react": "^3.3.15",
+    "@storybook/storybook-deployer": "^2.3.0",
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.0",
     "babel-eslint": "^8.2.2",
