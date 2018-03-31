@@ -96,7 +96,7 @@ export const defaultAlertArgs = {
   timeout: 5000,
   transition: "fade-slide-up",
   duration: 500,
-  position: bottom,
+  position: bottomFull,
   content,
   closeButton: true,
   maxHeight: "200px"

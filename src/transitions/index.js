@@ -18,10 +18,10 @@ import { Test } from "./Test";
 import { transitionConstants } from "../core/constants";
 
 export const transitions = {
-  [transitionConstants.SlideDown]: SlideDown,
-  [transitionConstants.SlideUp]: SlideUp,
-  [transitionConstants.SlideDownUp]: SlideDownUp,
-  [transitionConstants.SlideUpDown]: SlideUpDown,
+  [transitionConstants.slideDown]: SlideDown,
+  [transitionConstants.slideUp]: SlideUp,
+  [transitionConstants.slideDownUp]: SlideDownUp,
+  [transitionConstants.slideUpDown]: SlideUpDown,
   [transitionConstants.fade]: Fade,
   [transitionConstants.slideRight]: SlideRight,
   [transitionConstants.slideLeft]: SlideLeft,
