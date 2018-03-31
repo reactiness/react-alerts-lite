@@ -1,4 +1,11 @@
 import { initialState } from "./initialState";
+import {
+  ADD,
+  REMOVE,
+  REMOVE_TYPE,
+  REMOVE_ALL,
+  ADD_DEFAULT_PROPS
+} from "./actions";
 
 const remove = (state, id) => ({
   ...state,
@@ -21,25 +28,24 @@ const addDefaultProps = (state, props) => ({
 });
 
 export function reducer(state = initialState.alerts, action) {
-  console.log(action);
   switch (action.type) {
-    case "REMOVE": {
+    case REMOVE: {
       return remove(state, action.payload);
     }
 
-    case "ADD": {
+    case ADD: {
       return add(state, action.payload);
     }
 
-    case "REMOVE_TYPE": {
+    case REMOVE_TYPE: {
       return removeType(state, action.payload);
     }
 
-    case "REMOVE_ALL": {
+    case REMOVE_ALL: {
       return initialState.alerts;
     }
 
-    case "ADD_DEFAULT_PROPS": {
+    case ADD_DEFAULT_PROPS: {
       return addDefaultProps(state, action.payload);
     }
 

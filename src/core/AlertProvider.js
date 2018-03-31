@@ -3,7 +3,7 @@ import { reducer } from "../state/reducer";
 import { initialState } from "../state/initialState";
 import { AlertRenderer } from "./AlertRenderer";
 import { Store } from "../state/Store";
-import { remove, addDefaultProps } from "../state/actions";
+import { remove, addDefaultProps } from "../state/actionCreators";
 import { positionsArray } from "./constants";
 
 const reducers = {

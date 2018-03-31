@@ -1,23 +1,5 @@
-export const add = alert => ({
-  type: "ADD",
-  payload: alert
-});
-
-export const remove = alert => ({
-  type: "REMOVE",
-  payload: alert
-});
-
-export const removeType = type => ({
-  type: "REMOVE_TYPE",
-  payload: type
-});
-
-export const removeAll = () => ({
-  type: "REMOVE_ALL"
-});
-
-export const addDefaultProps = props => ({
-  type: "ADD_DEFAULT_PROPS",
-  payload: props
-});
+export const ADD = "ADD";
+export const REMOVE = "REMOVE";
+export const REMOVE_TYPE = "REMOVE_TYPE";
+export const REMOVE_ALL = "REMOVE_ALL";
+export const ADD_DEFAULT_PROPS = "ADD_DEFAULT_PROPS";

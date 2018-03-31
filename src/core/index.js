@@ -1,7 +1,7 @@
 import React from "react";
 import { Alert } from "./Alert";
 import { store } from "./AlertProvider";
-import { add, removeAll, removeType } from "../state/actions";
+import { add, removeAll, removeType } from "../state/actionCreators";
 import { defaultAlertArgs } from "./constants";
 
 let counter = 0;
