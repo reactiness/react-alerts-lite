@@ -162,7 +162,9 @@ describe("Alert Renderer", () => {
         transition: transitions[transitionConstants.scaleSlideUp]
       }
     ];
-    const wrapper = mount(<AlertRenderer alerts={sortedAlerts} transitions={customTransitions} />);
+    const wrapper = mount(
+      <AlertRenderer alerts={sortedAlerts} transitions={customTransitions} />
+    );
     const selectTransition = wrapper.instance().selectTransition;
     const transition = selectTransition("custom-transition-two");
     expect(transition).toEqual(transitions[transitionConstants.scaleSlideUp]);
