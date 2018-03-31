@@ -452,7 +452,7 @@ storiesOf("Transitions", module)
             content,
             type: "basic",
             transition: "rotate-left",
-            position: "bottom-left"
+            position: "bottom-right"
           })
         }
       >
@@ -469,7 +469,7 @@ storiesOf("Transitions", module)
             content,
             type: "basic",
             transition: "rotate-right",
-            position: "bottom-right"
+            position: "bottom-left"
           })
         }
       >
@@ -537,7 +537,7 @@ storiesOf("Transitions", module)
             content,
             type: "basic",
             transition: "scale-slide-left",
-            position: "bottom-left"
+            position: "bottom-right"
           })
         }
       >
@@ -554,7 +554,7 @@ storiesOf("Transitions", module)
             content,
             type: "basic",
             transition: "scale-slide-right",
-            position: "bottom-right"
+            position: "bottom-left"
           })
         }
       >

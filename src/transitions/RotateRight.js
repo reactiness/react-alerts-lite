@@ -9,7 +9,7 @@ export function RotateRight({ children, duration, maxHeight, in: inProp }) {
   const transitionStyles = {
     entering: {
       opacity: 0,
-      transform: "translateX(+100%) rotate(-30deg)",
+      transform: "translateX(-100%) rotate(-30deg)",
       maxHeight: "0px"
     },
     entered: {
@@ -19,7 +19,7 @@ export function RotateRight({ children, duration, maxHeight, in: inProp }) {
     },
     exiting: {
       opacity: 0,
-      transform: "translateX(+100%) rotate(30deg)",
+      transform: "translateX(-100%) rotate(-30deg)",
       maxHeight: "0px"
     }
   };

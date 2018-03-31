@@ -9,7 +9,7 @@ export function ScaleSlideRight({ children, duration, maxHeight, in: inProp }) {
   const transitionStyles = {
     entering: {
       opacity: 0,
-      transform: "translateX(+100%) scale(0.4)",
+      transform: "translateX(-100%) scale(0.4)",
       maxHeight: "0px"
     },
     entered: {
@@ -19,7 +19,7 @@ export function ScaleSlideRight({ children, duration, maxHeight, in: inProp }) {
     },
     exiting: {
       opacity: 0,
-      transform: "translateX(+100%) scale(0.4)",
+      transform: "translateX(-100%) scale(0.4)",
       maxHeight: "0px"
     }
   };

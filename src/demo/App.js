@@ -126,7 +126,7 @@ export default class App extends React.Component {
               onClick={() =>
                 this.handlePush({
                   position: "bottom-left",
-                  transition: "rotate-left"
+                  transition: "scale-slide-right"
                 })
               }
             >
@@ -136,7 +136,7 @@ export default class App extends React.Component {
               onClick={() =>
                 this.handlePush({
                   position: "bottom-right",
-                  transition: "rotate-right"
+                  transition: "scale-slide-left"
                 })
               }
             >
