@@ -13,7 +13,7 @@ describe("Alert", () => {
       <Alert
         content="this is a test alert"
         type="success"
-        pos={0}
+        pos={"bottom"}
         remove={jest.fn()}
       />
     );

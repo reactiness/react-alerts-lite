@@ -1,14 +1,14 @@
 import React from "react";
 import { Alert } from "./Alert";
 import { store } from "./AlertProvider";
-import { actions } from "../state/actions";
+import { add, removeAll, removeType } from "../state/actions";
 import { defaultAlertArgs } from "./constants";
 
 let counter = 0;
 
-const add = args => {
+const addAlert = args => {
   store.dispatch(
-    actions.add({
+    add({
       id: counter,
       ...args
     })
@@ -17,14 +17,16 @@ const add = args => {
 };
 
 const remove = type => {
-  type
-    ? store.dispatch(actions.removeType(type))
-    : store.dispatch(actions.removeAll());
+  type ? store.dispatch(removeType(type)) : store.dispatch(removeAll());
 };
 
 export class Alerts {
   static push(args) {
-    add({ ...defaultAlertArgs, ...store.state.alerts.defaultProps, ...args });
+    addAlert({
+      ...defaultAlertArgs,
+      ...store.state.alerts.defaultProps,
+      ...args
+    });
   }
   static remove(type) {
     remove(type);

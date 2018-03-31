@@ -3,7 +3,7 @@ import { reducer } from "../state/reducer";
 import { initialState } from "../state/initialState";
 import { AlertRenderer } from "./AlertRenderer";
 import { Store } from "../state/Store";
-import { actions } from "../state/actions";
+import { remove, addDefaultProps } from "../state/actions";
 import { positionsArray } from "./constants";
 
 const reducers = {
@@ -14,14 +14,14 @@ export const store = new Store(reducers, initialState);
 
 const createHandlers = dispatch => {
   const handleRemove = id => {
-    dispatch(actions.remove(id));
+    dispatch(remove(id));
   };
-  const addDefaultProps = props => {
-    dispatch(actions.addDefaultProps(props));
+  const handleAddDefaultProps = props => {
+    dispatch(addDefaultProps(props));
   };
   return {
     handleRemove,
-    addDefaultProps
+    handleAddDefaultProps
   };
 };
 
@@ -43,6 +43,7 @@ export class AlertProvider extends Component {
   }
 
   sortAlerts(alerts, container) {
+    console.log(alert, container);
     alerts.forEach(alert => {
       container[alert.position].push(alert);
     });
@@ -54,7 +55,7 @@ export class AlertProvider extends Component {
     store.subscribe(store =>
       this.sortAlerts(store.alerts.current, initEmptyPositionsObject())
     );
-    if (defaultProps) this.handlers.addDefaultProps(defaultProps);
+    if (defaultProps) this.handlers.handleAddDefaultProps(defaultProps);
   }
 
   render() {

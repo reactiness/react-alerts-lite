@@ -1,27 +1,27 @@
 import { initialState } from "./initialState";
 
-const remove = (state, id) => {
-  return {
-    ...state,
-    current: state.current.filter(el => el.id !== id)
-  };
-};
+const remove = (state, id) => ({
+  ...state,
+  current: state.current.filter(el => el.id !== id)
+});
 
-const add = (state, alert) => {
-  return {
-    ...state,
-    current: [...state.current, alert]
-  };
-};
+const add = (state, alert) => ({
+  ...state,
+  current: [...state.current, alert]
+});
 
-const removeType = (state, type) => {
-  return {
-    ...state,
-    current: state.current.filter(el => el.type !== type)
-  };
-};
+const removeType = (state, type) => ({
+  ...state,
+  current: state.current.filter(el => el.type !== type)
+});
+
+const addDefaultProps = (state, props) => ({
+  ...state,
+  defaultProps: props
+});
 
 export function reducer(state = initialState.alerts, action) {
+  console.log(action);
   switch (action.type) {
     case "REMOVE": {
       return remove(state, action.payload);
@@ -40,10 +40,7 @@ export function reducer(state = initialState.alerts, action) {
     }
 
     case "ADD_DEFAULT_PROPS": {
-      return {
-        ...state,
-        defaultProps: action.payload
-      };
+      return addDefaultProps(state, action.payload);
     }
 
     default:
