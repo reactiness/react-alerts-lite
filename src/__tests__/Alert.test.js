@@ -1,6 +1,7 @@
 import React from "react";
 // import { shallow } from "enzyme";
 import { Alert } from "../core/Alert.js";
+import toJson from "enzyme-to-json";
 
 describe("Alert", () => {
   it("should be defined", () => {
@@ -16,6 +17,6 @@ describe("Alert", () => {
         remove={jest.fn()}
       />
     );
-    expect(tree).toMatchSnapshot();
+    expect(toJson(tree)).toMatchSnapshot();
   });
 });
