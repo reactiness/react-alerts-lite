@@ -99,3 +99,5 @@ export const defaultAlertArgs = {
   closeButton: true,
   maxHeight: "200px"
 };
+
+export const CLASS_PREFIX = "__rta_";

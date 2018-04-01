@@ -1,8 +1,8 @@
 import { Alert } from "./Alert";
 import React, { Component } from "react";
 import TransitionGroup from "react-transition-group/TransitionGroup";
-import { containerStyle, positionStyle, themeStyles } from "../css/styles";
-import { positionsArray, positionSections } from "./constants";
+import { containerStyle, themeStyles } from "../css/styles";
+import { positionsArray, positionSections, CLASS_PREFIX } from "./constants";
 import { transitions as stockTransitions } from "../transitions";
 
 export class AlertRenderer extends Component {
@@ -50,7 +50,8 @@ export class AlertRenderer extends Component {
     const { alerts, remove, theme } = this.props;
     return positionsArray.map(position => (
       <TransitionGroup
-        style={{ ...positionStyle.common, ...positionStyle[position] }}
+        className={`${CLASS_PREFIX}pos_common ${CLASS_PREFIX}pos_${position}`}
+        // style={{ ...positionStyle.common, ...positionStyle[position] }}
         key={`__rta_pos_${position}`}
       >
         {alerts[position].map(alert => {
@@ -59,7 +60,7 @@ export class AlertRenderer extends Component {
             <Transition
               duration={alert.duration}
               key={`__rta_alert_${alert.id}`}
-              maxHeight={alert.maxHeight} // Little bit hacky - maybe better way than this
+              maxHeight={alert.maxHeight}
             >
               <Alert
                 theme={this.selectTheme(theme)}
