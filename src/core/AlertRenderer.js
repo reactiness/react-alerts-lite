@@ -69,7 +69,6 @@ export class AlertRenderer extends Component {
         key={`${CLASS_PREFIX}key_pos_${position}`}
       >
         {alerts[position].map(alert => {
-          console.log(alert.type, alertConstants[alert.type]);
           const Transition = this.selectTransition(alert.transition);
           return (
             <Transition
