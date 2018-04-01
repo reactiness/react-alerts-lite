@@ -1,3 +1,6 @@
+[![CircleCI](https://circleci.com/gh/reactiness/react-alerts-lite.svg?style=svg)](https://coveralls.io/github/reactiness/react-alerts-lite?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/reactiness/react-alerts-lite/badge.svg?branch=master)](https://coveralls.io/github/reactiness/react-alerts-lite?branch=master)
+
 # react-alerts-lite
 
 ## Synopsis
