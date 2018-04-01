@@ -18,6 +18,13 @@
     "build-storybook": "build-storybook -c .storybook -o .out",
     "deploy-storybook": "storybook-to-ghpages"
   },
+  "keywords": [
+    "react",
+    "alerts",
+    "notifications",
+    "react-transition-group",
+    "toast"
+  ],
   "devDependencies": {
     "@storybook/react": "^3.3.15",
     "@storybook/storybook-deployer": "^2.3.0",
