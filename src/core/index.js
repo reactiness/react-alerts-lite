@@ -33,3 +33,5 @@ export class Alerts {
     remove(type);
   }
 }
+
+export default Alerts;

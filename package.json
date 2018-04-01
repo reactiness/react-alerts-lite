@@ -52,15 +52,16 @@
     "mini-css-extract-plugin": "^0.2.0",
     "prettier": "^1.11.1",
     "react-test-renderer": "^16.3.0",
-    "react-transition-group": "^2.2.1",
-    "sinon": "^4.5.0",
     "url-loader": "^1.0.1",
     "webpack": "^4.2.0",
     "webpack-cli": "^2.0.13",
     "webpack-dev-server": "^3.1.1"
   },
-  "dependencies": {
+  "peer-dependencies": {
     "react": "^16.2.0",
     "react-dom": "^16.2.0"
+  },
+  "dependencies": {
+    "react-transition-group": "^2.2.1"
   }
 }
