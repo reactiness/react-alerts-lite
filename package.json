@@ -1,10 +1,10 @@
 {
-  "name": "react-transition-alerts",
+  "name": "react-alerts-lite",
   "version": "0.1.0",
-  "description": "Library for alerts built using react and react-transitions",
+  "description": "Minimal library for alerts built using react and react-transitions",
   "main": "src/index.js",
   "style": "dist/main.css",
-  "repository": "git@github.com:reactiness/react-transition-alerts.git",
+  "repository": "git@github.com:reactiness/react-alerts-lite.git",
   "author": "Geoff Whitehead",
   "license": "MIT",
   "scripts": {

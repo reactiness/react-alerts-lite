@@ -2,36 +2,217 @@
 
 ## Synopsis
 
-At the top of the file there should be a short introduction and/ or overview that explains **what** the project is. This description should match descriptions added for package managers (Gemspec, package.json, etc.)
+A minimal library for rendering alert / toasts / popups / notifications in react apps.
 
 ## Storybook
 
-https://reactiness.github.io/react-transition-alerts/
+https://reactiness.github.io/react-alerts-lite/
 
 ## Code Example
 
-Show what the library does as concisely as possible, developers should be able to figure out **how** your project solves their problem by looking at the code example. Make sure the API you are showing off is obvious, and that your code is short and concise.
+### Importing AlertProvider
+Import the AlertProvider and render before you need to use an Alert. 
+You only need to render AlertProvider once.
 
-## Motivation
+```sh
+import React, { Component } from 'react';
+import { AlertProvider } from "react-alerts-lite"
 
-A short description of the motivation behind the creation and maintenance of the project. This should explain **why** the project exists.
+export class App extends Component {
+  render() {
+    return (
+      <div>
+        <AlertProvider/>
+        <Root/>
+      </div>
+    );
+  }
+}
+```
+
+### Importing Alert
+Import Alert where you need to display an alert.
+
+```sh
+import React from "react";
+import { Alert } from "react-alerts-lite"
+
+export class Demo extends React.Component {
+    render() {
+        return (
+            <button onClick={() =>
+                Alert.push({
+                    type: "success"
+                    position: "bottom-full",
+                    transition: "fade"
+                })
+              }
+            >
+        )
+    }
+}
+```
 
 ## Installation
 
-Provide code examples and explanations of how to get the project.
+react-alerts-lite requires react and react-dom to run. It has a single dependency on react-transition-group.
+
+```sh
+$ npm install --save-dev react-alerts-lite
+```
+or
+```sh
+$ yarn add --dev react-alerts-lite
+```
 
 ## API Reference
 
-Depending on the size of the project, if it is small and simple enough the reference docs can be added to the README. For medium size to larger projects it is important to at least provide a link to where the API reference docs live.
+### AlertProvider
+#### Themes:
+```sh
+    <AlertProvider
+        theme="simple" | "rounded" | "shadowed" | "flat" | "bordered"
+        transitions=""
+    />
+```
+#### Custom transitions: Create your own
+The transitions prop accepts an array of transitions with the :name and :transitions keys. 
+Refer to react-transition-group documentation on creating transitions
+See bottom of page for simple template
+Note: maxHeight and duration are passed into transitions as props - use them where needed.
+```sh
+    import ScaleSlideRight from "../path/to/my/react-transition-group-custom-transition"
+    import ScaleSlideRight from "../path/to/my/react-transition-group-custom-transition"
+    
+    const customTransitions = [
+        {
+            name: "custom-transition_one",
+            transition: ScaleSlideRight
+        },
+        {
+            name: "custom-transition-two",
+            transition: ScaleSlideUp
+        }
+    ];
+```
+pass your transitions array into AlertProvider
+```sh
+    <AlertProvider
+        transitions=[myCustomTransitions]
+    />
+```
+reference your transition with the :name you provided.
+```sh
+    <button onClick={() =>
+        Alert.push({
+            transition: "custom-transition_one"
+        })
+      }
+    >
+```
 
-## Tests
+#### DefaultProps:
+you can pass default props into the AlertProvider to apply to all alerts.
+Props passed directly to an Alert take precedence so you can overwrite these where necessary.
+```sh
+    <AlertProvider
+        defaultProps={
+            type: "error",
+            position: "bottom",
+            transition: "slide-up"
+        }
+    />
+```
+Now when you render an alert with no props defaultProps will take precedence over stock props.
+```sh
+    <button onClick={() =>
+        Alert.push()
+      }
+    >
+```
+Note: the alert created here would now have type "error", position: "bottom", and transition: "slide-up"
 
-Describe and show how to run the tests with code examples.
+### Alert
+An alert accepts the following arguments
+```sh
+    Alert.push({
+        type: "basic" | "error" | "warning" | "info" | "error"
+        timeout: <int>
+        duration: <int>
+        position: "top-full" | "top-left" | "top" | "top-right" | "bottom-left" | "bottom" | "bottom-right" | "bottom-full"
+        content: <your content to render>
+        closeButton: {true | false}
+        onClose: () => {alert(console.log("my alert has unmounted))}
+        maxHeight: <int>
+        transition: "none" | "slide-up" | "slide-down" | "slide-up-through" | "fade" | "slide-right" | "slide-left" | "rotate-left" | "rotate-right" | "scale" | "scale-slide-down" | "scale-slide-left" | "scale-slide-right" | "scale-slide-up"
+    })
+```
 
+- timeout: How long before your alert unmounts
+- duration: How long the transition animation will take
+- closeButton: Whether to display the close button or not
+- onClose: callback for when the alert unmounts
+- maxHeight: Used in transitions to determine positioning of alerts in stack
+
+
+### Custom Transitions Example
+Example of a simple fade transition.
+```sh
+import Transition from "react-transition-group/Transition";
+import React from "react";
+
+export function Fade({ children, maxHeight, duration, in: inProp }) {
+  const defaultStyle = {
+    transition: `${duration}ms ease-in`,
+    transitionProperty: "opacity, max-height"
+  };
+  const transitionStyles = {
+    entering: {
+      opacity: 0,
+      maxHeight: "0px"
+    },
+    entered: {
+      opacity: 1,
+      maxHeight
+    },
+    exiting: {
+      opacity: 0,
+      maxHeight: "0px"
+    }
+  };
+
+  return (
+    <Transition
+      in={inProp}
+      timeout={{
+        enter: 0,
+        exit: duration
+      }}
+    >
+      {status => {
+        if (status === "exited") {
+          return null;
+        }
+        const currentStyles = transitionStyles[status];
+        return React.cloneElement(children, {
+          style: { ...defaultStyle, ...currentStyles }
+        });
+      }}
+    </Transition>
+  );
+}
+
+```
 ## Contributors
 
-Let people know how they can dive into the project, include important links to things like issue trackers, irc, twitter accounts if applicable.
+I'll post issues and enhancements as i find them - feel free to contribute :)
 
 ## License
 
-A short snippet describing the license (MIT, Apache, etc.)
+MIT
+
+### Tech
+
+peer-dependencies: react, react-dom
+dependencies: react-transition-group
+
