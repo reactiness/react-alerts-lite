@@ -10,7 +10,7 @@ const content =
 storiesOf("Types", module)
   .add("Success", () => (
     <div>
-      <AlertProvider theme="flat-rounded" />
+      <AlertProvider />
       <button
         onClick={() =>
           Alerts.push({

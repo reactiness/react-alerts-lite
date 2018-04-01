@@ -10,7 +10,7 @@ const content =
 storiesOf("Positions", module)
   .add("Top left", () => (
     <div>
-      <AlertProvider theme="flat-rounded" />
+      <AlertProvider />
       <button
         onClick={() =>
           Alerts.push({
