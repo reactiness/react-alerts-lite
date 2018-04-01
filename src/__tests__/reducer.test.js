@@ -1,12 +1,12 @@
-import { reducer } from "../state/reducer";
-import { initialState } from "../state/initialState";
+import { reducer } from "../core/state/reducer";
+import { initialState } from "../core/state/initialState";
 import {
   ADD,
   REMOVE,
   REMOVE_TYPE,
   REMOVE_ALL,
   ADD_DEFAULT_PROPS
-} from "../state/actions";
+} from "../core/state/actions";
 
 const alert = {
   id: 0,

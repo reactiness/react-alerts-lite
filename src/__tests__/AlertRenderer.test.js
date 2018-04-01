@@ -5,7 +5,7 @@ import {
   positionConstants,
   themeConstants
 } from "../core/constants";
-import { initialState } from "../state/initialState";
+import { initialState } from "../core/state/initialState";
 import { transitions } from "../transitions";
 import { themeStyles } from "../css/styles";
 

@@ -4,14 +4,14 @@ import {
   REMOVE_TYPE,
   REMOVE_ALL,
   ADD_DEFAULT_PROPS
-} from "../state/actions";
+} from "../core/state/actions";
 import {
   add,
   remove,
   removeAll,
   removeType,
   addDefaultProps
-} from "../state/actionCreators";
+} from "../core/state/actionCreators";
 
 const alert = {
   id: 0,

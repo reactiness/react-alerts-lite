@@ -20,8 +20,9 @@
   },
   "keywords": [
     "react",
+    "alert",
     "alerts",
-    "notifications",
+    "notification",
     "react-transition-group",
     "toast"
   ],
@@ -55,7 +56,9 @@
     "url-loader": "^1.0.1",
     "webpack": "^4.2.0",
     "webpack-cli": "^2.0.13",
-    "webpack-dev-server": "^3.1.1"
+    "webpack-dev-server": "^3.1.1",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0"
   },
   "peer-dependencies": {
     "react": "^16.2.0",
