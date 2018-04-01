@@ -5,6 +5,7 @@ import { AlertRenderer } from "./AlertRenderer";
 import { Store } from "./state/Store";
 import { remove, addDefaultProps } from "./state/actionCreators";
 import { positionsArray } from "./constants";
+import "../css/styles.css";
 
 const reducers = {
   alerts: reducer
