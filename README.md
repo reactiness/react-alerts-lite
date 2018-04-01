@@ -1,4 +1,4 @@
-# react-transition-alerts
+# react-alerts-lite
 
 ## Synopsis
 
