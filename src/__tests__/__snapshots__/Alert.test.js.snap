@@ -2,64 +2,18 @@
 
 exports[`Alert should render basic alert correctly 1`] = `
 <div
-  className="__rta_container"
-  style={
-    Object {
-      "overflow": "hidden",
-      "width": "100%",
-    }
-  }
+  className="__rta_container undefined"
 >
   <div
-    className="__rta_wrapper"
-    style={
-      Object {
-        "backgroundColor": "rgba(192,192,192,0.8)",
-        "color": "white",
-        "display": "flex",
-        "fontFamily": "Lato,Helvetica Neue,Arial,Helvetica,sans-serif",
-        "fontSize": "13px",
-        "justifyContent": "flex-start",
-        "minHeight": "40px",
-        "overflow": "hidden",
-        "width": "100%",
-        "zIndex": 50,
-      }
-    }
+    className="__rta_wrapper undefined _rta_type_basic"
   >
     <div
       className="__rta_icon"
-      style={
-        Object {
-          "alignItems": "flex-start",
-          "display": "flex",
-          "padding": "10px",
-          "width": "40px",
-        }
-      }
     >
-      <img
-        src={
-          Object {
-            "process": [Function],
-          }
-        }
-        style={
-          Object {
-            "margin": "0 auto",
-          }
-        }
-      />
+      <img />
     </div>
     <div
       className="__rta_content"
-      style={
-        Object {
-          "display": "flex",
-          "padding": "10px",
-          "width": "100%",
-        }
-      }
     >
       test
     </div>
@@ -69,88 +23,29 @@ exports[`Alert should render basic alert correctly 1`] = `
 
 exports[`Alert should render correctly 1`] = `
 <div
-  className="__rta_container"
-  style={
-    Object {
-      "overflow": "hidden",
-      "width": "100%",
-    }
-  }
+  className="__rta_container undefined"
 >
   <div
-    className="__rta_wrapper"
-    style={
-      Object {
-        "backgroundColor": "rgba(76, 175, 80, 0.8)",
-        "color": "white",
-        "display": "flex",
-        "fontFamily": "Lato,Helvetica Neue,Arial,Helvetica,sans-serif",
-        "fontSize": "13px",
-        "justifyContent": "flex-start",
-        "minHeight": "40px",
-        "overflow": "hidden",
-        "width": "100%",
-        "zIndex": 50,
-      }
-    }
+    className="__rta_wrapper undefined success"
   >
     <div
       className="__rta_icon"
-      style={
-        Object {
-          "alignItems": "flex-start",
-          "display": "flex",
-          "padding": "10px",
-          "width": "40px",
-        }
-      }
     >
-      <img
-        src={
-          Object {
-            "process": [Function],
-          }
-        }
-        style={
-          Object {
-            "margin": "0 auto",
-          }
-        }
-      />
+      <img />
     </div>
     <div
       className="__rta_content"
-      style={
-        Object {
-          "display": "flex",
-          "padding": "10px",
-          "width": "100%",
-        }
-      }
     >
       this is a test alert
     </div>
     <div
       className="__rta_close"
       onClick={[Function]}
-      style={
-        Object {
-          "alignItems": "flex-start",
-          "display": "flex",
-          "padding": "10px",
-          "width": "40px",
-        }
-      }
     >
       <img
         src={
           Object {
             "process": [Function],
-          }
-        }
-        style={
-          Object {
-            "margin": "0 auto",
           }
         }
       />
@@ -161,64 +56,18 @@ exports[`Alert should render correctly 1`] = `
 
 exports[`Alert should render error alert correctly 1`] = `
 <div
-  className="__rta_container"
-  style={
-    Object {
-      "overflow": "hidden",
-      "width": "100%",
-    }
-  }
+  className="__rta_container undefined"
 >
   <div
-    className="__rta_wrapper"
-    style={
-      Object {
-        "backgroundColor": "rgba(244, 67, 54, 0.8)",
-        "color": "white",
-        "display": "flex",
-        "fontFamily": "Lato,Helvetica Neue,Arial,Helvetica,sans-serif",
-        "fontSize": "13px",
-        "justifyContent": "flex-start",
-        "minHeight": "40px",
-        "overflow": "hidden",
-        "width": "100%",
-        "zIndex": 50,
-      }
-    }
+    className="__rta_wrapper undefined _rta_type_error"
   >
     <div
       className="__rta_icon"
-      style={
-        Object {
-          "alignItems": "flex-start",
-          "display": "flex",
-          "padding": "10px",
-          "width": "40px",
-        }
-      }
     >
-      <img
-        src={
-          Object {
-            "process": [Function],
-          }
-        }
-        style={
-          Object {
-            "margin": "0 auto",
-          }
-        }
-      />
+      <img />
     </div>
     <div
       className="__rta_content"
-      style={
-        Object {
-          "display": "flex",
-          "padding": "10px",
-          "width": "100%",
-        }
-      }
     >
       test
     </div>
@@ -228,64 +77,18 @@ exports[`Alert should render error alert correctly 1`] = `
 
 exports[`Alert should render info alert correctly 1`] = `
 <div
-  className="__rta_container"
-  style={
-    Object {
-      "overflow": "hidden",
-      "width": "100%",
-    }
-  }
+  className="__rta_container undefined"
 >
   <div
-    className="__rta_wrapper"
-    style={
-      Object {
-        "backgroundColor": "rgba(33, 150, 243, 0.8)",
-        "color": "white",
-        "display": "flex",
-        "fontFamily": "Lato,Helvetica Neue,Arial,Helvetica,sans-serif",
-        "fontSize": "13px",
-        "justifyContent": "flex-start",
-        "minHeight": "40px",
-        "overflow": "hidden",
-        "width": "100%",
-        "zIndex": 50,
-      }
-    }
+    className="__rta_wrapper undefined _rta_type_info"
   >
     <div
       className="__rta_icon"
-      style={
-        Object {
-          "alignItems": "flex-start",
-          "display": "flex",
-          "padding": "10px",
-          "width": "40px",
-        }
-      }
     >
-      <img
-        src={
-          Object {
-            "process": [Function],
-          }
-        }
-        style={
-          Object {
-            "margin": "0 auto",
-          }
-        }
-      />
+      <img />
     </div>
     <div
       className="__rta_content"
-      style={
-        Object {
-          "display": "flex",
-          "padding": "10px",
-          "width": "100%",
-        }
-      }
     >
       test
     </div>
@@ -295,64 +98,18 @@ exports[`Alert should render info alert correctly 1`] = `
 
 exports[`Alert should render success alert correctly 1`] = `
 <div
-  className="__rta_container"
-  style={
-    Object {
-      "overflow": "hidden",
-      "width": "100%",
-    }
-  }
+  className="__rta_container undefined"
 >
   <div
-    className="__rta_wrapper"
-    style={
-      Object {
-        "backgroundColor": "rgba(76, 175, 80, 0.8)",
-        "color": "white",
-        "display": "flex",
-        "fontFamily": "Lato,Helvetica Neue,Arial,Helvetica,sans-serif",
-        "fontSize": "13px",
-        "justifyContent": "flex-start",
-        "minHeight": "40px",
-        "overflow": "hidden",
-        "width": "100%",
-        "zIndex": 50,
-      }
-    }
+    className="__rta_wrapper undefined _rta_type_success"
   >
     <div
       className="__rta_icon"
-      style={
-        Object {
-          "alignItems": "flex-start",
-          "display": "flex",
-          "padding": "10px",
-          "width": "40px",
-        }
-      }
     >
-      <img
-        src={
-          Object {
-            "process": [Function],
-          }
-        }
-        style={
-          Object {
-            "margin": "0 auto",
-          }
-        }
-      />
+      <img />
     </div>
     <div
       className="__rta_content"
-      style={
-        Object {
-          "display": "flex",
-          "padding": "10px",
-          "width": "100%",
-        }
-      }
     >
       test
     </div>
@@ -362,64 +119,18 @@ exports[`Alert should render success alert correctly 1`] = `
 
 exports[`Alert should render warning alert correctly 1`] = `
 <div
-  className="__rta_container"
-  style={
-    Object {
-      "overflow": "hidden",
-      "width": "100%",
-    }
-  }
+  className="__rta_container undefined"
 >
   <div
-    className="__rta_wrapper"
-    style={
-      Object {
-        "backgroundColor": "rgba(255, 152, 0, 0.8)",
-        "color": "white",
-        "display": "flex",
-        "fontFamily": "Lato,Helvetica Neue,Arial,Helvetica,sans-serif",
-        "fontSize": "13px",
-        "justifyContent": "flex-start",
-        "minHeight": "40px",
-        "overflow": "hidden",
-        "width": "100%",
-        "zIndex": 50,
-      }
-    }
+    className="__rta_wrapper undefined _rta_type_warning"
   >
     <div
       className="__rta_icon"
-      style={
-        Object {
-          "alignItems": "flex-start",
-          "display": "flex",
-          "padding": "10px",
-          "width": "40px",
-        }
-      }
     >
-      <img
-        src={
-          Object {
-            "process": [Function],
-          }
-        }
-        style={
-          Object {
-            "margin": "0 auto",
-          }
-        }
-      />
+      <img />
     </div>
     <div
       className="__rta_content"
-      style={
-        Object {
-          "display": "flex",
-          "padding": "10px",
-          "width": "100%",
-        }
-      }
     >
       test
     </div>
@@ -429,64 +140,18 @@ exports[`Alert should render warning alert correctly 1`] = `
 
 exports[`Alert should render without close icon when closeButton prop equals false 1`] = `
 <div
-  className="__rta_container"
-  style={
-    Object {
-      "overflow": "hidden",
-      "width": "100%",
-    }
-  }
+  className="__rta_container undefined"
 >
   <div
-    className="__rta_wrapper"
-    style={
-      Object {
-        "backgroundColor": "rgba(76, 175, 80, 0.8)",
-        "color": "white",
-        "display": "flex",
-        "fontFamily": "Lato,Helvetica Neue,Arial,Helvetica,sans-serif",
-        "fontSize": "13px",
-        "justifyContent": "flex-start",
-        "minHeight": "40px",
-        "overflow": "hidden",
-        "width": "100%",
-        "zIndex": 50,
-      }
-    }
+    className="__rta_wrapper undefined success"
   >
     <div
       className="__rta_icon"
-      style={
-        Object {
-          "alignItems": "flex-start",
-          "display": "flex",
-          "padding": "10px",
-          "width": "40px",
-        }
-      }
     >
-      <img
-        src={
-          Object {
-            "process": [Function],
-          }
-        }
-        style={
-          Object {
-            "margin": "0 auto",
-          }
-        }
-      />
+      <img />
     </div>
     <div
       className="__rta_content"
-      style={
-        Object {
-          "display": "flex",
-          "padding": "10px",
-          "width": "100%",
-        }
-      }
     >
       this is a test alert
     </div>

@@ -3,11 +3,11 @@ import { AlertRenderer } from "../core/AlertRenderer";
 import {
   transitionConstants,
   positionConstants,
-  themeConstants
+  themeConstants,
+  CLASS_PREFIX
 } from "../core/constants";
 import { initialState } from "../core/state/initialState";
 import { transitions } from "../transitions";
-import { themeStyles } from "../css/styles";
 
 const alert = {
   id: 0,
@@ -98,25 +98,25 @@ describe("Alert Renderer", () => {
   });
   it("should select the correct theme", () => {
     const wrapper = mount(
-      <AlertRenderer alerts={sortedAlerts} theme={themeConstants.rounded} />
+      <AlertRenderer alerts={sortedAlerts} />
     );
     const selectTheme = wrapper.instance().selectTheme;
     let theme = selectTheme(themeConstants.rounded);
-    expect(theme).toEqual(themeStyles[themeConstants.rounded]);
-    theme = selectTheme(themeConstants.flatRounded);
-    expect(theme).toEqual(themeStyles[themeConstants.flatRounded]);
+    expect(theme).toEqual(`${CLASS_PREFIX}theme_rounded`);
+    theme = selectTheme(themeConstants.simple);
+    expect(theme).toEqual(`${CLASS_PREFIX}theme_simple`);
     theme = selectTheme(themeConstants.shadowed);
-    expect(theme).toEqual(themeStyles[themeConstants.shadowed]);
+    expect(theme).toEqual(`${CLASS_PREFIX}theme_shadowed`);
     theme = selectTheme(themeConstants.flat);
-    expect(theme).toEqual(themeStyles[themeConstants.flat]);
+    expect(theme).toEqual(`${CLASS_PREFIX}theme_flat`);
     theme = selectTheme(themeConstants.bordered);
-    expect(theme).toEqual(themeStyles[themeConstants.bordered]);
+    expect(theme).toEqual(`${CLASS_PREFIX}theme_bordered`);
   });
-  it("should return empty theme on error or invalid keyname", () => {
+  it("should return empty string on error or invalid keyname", () => {
     const wrapper = mount(<AlertRenderer alerts={sortedAlerts} />);
     const selectTheme = wrapper.instance().selectTheme;
     let theme = selectTheme("invalid theme key");
-    expect(theme).toEqual({});
+    expect(theme).toEqual("");
   });
   it("should call selectTheme when providing theme", () => {
     const spy = jest.spyOn(AlertRenderer.prototype, "selectTheme");
@@ -129,27 +129,6 @@ describe("Alert Renderer", () => {
     const spy = jest.spyOn(AlertRenderer.prototype, "selectTransition");
     const wrapper = mount(<AlertRenderer alerts={sortedAlerts} />);
     expect(spy).toHaveBeenCalledTimes(10);
-  });
-  it("should apply a custom theme when provided as a prop", () => {
-    const customTheme = { border: "1px solid red" };
-    const wrapper = mount(
-      <AlertRenderer alerts={sortedAlerts} customTheme={customTheme} />
-    );
-    const selectTheme = wrapper.instance().selectTheme;
-    let theme = selectTheme();
-    expect(theme).toEqual(customTheme);
-  });
-  it("should merge a custom theme with selected theme with customTheme taking precedence", () => {
-    const customTheme = { border: "1px solid red" };
-    const wrapper = mount(
-      <AlertRenderer alerts={sortedAlerts} customTheme={customTheme} />
-    );
-    const selectTheme = wrapper.instance().selectTheme;
-    let theme = selectTheme(themeConstants.bordered);
-    expect(theme).toEqual({
-      ...themeStyles[themeConstants.bordered],
-      ...customTheme
-    });
   });
   it("should select custom transition when provided via props", () => {
     const customTransitions = [

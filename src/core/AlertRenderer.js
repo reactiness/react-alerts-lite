@@ -51,7 +51,6 @@ export class AlertRenderer extends Component {
       if (themeString) {
         const temp = themeConstants;
         const themeExists = themeConstants[themeString];
-        console.log(themeString, themeExists);
         if (themeExists) return `${CLASS_PREFIX}theme_${themeString}`;
         console.warn("Theme not found");
       }
