@@ -97,9 +97,7 @@ describe("Alert Renderer", () => {
     expect(transition).toEqual(transitions[transitionConstants.fade]);
   });
   it("should select the correct theme", () => {
-    const wrapper = mount(
-      <AlertRenderer alerts={sortedAlerts} />
-    );
+    const wrapper = mount(<AlertRenderer alerts={sortedAlerts} />);
     const selectTheme = wrapper.instance().selectTheme;
     let theme = selectTheme(themeConstants.rounded);
     expect(theme).toEqual(`${CLASS_PREFIX}theme_rounded`);

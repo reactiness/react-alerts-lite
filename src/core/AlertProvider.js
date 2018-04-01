@@ -64,7 +64,6 @@ export class AlertProvider extends Component {
         remove={this.handlers.handleRemove}
         transitions={this.props.transitions}
         theme={this.props.theme}
-        customTheme={this.props.customTheme ? this.props.customTheme : {}}
       />
     );
   }
