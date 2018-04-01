@@ -1,8 +1,13 @@
 import { Alert } from "./Alert";
 import React, { Component } from "react";
 import TransitionGroup from "react-transition-group/TransitionGroup";
-import { containerStyle, positionStyle, themeStyles } from "../css/styles";
-import { positionsArray, positionSections } from "./constants";
+import { alertIcons } from "../css/styles";
+import {
+  positionsArray,
+  alertConstants,
+  themeConstants,
+  CLASS_PREFIX
+} from "./constants";
 import { transitions as stockTransitions } from "../transitions";
 
 export class AlertRenderer extends Component {
@@ -31,18 +36,28 @@ export class AlertRenderer extends Component {
     }
   }
 
+  // TODO
+  // selectType(typeString) {
+
+  // }
+
+  // TODO
+  // selectIcon(iconString) {
+
+  // }
+
   selectTheme(themeString) {
-    const { customTheme } = this.props;
     try {
       if (themeString) {
-        const themeStyle = themeStyles[themeString];
-        if (themeStyle) return { ...themeStyle, ...customTheme };
+        const temp = themeConstants;
+        const themeExists = themeConstants[themeString];
+        if (themeExists) return `${CLASS_PREFIX}theme_${themeString}`;
         console.warn("Theme not found");
       }
-      return { ...customTheme };
+      return "";
     } catch (error) {
       console.warn("Theme not found");
-      return { ...customTheme };
+      return "";
     }
   }
 
@@ -50,21 +65,23 @@ export class AlertRenderer extends Component {
     const { alerts, remove, theme } = this.props;
     return positionsArray.map(position => (
       <TransitionGroup
-        style={{ ...positionStyle.common, ...positionStyle[position] }}
-        key={`__rta_pos_${position}`}
+        className={`${CLASS_PREFIX}pos_common ${CLASS_PREFIX}pos_${position}`}
+        key={`${CLASS_PREFIX}key_pos_${position}`}
       >
         {alerts[position].map(alert => {
           const Transition = this.selectTransition(alert.transition);
           return (
             <Transition
               duration={alert.duration}
-              key={`__rta_alert_${alert.id}`}
-              maxHeight={alert.maxHeight} // Little bit hacky - maybe better way than this
+              key={`${CLASS_PREFIX}key_alert_${alert.id}`}
+              maxHeight={alert.maxHeight}
             >
               <Alert
+                {...alert}
                 theme={this.selectTheme(theme)}
                 remove={remove}
-                {...alert}
+                type={`${CLASS_PREFIX}type_${alertConstants[alert.type]}`}
+                icon={alert.icon ? icon : alertIcons[alert.type]}
               />
             </Transition>
           );

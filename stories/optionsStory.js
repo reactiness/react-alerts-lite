@@ -10,7 +10,7 @@ const content =
 storiesOf("Options", module)
   .add("No Close Button", () => (
     <div>
-      <AlertProvider theme="flat" />
+      <AlertProvider />
       <button
         onClick={() =>
           Alerts.push({
@@ -25,7 +25,7 @@ storiesOf("Options", module)
   ))
   .add("Timeout set to 1 second", () => (
     <div>
-      <AlertProvider theme="flat" />
+      <AlertProvider />
       <button
         onClick={() =>
           Alerts.push({
@@ -40,7 +40,7 @@ storiesOf("Options", module)
   ))
   .add("Duration set to 3 seconds", () => (
     <div>
-      <AlertProvider theme="flat" />
+      <AlertProvider />
       <button
         onClick={() =>
           Alerts.push({
@@ -55,7 +55,7 @@ storiesOf("Options", module)
   ))
   .add("onClose Callback", () => (
     <div>
-      <AlertProvider theme="flat" />
+      <AlertProvider />
       <button
         onClick={() =>
           Alerts.push({

@@ -38,9 +38,9 @@ storiesOf("Themes", module)
       </button>
     </div>
   ))
-  .add("Flat Rounded", () => (
+  .add("Simple", () => (
     <div>
-      <AlertProvider theme="flat-rounded" />
+      <AlertProvider theme="simple" />
       <button
         onClick={() =>
           Alerts.push({

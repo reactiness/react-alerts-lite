@@ -1,13 +1,12 @@
 import React from "react";
 import { Alert } from "./Alert";
 import { store } from "./AlertProvider";
-import { add, removeAll, removeType } from "../state/actionCreators";
+import { add, removeAll, removeType } from "./state/actionCreators";
 import { defaultAlertArgs } from "./constants";
 
 let counter = 0;
 
-const addAlert = args => {
-  console.log("args", args);
+const insert = args => {
   store.dispatch(
     add({
       id: counter,
@@ -23,7 +22,7 @@ const remove = type => {
 
 export class Alerts {
   static push(args) {
-    addAlert({
+    insert({
       ...defaultAlertArgs,
       ...store.state.alerts.defaultProps,
       ...args
@@ -33,3 +32,5 @@ export class Alerts {
     remove(type);
   }
 }
+
+export default Alerts;

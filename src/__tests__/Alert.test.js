@@ -35,31 +35,31 @@ describe("Alert", () => {
   });
   it("should render success alert correctly", () => {
     const wrapper = shallow(
-      <Alert content="test" type="success" remove={jest.fn()} />
+      <Alert content="test" type="_rta_type_success" remove={jest.fn()} />
     );
     expect(wrapper).toMatchSnapshot();
   });
   it("should render warning alert correctly", () => {
     const wrapper = shallow(
-      <Alert content="test" type="warning" remove={jest.fn()} />
+      <Alert content="test" type="_rta_type_warning" remove={jest.fn()} />
     );
     expect(wrapper).toMatchSnapshot();
   });
   it("should render error alert correctly", () => {
     const wrapper = shallow(
-      <Alert content="test" type="error" remove={jest.fn()} />
+      <Alert content="test" type="_rta_type_error" remove={jest.fn()} />
     );
     expect(wrapper).toMatchSnapshot();
   });
   it("should render basic alert correctly", () => {
     const wrapper = shallow(
-      <Alert content="test" type="basic" remove={jest.fn()} />
+      <Alert content="test" type="_rta_type_basic" remove={jest.fn()} />
     );
     expect(wrapper).toMatchSnapshot();
   });
   it("should render info alert correctly", () => {
     const wrapper = shallow(
-      <Alert content="test" type="info" remove={jest.fn()} />
+      <Alert content="test" type="_rta_type_info" remove={jest.fn()} />
     );
     expect(wrapper).toMatchSnapshot();
   });

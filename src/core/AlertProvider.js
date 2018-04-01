@@ -1,10 +1,11 @@
 import React, { Component } from "react";
-import { reducer } from "../state/reducer";
-import { initialState } from "../state/initialState";
+import { reducer } from "./state/reducer";
+import { initialState } from "./state/initialState";
 import { AlertRenderer } from "./AlertRenderer";
-import { Store } from "../state/Store";
-import { remove, addDefaultProps } from "../state/actionCreators";
+import { Store } from "./state/Store";
+import { remove, addDefaultProps } from "./state/actionCreators";
 import { positionsArray } from "./constants";
+import "../css/styles.css";
 
 const reducers = {
   alerts: reducer
@@ -64,7 +65,6 @@ export class AlertProvider extends Component {
         remove={this.handlers.handleRemove}
         transitions={this.props.transitions}
         theme={this.props.theme}
-        customTheme={this.props.customTheme ? this.props.customTheme : {}}
       />
     );
   }

@@ -10,7 +10,7 @@ const content =
 storiesOf("Transitions", module)
   .add("No Transition", () => (
     <div>
-      <AlertProvider theme="flat" />
+      <AlertProvider />
       <button
         onClick={() =>
           Alerts.push({
@@ -44,7 +44,7 @@ storiesOf("Transitions", module)
   ))
   .add("Slide Up", () => (
     <div>
-      <AlertProvider theme="flat" />
+      <AlertProvider />
       <button
         onClick={() =>
           Alerts.push({
@@ -61,7 +61,7 @@ storiesOf("Transitions", module)
   ))
   .add("Slide Right", () => (
     <div>
-      <AlertProvider theme="flat" />
+      <AlertProvider />
       <button
         onClick={() =>
           Alerts.push({
@@ -78,7 +78,7 @@ storiesOf("Transitions", module)
   ))
   .add("Slide Left", () => (
     <div>
-      <AlertProvider theme="flat" />
+      <AlertProvider />
       <button
         onClick={() =>
           Alerts.push({
@@ -95,7 +95,7 @@ storiesOf("Transitions", module)
   ))
   .add("Slide Up Through", () => (
     <div>
-      <AlertProvider theme="flat" />
+      <AlertProvider />
       <button
         onClick={() =>
           Alerts.push({
@@ -112,7 +112,7 @@ storiesOf("Transitions", module)
   ))
   .add("Fade", () => (
     <div>
-      <AlertProvider theme="flat" />
+      <AlertProvider />
       <button
         onClick={() =>
           Alerts.push({
@@ -129,7 +129,7 @@ storiesOf("Transitions", module)
   ))
   .add("Rotate Left", () => (
     <div>
-      <AlertProvider theme="flat" />
+      <AlertProvider />
       <button
         onClick={() =>
           Alerts.push({
@@ -146,7 +146,7 @@ storiesOf("Transitions", module)
   ))
   .add("Rotate Right", () => (
     <div>
-      <AlertProvider theme="flat" />
+      <AlertProvider />
       <button
         onClick={() =>
           Alerts.push({
@@ -163,7 +163,7 @@ storiesOf("Transitions", module)
   ))
   .add("Scale", () => (
     <div>
-      <AlertProvider theme="flat" />
+      <AlertProvider />
       <button
         onClick={() =>
           Alerts.push({
@@ -180,7 +180,7 @@ storiesOf("Transitions", module)
   ))
   .add("Scale Slide Down", () => (
     <div>
-      <AlertProvider theme="flat" />
+      <AlertProvider />
       <button
         onClick={() =>
           Alerts.push({
@@ -197,7 +197,7 @@ storiesOf("Transitions", module)
   ))
   .add("Scale Slide Up", () => (
     <div>
-      <AlertProvider theme="flat" />
+      <AlertProvider />
       <button
         onClick={() =>
           Alerts.push({
@@ -214,7 +214,7 @@ storiesOf("Transitions", module)
   ))
   .add("Scale Slide Left", () => (
     <div>
-      <AlertProvider theme="flat" />
+      <AlertProvider />
       <button
         onClick={() =>
           Alerts.push({
@@ -231,7 +231,7 @@ storiesOf("Transitions", module)
   ))
   .add("Scale Slide Right", () => (
     <div>
-      <AlertProvider theme="flat" />
+      <AlertProvider />
       <button
         onClick={() =>
           Alerts.push({
