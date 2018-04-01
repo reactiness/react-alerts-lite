@@ -82,7 +82,7 @@
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.35);
   width: 100%-8px;
 }
-.__rta_theme_shadowed {
+.__rta_theme_simple {
   margin: 3px;
   width: 100%-8px;
   border-radius: 3px;
@@ -98,7 +98,7 @@
 
 /* Container */
 
-.__rta_theme_container {
+.__rta_container {
   width: 100%;
   overflow: hidden;
 };
@@ -126,4 +126,29 @@
 .__rta_type_info {
   background-color: rgba(33, 150, 243, 0.8);
   border-color: rgba(33, 150, 243, 1);
+}
+
+
+/* Icon Styles */
+
+.__rta_icon {
+  padding: 10px;
+  display: flex;
+  width: 40px;
+  align-items: flex-start;
+}
+
+
+/* SVG Styles */
+.__rta_icon > img, .__rta_close > img {
+  margin: 0 auto;
+}
+
+
+/* Content Styles */
+
+.__rta_content {
+  padding: 10px;
+  display: flex;
+  width: 100%;
 }

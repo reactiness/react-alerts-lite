@@ -1,8 +1,13 @@
 import { Alert } from "./Alert";
 import React, { Component } from "react";
 import TransitionGroup from "react-transition-group/TransitionGroup";
-import { containerStyle } from "../css/styles";
-import { positionsArray, positionSections, alertConstants, themeConstants, CLASS_PREFIX } from "./constants";
+import { alertIcons } from "../css/styles";
+import {
+  positionsArray,
+  alertConstants,
+  themeConstants,
+  CLASS_PREFIX
+} from "./constants";
 import { transitions as stockTransitions } from "../transitions";
 
 export class AlertRenderer extends Component {
@@ -36,13 +41,18 @@ export class AlertRenderer extends Component {
 
   // }
 
+  // TODO
+  // selectIcon(iconString) {
+
+  // }
+
   selectTheme(themeString) {
     try {
       if (themeString) {
         const temp = themeConstants;
         const themeExists = themeConstants[themeString];
         console.log(themeString, themeExists);
-        if (themeExists) return `${CLASS_PREFIX}_theme_${themeString}`;
+        if (themeExists) return `${CLASS_PREFIX}theme_${themeString}`;
         console.warn("Theme not found");
       }
       return "";
@@ -57,14 +67,14 @@ export class AlertRenderer extends Component {
     return positionsArray.map(position => (
       <TransitionGroup
         className={`${CLASS_PREFIX}pos_common ${CLASS_PREFIX}pos_${position}`}
-        key={`__rta_pos_${position}`}
+        key={`${CLASS_PREFIX}key_pos_${position}`}
       >
         {alerts[position].map(alert => {
           const Transition = this.selectTransition(alert.transition);
           return (
             <Transition
               duration={alert.duration}
-              key={`${CLASS_PREFIX}alert_${alert.id}`}
+              key={`${CLASS_PREFIX}key_alert_${alert.id}`}
               maxHeight={alert.maxHeight}
             >
               <Alert
@@ -72,6 +82,7 @@ export class AlertRenderer extends Component {
                 theme={this.selectTheme(theme)}
                 remove={remove}
                 type={`${CLASS_PREFIX}type_${alertConstants[alert.type]}`}
+                icon={alert.icon ? icon : alertIcons[alert.type]}
               />
             </Transition>
           );
