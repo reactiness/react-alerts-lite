@@ -1,8 +1,8 @@
 import { Alert } from "./Alert";
 import React, { Component } from "react";
 import TransitionGroup from "react-transition-group/TransitionGroup";
-import { containerStyle, themeStyles } from "../css/styles";
-import { positionsArray, positionSections, CLASS_PREFIX } from "./constants";
+import { containerStyle } from "../css/styles";
+import { positionsArray, positionSections, alertConstants, themeConstants, CLASS_PREFIX } from "./constants";
 import { transitions as stockTransitions } from "../transitions";
 
 export class AlertRenderer extends Component {
@@ -31,18 +31,24 @@ export class AlertRenderer extends Component {
     }
   }
 
+  // TODO
+  // selectType(typeString) {
+
+  // }
+
   selectTheme(themeString) {
-    const { customTheme } = this.props;
     try {
       if (themeString) {
-        const themeStyle = themeStyles[themeString];
-        if (themeStyle) return { ...themeStyle, ...customTheme };
+        const temp = themeConstants;
+        const themeExists = themeConstants[themeString];
+        console.log(themeString, themeExists);
+        if (themeExists) return `${CLASS_PREFIX}_theme_${themeString}`;
         console.warn("Theme not found");
       }
-      return { ...customTheme };
+      return "";
     } catch (error) {
       console.warn("Theme not found");
-      return { ...customTheme };
+      return "";
     }
   }
 
@@ -51,7 +57,6 @@ export class AlertRenderer extends Component {
     return positionsArray.map(position => (
       <TransitionGroup
         className={`${CLASS_PREFIX}pos_common ${CLASS_PREFIX}pos_${position}`}
-        // style={{ ...positionStyle.common, ...positionStyle[position] }}
         key={`__rta_pos_${position}`}
       >
         {alerts[position].map(alert => {
@@ -59,13 +64,14 @@ export class AlertRenderer extends Component {
           return (
             <Transition
               duration={alert.duration}
-              key={`__rta_alert_${alert.id}`}
+              key={`${CLASS_PREFIX}alert_${alert.id}`}
               maxHeight={alert.maxHeight}
             >
               <Alert
+                {...alert}
                 theme={this.selectTheme(theme)}
                 remove={remove}
-                {...alert}
+                type={`${CLASS_PREFIX}type_${alertConstants[alert.type]}`}
               />
             </Transition>
           );

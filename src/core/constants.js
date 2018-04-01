@@ -14,14 +14,14 @@ const info = "info";
 const success = "success";
 
 const rounded = "rounded";
-const flatRounded = "flat-rounded";
+const simple = "simple";
 const shadowed = "shadowed";
 const flat = "flat";
 const bordered = "bordered";
 
 export const themeConstants = {
   rounded,
-  flatRounded,
+  simple,
   shadowed,
   flat,
   bordered

@@ -1,14 +1,12 @@
 import React, { Component } from "react";
 import {
-  defaultStyle,
-  containerStyle,
-  alertStyles,
   iconStyle,
   closeButtonStyle,
   contentStyle,
   alertIcons
 } from "../css/styles";
 import close from "../assets/x.svg";
+import { CLASS_PREFIX } from "./constants";
 
 const createHandlers = (remove, id) => {
   const handleRemove = () => {
@@ -55,15 +53,10 @@ export class Alert extends React.Component {
     return (
       <div
         className="__rta_container"
-        style={{ ...containerStyle, ...transitionStyle }}
+        style={ transitionStyle }
       >
         <div
-          className="__rta_wrapper"
-          style={{
-            ...defaultStyle,
-            ...theme,
-            ...alertStyles[type]
-          }}
+          className={`${CLASS_PREFIX}wrapper ${theme} ${type}`}
         >
           <div className="__rta_icon" style={iconStyle}>
             <img
