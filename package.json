@@ -1,6 +1,6 @@
 {
   "name": "react-alerts-lite",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Minimal library for alerts built using react and react-transitions",
   "main": "dist/index.min.js",
   "style": "dist/index.min.css",

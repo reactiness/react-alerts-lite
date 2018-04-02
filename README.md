@@ -5,7 +5,7 @@
 
 ## Synopsis
 
-A minimal library for rendering alert / toasts / popups / notifications in react apps.
+A minimal library for rendering alerts / toasts / popups / notifications in react apps.
 
 ## Storybook
 
@@ -83,7 +83,6 @@ $ yarn add react-alerts-lite
 ```jsx
 <AlertProvider
   theme="simple" | "rounded" | "shadowed" | "flat" | "bordered"
-  transitions=""
 />
 ```
 #### Custom transitions: Create your own
@@ -162,12 +161,15 @@ An alert accepts the following arguments
     transition: "none" | "slide-up" | "slide-down" | "slide-up-through" | "fade" | "slide-right" | "slide-left" | "rotate-left" | "rotate-right" | "scale" | "scale-slide-down" | "scale-slide-left" | "scale-slide-right" | "scale-slide-up"
   })
 ```
-
+- type: Type of alert to add
 - timeout: How long before your alert unmounts
 - duration: How long the transition animation will take
+- position: The screen position to render the alert
+- content: This will be the content you want to render inside the alert
 - closeButton: Whether to display the close button or not
 - onClose: callback for when the alert unmounts
 - maxHeight: Used in transitions to determine positioning of alerts in stack
+- transition: The string key for the type of transition the alert will use
 
 
 ### Custom Transitions Example
@@ -228,5 +230,5 @@ MIT
 
 ### Tech
 
-peer-dependencies: react, react-dom
-dependencies: react-transition-group
+- peer-dependencies: react, react-dom
+- dependencies: react-transition-group
