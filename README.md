@@ -63,11 +63,11 @@ export class Demo extends React.Component {
 react-alerts-lite requires react and react-dom to run. It has a single dependency on react-transition-group.
 
 ```sh
-$ npm install --save-dev react-alerts-lite
+$ npm install react-alerts-lite
 ```
 or
 ```sh
-$ yarn add --dev react-alerts-lite
+$ yarn add react-alerts-lite
 ```
 
 ## API Reference
@@ -75,10 +75,10 @@ $ yarn add --dev react-alerts-lite
 ### AlertProvider
 #### Themes:
 ```jsx
-    <AlertProvider
-        theme="simple" | "rounded" | "shadowed" | "flat" | "bordered"
-        transitions=""
-    />
+<AlertProvider
+  theme="simple" | "rounded" | "shadowed" | "flat" | "bordered"
+  transitions=""
+/>
 ```
 #### Custom transitions: Create your own
 The transitions prop accepts an array of transitions with the :name and :transitions keys. 
@@ -86,71 +86,75 @@ Refer to react-transition-group documentation on creating transitions
 See bottom of page for simple template
 Note: maxHeight and duration are passed into transitions as props - use them where needed.
 ```jsx
-    import ScaleSlideRight from "../path/to/my/react-transition-group-custom-transition"
-    import ScaleSlideRight from "../path/to/my/react-transition-group-custom-transition"
-    
-    const customTransitions = [
-        {
-            name: "custom-transition_one",
-            transition: ScaleSlideRight
-        },
-        {
-            name: "custom-transition-two",
-            transition: ScaleSlideUp
-        }
-    ];
+import ScaleSlideRight from "../path/to/my/react-transition-group-custom-transition";
+import ScaleSlideRight from "../path/to/my/react-transition-group-custom-transition";
+
+const customTransitions = [
+  {
+    name: "custom-transition_one",
+    transition: ScaleSlideRight
+  },
+  {
+    name: "custom-transition-two",
+    transition: ScaleSlideUp
+  }
+];
 ```
 pass your transitions array into AlertProvider
 ```jsx
-    <AlertProvider
-        transitions=[myCustomTransitions]
-    />
+<AlertProvider
+  transitions=[customTransitions]
+/>
 ```
 reference your transition with the :name you provided.
 ```jsx
-    <button onClick={() =>
-        Alerts.push({
-            transition: "custom-transition_one"
-        })
-      }
-    >
+<button onClick={() =>
+    Alerts.push({
+      transition: "custom-transition_one"
+    })
+  }
+>
+  Click me
+</button>
 ```
 
 #### DefaultProps:
 you can pass default props into the AlertProvider to apply to all alerts.
 Props passed directly to an Alert take precedence so you can overwrite these where necessary.
 ```jsx
-    <AlertProvider
-        defaultProps={
-            type: "error",
-            position: "bottom",
-            transition: "slide-up"
-        }
-    />
+  <AlertProvider
+    defaultProps={
+      type: "error",
+      position: "bottom",
+      transition: "slide-up"
+    }
+  />
 ```
 Now when you render an alert with no props defaultProps will take precedence over stock props.
 ```jsx
-    <button onClick={() =>
-        Alerts.push()
-      }
-    >
+<button onClick={
+  () => Alerts.push()
+  }
+>
+  Click me
+</button>
 ```
 Note: the alert created here would now have type "error", position: "bottom", and transition: "slide-up"
 
 ### Alert
 An alert accepts the following arguments
 ```jsx
-    Alerts.push({
-        type: "basic" | "error" | "warning" | "info" | "error"
-        timeout: <int>
-        duration: <int>
-        position: "top-full" | "top-left" | "top" | "top-right" | "bottom-left" | "bottom" | "bottom-right" | "bottom-full"
-        content: <your content to render>
-        closeButton: {true | false}
-        onClose: () => {alert(console.log("my alert has unmounted))}
-        maxHeight: <int>
-        transition: "none" | "slide-up" | "slide-down" | "slide-up-through" | "fade" | "slide-right" | "slide-left" | "rotate-left" | "rotate-right" | "scale" | "scale-slide-down" | "scale-slide-left" | "scale-slide-right" | "scale-slide-up"
-    })
+  Alerts.push({
+    type: "basic" | "error" | "warning" | "info" | "error"
+    timeout: <int>
+    duration: <int>
+    position: "top-full" | "top-left" | "top" | "top-right" | "bottom-left" | "bottom" | "bottom-right" | "bottom-full"
+    content: <your content to render>
+    closeButton: {true | false}
+    onClose: () => {alert("my alert has unmounted")}
+    maxHeight: <int>
+    transition: "none" | "slide-up" | "slide-down" | "slide-up-through" | "fade" | "slide-right" | "slide-left" | "rotate-left" | "rotate-right" | "scale" | "scale-slide-down" | "scale-slide-left" | "scale-slide-right" | "scale-slide-up"
+  })
 ```
 
 - timeout: How long before your alert unmounts
@@ -220,4 +224,3 @@ MIT
 
 peer-dependencies: react, react-dom
 dependencies: react-transition-group
-
