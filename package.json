@@ -20,6 +20,9 @@
     "deploy-storybook": "storybook-to-ghpages",
     "test-ci": "jest --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js"
   },
+  "files": [
+    "dist"
+  ],
   "keywords": [
     "react",
     "alerts",
