@@ -1,21 +1,21 @@
 import React from "react";
 import { storiesOf } from "@storybook/react";
 import { action } from "@storybook/addon-actions";
-import { Alerts } from "../src/core";
-import { AlertProvider } from "../src/core/AlertProvider";
+import { Alerts } from "../core";
+import { AlertProvider } from "../core/AlertProvider";
 
 const content =
   "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur."
 
-storiesOf("Types", module)
-  .add("Success", () => (
+storiesOf("Options", module)
+  .add("No Close Button", () => (
     <div>
       <AlertProvider />
       <button
         onClick={() =>
           Alerts.push({
-            type: "success",
-            content
+            content,
+            closeButton: false
           })
         }
       >
@@ -23,14 +23,14 @@ storiesOf("Types", module)
       </button>
     </div>
   ))
-  .add("Error", () => (
+  .add("Timeout set to 1 second", () => (
     <div>
       <AlertProvider />
       <button
         onClick={() =>
           Alerts.push({
             content,
-            type: "error"
+            timeout: 1000
           })
         }
       >
@@ -38,14 +38,14 @@ storiesOf("Types", module)
       </button>
     </div>
   ))
-  .add("Warning", () => (
+  .add("Duration set to 3 seconds", () => (
     <div>
       <AlertProvider />
       <button
         onClick={() =>
           Alerts.push({
             content,
-            type: "warning"
+            duration: 2000
           })
         }
       >
@@ -53,29 +53,14 @@ storiesOf("Types", module)
       </button>
     </div>
   ))
-  .add("Info", () => (
+  .add("onClose Callback", () => (
     <div>
       <AlertProvider />
       <button
         onClick={() =>
           Alerts.push({
             content,
-            type: "info"
-          })
-        }
-      >
-        create
-      </button>
-    </div>
-  ))
-  .add("Basic", () => (
-    <div>
-      <AlertProvider />
-      <button
-        onClick={() =>
-          Alerts.push({
-            content,
-            type: "basic"
+            onClose: () => alert("onClose callback")
           })
         }
       >
