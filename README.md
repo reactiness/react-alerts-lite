@@ -15,7 +15,7 @@ https://reactiness.github.io/react-alerts-lite/
 
 ### Importing AlertProvider
 Import the AlertProvider and render before you need to use an Alert. 
-You only need to render AlertProvider once.
+You must only render the AlertProvider once.
 
 ```jsx
 import React, { Component } from 'react';
