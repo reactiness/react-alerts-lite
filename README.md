@@ -62,11 +62,11 @@ export class Demo extends React.Component {
 
 react-alerts-lite requires react and react-dom to run. It has a single dependency on react-transition-group.
 
-```sh
+```bash
 $ npm install react-alerts-lite
 ```
 or
-```sh
+```bash
 $ yarn add react-alerts-lite
 ```
 
