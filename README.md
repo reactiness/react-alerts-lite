@@ -17,7 +17,7 @@ https://reactiness.github.io/react-alerts-lite/
 Import the AlertProvider and render before you need to use an Alert. 
 You only need to render AlertProvider once.
 
-```sh
+```jsx
 import React, { Component } from 'react';
 import { AlertProvider } from "react-alerts-lite"
 
@@ -36,7 +36,7 @@ export class App extends Component {
 ### Importing Alert
 Import Alert where you need to display an alert.
 
-```sh
+```jsx
 import React from "react";
 import { Alert } from "react-alerts-lite"
 
@@ -72,7 +72,7 @@ $ yarn add --dev react-alerts-lite
 
 ### AlertProvider
 #### Themes:
-```sh
+```jsx
     <AlertProvider
         theme="simple" | "rounded" | "shadowed" | "flat" | "bordered"
         transitions=""
@@ -83,7 +83,7 @@ The transitions prop accepts an array of transitions with the :name and :transit
 Refer to react-transition-group documentation on creating transitions
 See bottom of page for simple template
 Note: maxHeight and duration are passed into transitions as props - use them where needed.
-```sh
+```jsx
     import ScaleSlideRight from "../path/to/my/react-transition-group-custom-transition"
     import ScaleSlideRight from "../path/to/my/react-transition-group-custom-transition"
     
@@ -99,13 +99,13 @@ Note: maxHeight and duration are passed into transitions as props - use them whe
     ];
 ```
 pass your transitions array into AlertProvider
-```sh
+```jsx
     <AlertProvider
         transitions=[myCustomTransitions]
     />
 ```
 reference your transition with the :name you provided.
-```sh
+```jsx
     <button onClick={() =>
         Alert.push({
             transition: "custom-transition_one"
@@ -117,7 +117,7 @@ reference your transition with the :name you provided.
 #### DefaultProps:
 you can pass default props into the AlertProvider to apply to all alerts.
 Props passed directly to an Alert take precedence so you can overwrite these where necessary.
-```sh
+```jsx
     <AlertProvider
         defaultProps={
             type: "error",
@@ -127,7 +127,7 @@ Props passed directly to an Alert take precedence so you can overwrite these whe
     />
 ```
 Now when you render an alert with no props defaultProps will take precedence over stock props.
-```sh
+```jsx
     <button onClick={() =>
         Alert.push()
       }
@@ -137,7 +137,7 @@ Note: the alert created here would now have type "error", position: "bottom", an
 
 ### Alert
 An alert accepts the following arguments
-```sh
+```jsx
     Alert.push({
         type: "basic" | "error" | "warning" | "info" | "error"
         timeout: <int>
@@ -160,7 +160,7 @@ An alert accepts the following arguments
 
 ### Custom Transitions Example
 Example of a simple fade transition.
-```sh
+```jsx
 import Transition from "react-transition-group/Transition";
 import React from "react";
 
