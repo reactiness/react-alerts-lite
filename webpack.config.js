@@ -1,8 +1,16 @@
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
+const path = require("path");
 
 module.exports = {
+  output: {
+    filename: "index.min.js",
+    libraryTarget: "umd",
+    library: "ReactAlertsLite",
+    path: path.resolve(__dirname, "dist")
+  },
+  externals: ["react", "react-dom", "prop-types"],
   optimization: {
     minimizer: [
       new UglifyJsPlugin({
@@ -15,7 +23,7 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: "[name].css",
+      filename: "index.min.css",
       chunkFilename: "[id].css"
     })
   ],
