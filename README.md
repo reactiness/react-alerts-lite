@@ -58,6 +58,12 @@ export class Demo extends React.Component {
 }
 ```
 
+### Importing CSS
+
+```js
+import 'react-alerts-lite/dist/index.min.css';
+```
+
 ## Installation
 
 react-alerts-lite requires react and react-dom to run. It has a single dependency on react-transition-group.
