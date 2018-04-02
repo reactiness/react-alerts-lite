@@ -18,8 +18,8 @@ Import the AlertProvider and render before you need to use an Alert.
 You must only render the AlertProvider once.
 
 ```jsx
-import React, { Component } from 'react';
-import { AlertProvider } from "react-alerts-lite"
+import React, { Component } from "react";
+import { AlertProvider } from "react-alerts-lite";
 
 export class App extends Component {
   render() {
@@ -38,21 +38,23 @@ Import Alerts where you need to display an alert.
 
 ```jsx
 import React from "react";
-import { Alerts } from "react-alerts-lite"
+import { Alerts } from "react-alerts-lite";
 
 export class Demo extends React.Component {
-    render() {
-        return (
-            <button onClick={() =>
-                Alerts.push({
-                    type: "success"
-                    position: "bottom-full",
-                    transition: "fade"
-                })
-              }
-            >
-        )
-    }
+  render() {
+    return (
+      <button onClick={() =>
+        Alerts.push({
+          type: "success",
+          position: "bottom-full",
+          transition: "fade"
+        })
+        }
+      >
+        Click me
+      </button>
+    )
+  }
 }
 ```
 
