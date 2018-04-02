@@ -3,7 +3,7 @@ import { reducer } from "./state/reducer";
 import { initialState } from "./state/initialState";
 import { AlertRenderer } from "./AlertRenderer";
 import { Store } from "./state/Store";
-import { remove, addDefaultProps } from "./state/actionCreators";
+import { remove, addDefaultProps, removeAll } from "./state/actionCreators";
 import { positionsArray } from "./constants";
 import "../css/styles.css";
 
@@ -56,6 +56,10 @@ export class AlertProvider extends Component {
       this.sortAlerts(store.alerts.current, this.initEmptyPositionsObject())
     );
     if (defaultProps) this.handlers.handleAddDefaultProps(defaultProps);
+  }
+
+  componentWillUnmount() {
+    store.dispatch(removeAll());
   }
 
   render() {
