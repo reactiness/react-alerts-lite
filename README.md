@@ -33,18 +33,18 @@ export class App extends Component {
 }
 ```
 
-### Importing Alert
-Import Alert where you need to display an alert.
+### Importing Alerts
+Import Alerts where you need to display an alert.
 
 ```jsx
 import React from "react";
-import { Alert } from "react-alerts-lite"
+import { Alerts } from "react-alerts-lite"
 
 export class Demo extends React.Component {
     render() {
         return (
             <button onClick={() =>
-                Alert.push({
+                Alerts.push({
                     type: "success"
                     position: "bottom-full",
                     transition: "fade"
@@ -107,7 +107,7 @@ pass your transitions array into AlertProvider
 reference your transition with the :name you provided.
 ```jsx
     <button onClick={() =>
-        Alert.push({
+        Alerts.push({
             transition: "custom-transition_one"
         })
       }
@@ -129,7 +129,7 @@ Props passed directly to an Alert take precedence so you can overwrite these whe
 Now when you render an alert with no props defaultProps will take precedence over stock props.
 ```jsx
     <button onClick={() =>
-        Alert.push()
+        Alerts.push()
       }
     >
 ```
@@ -138,7 +138,7 @@ Note: the alert created here would now have type "error", position: "bottom", an
 ### Alert
 An alert accepts the following arguments
 ```jsx
-    Alert.push({
+    Alerts.push({
         type: "basic" | "error" | "warning" | "info" | "error"
         timeout: <int>
         duration: <int>
