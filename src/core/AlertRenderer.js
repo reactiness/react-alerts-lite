@@ -28,18 +28,19 @@ export class AlertRenderer extends Component {
       }
       if (stockTransitions[transitionString])
         return stockTransitions[transitionString];
-      console.warn("Transition name not found: defaulting to fade transition");
-      return stockTransitions["fade"];
-    } catch (error) {
-      console.warn("Transition name not found: defaulting to fade transition");
-      return stockTransitions["fade"];
-    }
+    } catch (error) {}
+    console.warn("Transition name not found: defaulting to fade transition");
+    return stockTransitions["fade"];
   }
 
-  // TODO
-  // selectType(typeString) {
-
-  // }
+  selectType(typeString) {
+    try {
+      const type = alertConstants[typeString];
+      if (type) return type;
+    } catch (error) {}
+    console.warn("type not found: defaulting to basic type");
+    return alertConstants.basic;
+  }
 
   // TODO
   // selectIcon(iconString) {
@@ -52,13 +53,10 @@ export class AlertRenderer extends Component {
         const temp = themeConstants;
         const themeExists = themeConstants[themeString];
         if (themeExists) return `${CLASS_PREFIX}theme_${themeString}`;
-        console.warn("Theme not found");
       }
-      return "";
-    } catch (error) {
-      console.warn("Theme not found");
-      return "";
-    }
+    } catch (error) {}
+    console.warn("Theme not found");
+    return "";
   }
 
   render() {
@@ -70,6 +68,7 @@ export class AlertRenderer extends Component {
       >
         {alerts[position].map(alert => {
           const Transition = this.selectTransition(alert.transition);
+          const type = this.selectType(alert.type);
           return (
             <Transition
               duration={alert.duration}
@@ -80,8 +79,8 @@ export class AlertRenderer extends Component {
                 {...alert}
                 theme={this.selectTheme(theme)}
                 remove={remove}
-                type={`${CLASS_PREFIX}type_${alertConstants[alert.type]}`}
-                icon={alert.icon ? icon : alertIcons[alert.type]}
+                type={`${CLASS_PREFIX}type_${alertConstants[type]}`}
+                icon={alert.icon ? icon : alertIcons[type]}
               />
             </Transition>
           );
