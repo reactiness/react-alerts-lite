@@ -15,6 +15,7 @@ export class AlertRenderer extends Component {
     super(props);
     this.selectTransition = this.selectTransition.bind(this);
     this.selectTheme = this.selectTheme.bind(this);
+    this.selectType = this.selectType.bind(this);
   }
 
   selectTransition(transitionString) {

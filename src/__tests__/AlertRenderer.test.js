@@ -110,7 +110,7 @@ describe("Alert Renderer", () => {
     theme = selectTheme(themeConstants.bordered);
     expect(theme).toEqual(`${CLASS_PREFIX}theme_bordered`);
   });
-  it("should return empty string on error or invalid keyname", () => {
+  it("selectTheme: should return empty string on error or invalid keyname", () => {
     const wrapper = mount(<AlertRenderer alerts={sortedAlerts} />);
     const selectTheme = wrapper.instance().selectTheme;
     let theme = selectTheme("invalid theme key");
@@ -128,6 +128,20 @@ describe("Alert Renderer", () => {
     const wrapper = mount(<AlertRenderer alerts={sortedAlerts} />);
     expect(spy).toHaveBeenCalledTimes(10);
   });
+  it("should call selectType when providing alerts", () => {
+    const spy = jest.spyOn(AlertRenderer.prototype, "selectType");
+    const wrapper = mount(<AlertRenderer alerts={sortedAlerts} />);
+    expect(spy).toHaveBeenCalledTimes(10);
+  });
+  it("selectType: should return correct type", () => {
+    const wrapper = mount(<AlertRenderer alerts={sortedAlerts} />);
+    const selectType = wrapper.instance().selectType;
+    let type = selectType("invalid type key");
+    expect(type).toEqual("basic");
+    type = selectType("warning");
+    expect(type).toEqual("warning");
+  });
+
   it("should select custom transition when provided via props", () => {
     const customTransitions = [
       {
