@@ -44,8 +44,7 @@ export class AlertRenderer extends Component {
     return alertConstants.basic;
   }
 
-  selectIcon(icon, typeString) {
-    if (icon) return icon;
+  selectIcon(typeString) {
     return alertIcons[typeString];
   }
 
@@ -71,7 +70,8 @@ export class AlertRenderer extends Component {
         {alerts[position].map(alert => {
           const Transition = this.selectTransition(alert.transition);
           const type = this.selectType(alert.type);
-          const icon = this.selectIcon(alert.icon, type);
+          const icon = this.selectIcon(type);
+          const theme = this.selectTheme(theme);
           return (
             <Transition
               duration={alert.duration}
@@ -80,9 +80,9 @@ export class AlertRenderer extends Component {
             >
               <Alert
                 {...alert}
-                theme={this.selectTheme(theme)}
+                theme={theme}
                 remove={remove}
-                type={`${CLASS_PREFIX}type_${alertConstants[type]}`}
+                type={`${CLASS_PREFIX}type_${type}`}
                 icon={icon}
               />
             </Transition>
